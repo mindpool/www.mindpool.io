@@ -1,0 +1,45 @@
+// Imports
+@import "bootstrap.less";
+@import "navbar.less";
+@import "responsive.less";
+@import "jumbotron.less";
+
+// Scafolding
+@bodyPaddingTop:        0;
+@bodyPaddingBottom:     40;
+@bodyMargin:            0;
+@baseFontSize:          13px;
+@baseFontFamily:        @serifFontFamily;
+@baseLineHeight:        18px;
+@altFontFamily:         @sansFontFamily;
+
+// Navbar
+@navbarHeight:                    40px;
+@navbarBackground:                #180725;
+@navbarBackgroundHighlight:       #1b012f;
+
+// Jumbotron
+@jumbotronTextColor:        @white;
+@jumbotronPadding:          40px 0;
+@jumbotronAlign:            center;
+@jumbotronBackgroundColor1: #1b012f;
+@jumbotronBackgroundColor2: #574364;
+@jumbotronMastheadPattern:  "../img/bs-docs-masthead-pattern.png";
+
+// CSS/LESS Overrides
+body {
+  margin: @bodyMargin;
+  padding-top: @bodyPaddingTop;
+  padding-bottom: @bodyPaddingBottom;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @bodyBackground;
+}
+
+.navbar-inverse {
+  .navbar-inner {
+    #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+  }
+}
