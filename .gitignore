@@ -1,6 +1,8 @@
-*.py[co]
+# VIM
+*.sw[po]
 
-# Packages
+# Python
+*.py[co]
 *.egg
 *.egg-info
 dist
