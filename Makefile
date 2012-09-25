@@ -1,4 +1,4 @@
-LIB = mindpool
+LIB = mindpoolsite
 BIN_DIR = /usr/local/bin
 BASE_DIR = $(shell pwd)
 USER = $(shell echo $$USER)
@@ -73,18 +73,19 @@ css:
 run-dev: css
 	-pyflakes $(LIB)
 	-pep8 $(LIB)
-	$(TWISTD) -n mindpool
+	$(TWISTD) -n mindpool-site
+
+start-static:
+	$(TWISTD) web -p 9080 --path=./static/html/
+
+stop-static:
+	make stop-prod
 
 start-prod:
-	$(TWISTD) mindpool
+	$(TWISTD) mindpool-site
 
-# XXX the targets below which have mindpool commands/subcommands need to be
-# updated to use those, and not import the Python ones directly.
-#
-# XXX Those that don't have a subcommand, need to have one!
 stop-prod:
-	$(TWISTD) mindpool stop
-
+	$(TWISTD) mindpool-site stop
 
 $(MONGO_BASE):
 	sudo mkdir -p $(MONGO_DATA)
