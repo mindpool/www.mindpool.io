@@ -1,5 +1,5 @@
 import sys
-print sys.path
+
 from twisted.application import service, internet
 from twisted.python import usage
 from twisted.web import server
