@@ -1,0 +1,25 @@
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
+  <div t:render="dictionaryData">
+
+    <ul class="breadcrumb">
+      <li>
+        <a><t:attr name="href"><t:slot name="rootURL"/></t:attr>
+        Home</a> 
+        <span class="divider"><t:slot name="breadcrumbDivider"/></span>
+      </li>
+      <li>
+        <a><t:attr name="href"><t:slot name="dictionariesURL"/></t:attr>
+        Dictionaries</a>
+        <span class="divider"><t:slot name="breadcrumbDivider"/></span>
+      </li>
+      <li class="active">
+        <t:slot name="dictionaryName"/> Dictionary
+      </li>
+    </ul>
+
+    <h1><t:slot name="dictionaryName"/> Dictionary</h1>
+    <br/><br/>
+    <div t:render="dictionary"/>
+      <t:transparent t:render="dictionaryTabs" />
+  </div>
+</t:transparent>
