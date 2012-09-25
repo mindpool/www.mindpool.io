@@ -34,7 +34,7 @@ class BasePage(elements.TemplateLoader):
         thisYear = datetime.now().year
         if thisYear > year:
             year = "%s - %s" % (year, thisYear)
-        return tag("© %s, %s" % (year, meta.author))
+        return tag("© %s %s" % (year, meta.author))
 
     @renderer
     def jsloader(self, request, tag):

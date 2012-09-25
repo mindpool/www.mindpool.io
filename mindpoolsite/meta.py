@@ -2,7 +2,7 @@
 displayName = "MindPool Site"
 libraryName = "mindpoolsite"
 version = "0.1"
-author = "MindPool, Inc.",
+author = "MindPool, Inc."
 startingYear = 2012
 authorEmail = "is@mindpool.io"
 license = "BSD"
