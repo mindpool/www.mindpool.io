@@ -53,5 +53,5 @@ dictionaries = [
     ]
 
 
-assetsDirectory = "./assets"
+assetsDirectory = "./static"
 breadcrumbDivider = "/"
