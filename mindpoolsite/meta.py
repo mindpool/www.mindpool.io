@@ -2,9 +2,9 @@
 displayName = "MindPool Site"
 libraryName = "mindpoolsite"
 version = "0.1"
-author = "Duncan McGreggor"
+author = "MindPool, Inc.",
 startingYear = 2012
-authorEmail = "oubiwann@mindpool.io"
+authorEmail = "is@mindpool.io"
 license = "BSD"
 url = "http://github.com/mindpool/www.mindpool.io"
 description = "The web site for MindPool, Inc."
