@@ -7,6 +7,7 @@ from twisted.web import server
 from klein import resource
 
 from mindpoolsite import meta, routes
+from mindpoolsite.scripts import async, sync
 
 
 class SubCommandOptions(usage.Options):
