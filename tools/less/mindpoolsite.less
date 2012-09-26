@@ -29,6 +29,8 @@
 // Buttons
 @btnMindPoolBackground:             #dacfde;
 @btnMindPoolBackgroundHighlight:    darken(@btnMindPoolBackground, 10%);
+@btnMindPoolTextColor:              #363636;
+@btnMindPoolBorderColor:            #acacac;
 
 // CSS/LESS Overrides
 body {
@@ -49,5 +51,6 @@ body {
 }
 
 .btn-mindpool {
-  .buttonBackground(@btnMindPoolBackground, @btnMindPoolBackgroundHighlight);
+  .buttonBackground(@btnMindPoolBackground, @btnMindPoolBackgroundHighlight, @btnMindPoolTextColor, 0);
+  border-color: @btnMindPoolBorderColor;
 }
