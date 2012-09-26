@@ -9888,3 +9888,20 @@ body {
 .btn-mindpool.active {
   background-color: #ab93b4 \9;
 }
+.splash-page-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.offices {
+  font-style: italic;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.offices .city {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.copyright {
+  font-size: 80%;
+}
