@@ -26,6 +26,10 @@
 @jumbotronBackgroundColor2: #574364;
 @jumbotronMastheadPattern:  "../img/mindpool-masthead-pattern.png";
 
+// Buttons
+@btnMindPoolBackground:             #dacfde;
+@btnMindPoolBackgroundHighlight:    darken(@btnMindPoolBackground, 10%);
+
 // CSS/LESS Overrides
 body {
   margin: @bodyMargin;
@@ -42,4 +46,8 @@ body {
   .navbar-inner {
     #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
   }
+}
+
+.btn-mindpool {
+  .buttonBackground(@btnMindPoolBackground, @btnMindPoolBackgroundHighlight);
 }
