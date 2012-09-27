@@ -14,9 +14,12 @@
 @altFontFamily:         @sansFontFamily;
 
 // Navbar
-@navbarHeight:                    40px;
-@navbarBackground:                #180725;
-@navbarBackgroundHighlight:       #1b012f;
+@navbarHeight:                  40px;
+@navbarBackground:              #180725;
+@navbarBackgroundHighlight:     #1b012f;
+@navbarMindPoolActive:          @jumbotronBackgroundColor1;
+@navbarMindPoolActiveHighlight: @jumbotronBackgroundColor2;
+@navbarMindPoolActiveShadow:    rgba(112, 112, 112, 0.55);
 
 // Jumbotron
 @jumbotronTextColor:        @white;
@@ -47,6 +50,22 @@ body {
 .navbar-inverse {
   .navbar-inner {
     #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+  }
+
+  .nav .active > a,
+  .nav .active > a:hover,
+  .nav .active > a:focus {
+    color: @navbarInverseLinkColorActive;
+    text-decoration: none;
+    .box-shadow(inset 0 3px 8px @navbarMindPoolActiveShadow);
+    background: @navbarMindPoolActive; /* Old browsers */
+    background: -moz-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @navbarMindPoolActive), color-stop(100%, @navbarMindPoolActiveHighlight)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* IE10+ */
+    background: linear-gradient(to bottom, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@navbarMindPoolActive', endColorstr='@navbarMindPoolActiveHighlight',GradientType=0 ); /* IE6-9 */
   }
 }
 
