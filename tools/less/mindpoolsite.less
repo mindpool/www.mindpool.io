@@ -3,15 +3,22 @@
 @import "navbar.less";
 @import "responsive.less";
 @import "jumbotron.less";
+@import "pageback.less";
 
 // Scafolding
-@bodyPaddingTop:        0;
-@bodyPaddingBottom:     40;
-@bodyMargin:            0;
-@baseFontSize:          13px;
-@baseFontFamily:        @serifFontFamily;
-@baseLineHeight:        18px;
-@altFontFamily:         @sansFontFamily;
+@bodyPaddingTop:            0;
+@bodyPaddingBottom:         40;
+@bodyMargin:                0;
+//@bodyBackgroundContentPage: #dacfdf;
+@bodyBackgroundContentPage: @white;
+@baseFontSize:              13px;
+@baseFontFamily:            @serifFontFamily;
+@baseLineHeight:            18px;
+@altFontFamily:             @sansFontFamily;
+@contentPadMindPoolLeft:    50px;
+@contentPadMindPoolRight:   50px;
+@contentPadMindPoolBootom:  50px;
+@greyWellBackground:        rgba(220, 205, 225, .25);
 
 // Navbar
 @navbarHeight:                  40px;
@@ -29,6 +36,13 @@
 @jumbotronBackgroundColor2: #574364;
 @jumbotronMastheadPattern:  "../img/mindpool-masthead-pattern.png";
 
+// Pageback
+@pagebackTextColor:        @black;
+@pagebackPadding:          40px 0;
+@pagebackAlign:            left;
+@pagebackBackgroundColor:  @bodyBackgroundContentPage;
+@pagebackBackgroundImage:  "../img/mindpool-pageback-fade.png";
+
 // Buttons
 @btnMindPoolBackground:             #dacfde;
 @btnMindPoolBackgroundHighlight:    darken(@btnMindPoolBackground, 10%);
@@ -45,6 +59,10 @@ body {
   line-height: @baseLineHeight;
   color: @textColor;
   background-color: @bodyBackground;
+}
+
+body.content-page {
+  background-color: @bodyBackgroundContentPage;
 }
 
 .navbar-inverse {
@@ -67,6 +85,12 @@ body {
     background: linear-gradient(to bottom, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@navbarMindPoolActive', endColorstr='@navbarMindPoolActiveHighlight',GradientType=0 ); /* IE6-9 */
   }
+}
+
+.main-content-mindpool {
+  padding-left: @contentPadMindPoolLeft;
+  padding-right: @contentPadMindPoolRight;
+  padding-bottom: @contentPadMindPoolBootom;
 }
 
 .btn-mindpool {
@@ -93,4 +117,10 @@ body {
 
 .copyright {
   font-size: 80%;
+}
+
+.grey-well {
+  background-color: @greyWellBackground;
+  border: 1px solid darken(@greyWellBackground, 7%);
+  //border-top: 1px solid darken(@greyWellBackground, 14%);
 }
