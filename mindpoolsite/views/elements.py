@@ -3,7 +3,7 @@ import os.path
 from twisted.python.filepath import FilePath
 from twisted.web.template import Element, XMLFile, renderer, tags
 
-from mindpoolsite import const, meta, utils
+from mindpoolsite import const, content, meta, utils
 from mindpoolsite.models import collection
 from mindpoolsite.controllers import retrieve
 
@@ -85,8 +85,14 @@ class SplashFragment(BaseFragment):
     templateFile = "splash.xml"
 
     @renderer
-    def tagline(self, request, tag):
-        return const.tagline
+    def splashContent(self, request, tag):
+        tag.fillSlots(
+            tagline=const.tagline,
+            consulting=content.splash.consulting,
+            training=content.splash.training,
+            teams=content.splash.teams
+            )
+        return tag
 
     @renderer
     def footer(self, request, tag):

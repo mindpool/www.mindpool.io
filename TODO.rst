@@ -8,3 +8,5 @@ TODO
   the footer
 
 * update favicon
+
+* make the blurb text for the three areas on the splash page bigger font size
