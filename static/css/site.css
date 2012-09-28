@@ -9751,7 +9751,30 @@ a.badge:hover {
   color: #000000;
   text-align: left;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
-  background: #ffffff url("../img/mindpool-pageback-fade.png") repeat-x;
+  background: #574364;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #574364 0%, #1b012f 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #574364), color-stop(100%, #1b012f));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #574364 0%, #1b012f 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #574364 0%, #1b012f 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #574364 0%, #1b012f 100%);
+  /* IE10+ */
+
+  background: linear-gradient(top, #574364 0%, #1b012f 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='@pagebackBackgroundColor2', endColorstr='@pagebackBackgroundColor1', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+
 }
 .pageback h1 {
   font-size: 120%;
@@ -9854,7 +9877,7 @@ body {
   background-color: #ffffff;
 }
 body.content-page {
-  background-color: #ffffff;
+  background-color: #1b012f;
 }
 .mindpool-button-shadow {
   -webkit-box-shadow: inset 0 3px 8px rgba(112, 112, 112, 0.55);
@@ -10148,4 +10171,7 @@ body.content-page {
 }
 .footer {
   padding-top: 100px;
+}
+body.content-page .footer {
+  color: #ccc;
 }

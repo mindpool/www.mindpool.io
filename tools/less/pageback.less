@@ -9,7 +9,15 @@
   color: @pagebackTextColor;
   text-align: @pagebackAlign;
   text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
-  background: @pagebackBackgroundColor url(@pagebackBackgroundImage) repeat-x;
+  background: @pagebackBackgroundColor2; /* Old browsers */
+  background: -moz-linear-gradient(top, @pagebackBackgroundColor2 0%, @pagebackBackgroundColor1 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@pagebackBackgroundColor2), color-stop(100%,@pagebackBackgroundColor1)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, @pagebackBackgroundColor2 0%,@pagebackBackgroundColor1 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, @pagebackBackgroundColor2 0%,@pagebackBackgroundColor1 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, @pagebackBackgroundColor2 0%,@pagebackBackgroundColor1 100%); /* IE10+ */
+  background: linear-gradient(top, @pagebackBackgroundColor2 0%,@pagebackBackgroundColor1 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@pagebackBackgroundColor2', endColorstr='@pagebackBackgroundColor1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 .pageback h1 {
   font-size: 120%;

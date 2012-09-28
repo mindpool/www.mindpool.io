@@ -10,7 +10,8 @@
 @bodyPaddingBottom:         40;
 @bodyMargin:                0;
 //@bodyBackgroundContentPage: #dacfdf;
-@bodyBackgroundContentPage: @white;
+//@bodyBackgroundContentPage: @white;
+@bodyBackgroundContentPage: @jumbotronBackgroundColor1;
 @baseFontSize:              13px;
 @baseFontFamily:            @serifFontFamily;
 @baseLineHeight:            18px;
@@ -41,8 +42,9 @@
 @pagebackTextColor:        @black;
 @pagebackPadding:          40px 0;
 @pagebackAlign:            left;
-@pagebackBackgroundColor:  @bodyBackgroundContentPage;
-@pagebackBackgroundImage:  "../img/mindpool-pageback-fade.png";
+@pagebackBackgroundColor1: @jumbotronBackgroundColor1;
+@pagebackBackgroundColor2: @jumbotronBackgroundColor2;
+@pagebackMastheadPattern:  "../img/mindpool-masthead-pattern.png";
 
 // Buttons
 @btnMindPoolLightBackground:            #dacfde;
@@ -156,4 +158,8 @@ body.content-page {
 
 .footer {
   padding-top: @footerTopPadding;
+}
+
+body.content-page .footer {
+  color: #ccc;
 }
