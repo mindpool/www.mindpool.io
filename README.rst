@@ -16,6 +16,8 @@ Production Deployments
 
 #. Run ``make install``.
 
+#. Run ``make start-prod``.
+
 Development
 -----------
 
@@ -25,8 +27,10 @@ Development
 
 #. Run ``make install-dev``
 
-That last step will install Bootstrap (in the local dir) and the LESS compiler
-(using ``npm``).
+   This step will install Bootstrap (in the local dir) and the LESS compiler
+   (using ``npm``).
+
+#. Run ``make start-dev``
 
 
 .. Links

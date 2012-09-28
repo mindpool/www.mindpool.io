@@ -89,7 +89,7 @@ init-template: install-deps $(ASSETS_DIR) $(TEMPLATES_DIR)
 css:
 	$(LESSC) ./tools/less/mindpoolsite.less > ./static/css/site.css
 
-run-dev: css
+start-dev: css
 	-pyflakes $(LIB)
 	-pep8 $(LIB)
 	$(TWISTD) -n mindpool-site
