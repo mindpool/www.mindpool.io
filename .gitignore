@@ -26,3 +26,6 @@ pip-log.txt
 dropin.cache
 _trial_temp
 twistd.[lp]*
+
+# Other
+deps
