@@ -90,7 +90,10 @@ class SplashFragment(BaseFragment):
             tagline=const.tagline,
             consulting=content.splash.consulting,
             training=content.splash.training,
-            teams=content.splash.teams
+            teams=content.splash.teams,
+            consultingURL=const.urls["consulting"],
+            trainingURL=const.urls["training"],
+            teamsURL=const.urls["teams"]
             )
         return tag
 
