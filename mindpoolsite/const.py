@@ -27,3 +27,4 @@ topNavLinksSplash = [
 topNavLinks = [("Home", urls["root"])] + topNavLinksSplash
 assetsDirectory = "./static"
 breadcrumbDivider = "/"
+tagline = "Providing Knowledge and Services for Tomorrow's Platforms"

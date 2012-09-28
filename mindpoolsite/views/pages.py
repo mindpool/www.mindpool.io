@@ -21,6 +21,10 @@ class BasePage(elements.TemplateLoader):
         return elements.TopNavFragment()
 
     @renderer
+    def contentarea(self, request, tag):
+        raise NotImplementedError()
+
+    @renderer
     def sidebar(self, request, tag):
         return tag
 
@@ -48,6 +52,9 @@ class BasePage(elements.TemplateLoader):
 class SplashPage(BasePage):
     """
     """
+    @renderer
+    def contentarea(self, request, tag):
+        return elements.SplashFragment()
 
 
 class SidebarPage(BasePage):

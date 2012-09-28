@@ -1,0 +1,49 @@
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
+
+    <div class="jumbotron masthead">
+      <div class="container">
+        <img src="/static/img/moon-with-water-reflection-9-tiny-text.png" />
+        <br />
+        <p class="tagline"><t:transparent t:render="tagline" /></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="splash-page-text row">
+        <div class="span4">
+          <h2>Consulting</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+          tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+          fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+          mollis euismod. Donec sed odio dui. </p>
+          <p>
+            <a class="btn btn-mindpool" href="#">View details &#187;</a>
+          </p>
+        </div>
+        <div class="span4">
+          <h2>Training</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+          tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+          fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+          mollis euismod. Donec sed odio dui. </p>
+          <p>
+            <a class="btn btn-mindpool" href="#">View details &#187;</a>
+          </p>
+       </div>
+        <div class="span4">
+          <h2>Teams</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+          egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+          Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+          nibh, ut fermentum massa justo sit amet risus.</p>
+          <p>
+            <a class="btn btn-mindpool" href="#">View details &#187;</a>
+          </p>
+        </div>
+      </div>
+
+      <t:transparent t:render="footer" />
+    </div>
+
+</t:transparent>

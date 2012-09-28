@@ -38,7 +38,13 @@ class HeadFragment(BaseFragment):
 
     @renderer
     def title(self, request, tag):
-        return tag("mindpool." + ".".join(request.path.split("/")))
+        title = "mindpool"
+        parts = [x for x in request.path.split("/") if x]
+        if len(parts) > 1:
+            title = title + ".".join(parts)
+        elif len(parts) == 1:
+            title = "%s.%s" % (title, parts[0])
+        return tag(title)
 
 
 class TopNavFragment(BaseFragment):
@@ -71,6 +77,20 @@ class TopNavFragment(BaseFragment):
                 tags.li(tags.a(text, href=url), class_=cssClass),
                 )
         return tag(elements)
+
+
+class SplashFragment(BaseFragment):
+    """
+    """
+    templateFile = "splash.xml"
+
+    @renderer
+    def tagline(self, request, tag):
+        return const.tagline
+
+    @renderer
+    def footer(self, request, tag):
+        return FooterFragment()
 
 
 class FooterFragment(BaseFragment):

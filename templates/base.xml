@@ -9,21 +9,7 @@
       <t:transparent t:render="topnav" />
     </div>
 
-    <div class="pageback pageback-masthead">
-      <div class="container">
-      <div class="row-fluid">
-        <div class="span3">
-          <t:transparent t:render="sidebar" />
-        </div><!--/span-->
-        <div class="span9">
-          <t:transparent t:render="content" />
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <t:transparent t:render="footer" />
-
-    </div><!--/.fluid-container-->
-    </div>
+    <t:transparent t:render="contentarea" />
 
     <!-- Placed at the end of the document so the pages load faster -->
     <t:transparent t:render="jsloader" />
