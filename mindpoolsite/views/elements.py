@@ -38,7 +38,7 @@ class HeadFragment(BaseFragment):
 
     @renderer
     def title(self, request, tag):
-        return tag("%s :: %s" % (meta.displayName, meta.description))
+        return tag("mindpool." + ".".join(request.path.split("/")))
 
 
 class TopNavFragment(BaseFragment):
