@@ -2,10 +2,7 @@
 TODO
 ~~~~
 
-* fix up footer design for front page (use footer on regular page template as
-  inspiration)
-
-* fix splash text on splash page
+* fix jagged edges on front-page logo
 
 * add mindpool logo to regular page template
 
