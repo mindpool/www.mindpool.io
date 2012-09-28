@@ -6,3 +6,5 @@ TODO
 
 * footer is too far down; needs to be less space between the page content and
   the footer
+
+* update favicon
