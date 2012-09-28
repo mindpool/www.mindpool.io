@@ -6,9 +6,9 @@ DEPS_DIR = $(BASE_DIR)/deps
 BOOTSTRAP_DIR = $(DEPS_DIR)/bootstrap
 ASSETS_DIR = $(BASE_DIR)/assets
 TEMPLATES_DIR = $(BASE_DIR)/templates
-PIP ?= pip-2.7
-PYTHON ?= python2.7
-PYTHON_BIN = /home/oubiwann/pypy-1.9/bin
+PYTHON_BIN = /usr/local/pypy-1.9/bin
+PYTHON ?= $(PYTHON_BIN)/pypy
+PIP ?= $(PYTHON_BIN)/pip
 TWISTD ?= $(PYTHON_BIN)/twistd
 TRIAL ?= $(PYTHON_BIN)/trial
 LESSC ?= $(BIN_DIR)/lessc
@@ -48,13 +48,32 @@ $(BIN_DIR)/lessc:
 	cd $(DEPS_DIR) && \
 	sudo npm install -g less
 
-install-deps: $(DEPS_DIR) $(BOOTSTRAP_DIR) \
-$(BIN_DIR)/recess $(BIN_DIR)/uglifyjs $(BIN_DIR)/jshint $(BIN_DIR)/lessc
-	cd $(BOOTSTRAP_DIR) && make
-	sudo $(PIP) install https://github.com/twisted/klein/zipball/master
-	sudo $(PIP) install https://github.com/fiorix/mongo-async-python-driver/zipball/master
+$(PYTHON_BIN)/easy_install:
+	cd $(DEPS_DIR) && \
+	curl -O http://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz && \
+	tar xvfz setuptools-0.6c11.tar.gz && \
+	cd setuptools-0.6c11 && \
+	$(PYTHON) setup.py install
 
-install: install-deps
+$(PIP):
+	cd $(DEPS_DIR) && \
+	curl -O http://pypi.python.org/packages/source/p/pip/pip-1.2.1.tar.gz && \
+	tar xvfz pip-1.2.1.tar.gz && \
+	cd pip-1.2.1 && \
+	$(PYTHON) setup.py install
+
+install-python-utils: $(DEPS_DIR) $(PYTHON_BIN)/easy_install $(PIP)
+
+install-python-deps: install-python-utils
+	$(PIP) install http://pypi.python.org/packages/source/T/Twisted/Twisted-12.2.0.tar.bz2
+	$(PIP) install https://github.com/twisted/klein/zipball/master
+	$(PIP) install https://github.com/fiorix/mongo-async-python-driver/zipball/master
+
+install: install-python-deps
+
+install-dev: install-python-deps $(DEPS_DIR) $(BOOTSTRAP_DIR) \
+$(BIN_DIR)/recess $(BIN_DIR)/uglifyjs $(BIN_DIR)/jshint $(BIN_DIR)/lessc \
+	cd $(BOOTSTRAP_DIR) && make
 
 $(ASSETS_DIR):
 	mkdir $(ASSETS_DIR)
