@@ -14,21 +14,21 @@
       <div class="splash-page-text row">
         <div class="span4">
           <h2>Consulting</h2>
-          <p><t:slot name="consulting" /></p>
+          <p class="splash-blurb"><t:slot name="consulting" /></p>
           <p>
             <a class="btn btn-mindpool" href="/services/consulting">View details &#187;</a>
           </p>
         </div>
         <div class="span4">
           <h2>Training</h2>
-          <p><t:slot name="training" /></p>
+          <p class="splash-blurb"><t:slot name="training" /></p>
           <p>
             <a class="btn btn-mindpool" href="/services/training">View details &#187;</a>
           </p>
        </div>
         <div class="span4">
           <h2>Teams</h2>
-          <p><t:slot name="teams" /></p>
+          <p class="splash-blurb"><t:slot name="teams" /></p>
           <p>
             <a class="btn btn-mindpool" href="/people/teams">View details &#187;</a>
           </p>

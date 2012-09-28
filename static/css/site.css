@@ -9983,6 +9983,9 @@ p.tagline {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+p.splash-blurb {
+  font-size: 115%;
+}
 .btn-mindpool {
   color: #ffffff;
   text-shadow: 0;
