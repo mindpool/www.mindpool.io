@@ -33,7 +33,7 @@
 @jumbotronTextColor:        @white;
 @jumbotronPadding:          40px 0;
 @jumbotronAlign:            center;
-@jumbotronBackgroundColor1: #1b012f;
+@jumbotronBackgroundColor1: @navbarBackgroundHighlight;
 @jumbotronBackgroundColor2: #574364;
 @jumbotronMastheadPattern:  "../img/mindpool-masthead-pattern.png";
 
@@ -45,10 +45,14 @@
 @pagebackBackgroundImage:  "../img/mindpool-pageback-fade.png";
 
 // Buttons
-@btnMindPoolBackground:             #dacfde;
-@btnMindPoolBackgroundHighlight:    darken(@btnMindPoolBackground, 10%);
-@btnMindPoolTextColor:              #363636;
-@btnMindPoolBorderColor:            #acacac;
+@btnMindPoolLightBackground:            #dacfde;
+@btnMindPoolLightBackgroundHighlight:   darken(@btnMindPoolLightBackground, 10%);
+@btnMindPoolLightTextColor:             #363636;
+@btnMindPoolBorderColor:                #acacac;
+@btnMindPoolDarkBackground:             lighten(@btnMindPoolDarkBackgroundHighlight, 20%);
+@btnMindPoolDarkBackgroundHighlight:    @jumbotronBackgroundColor2;
+@btnMindPoolDarkTextColor:              @white;
+@btnMindPoolDarkBorderColor:            #262626;
 
 // CSS/LESS Overrides
 body {
@@ -66,6 +70,23 @@ body.content-page {
   background-color: @bodyBackgroundContentPage;
 }
 
+.mindpool-button-shadow {
+  .box-shadow(inset 0 3px 8px @navbarMindPoolActiveShadow);
+}
+.mindpool-button-fade {
+  color: @navbarInverseLinkColorActive;
+  text-decoration: none;
+  .mindpool-button-shadow;
+  background: @navbarMindPoolActive; /* Old browsers */
+  background: -moz-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @navbarMindPoolActive), color-stop(100%, @navbarMindPoolActiveHighlight)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* IE10+ */
+  background: linear-gradient(to bottom, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@navbarMindPoolActive', endColorstr='@navbarMindPoolActiveHighlight',GradientType=0 ); /* IE6-9 */
+}
+
 .navbar-inverse {
   .navbar-inner {
     #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
@@ -74,17 +95,7 @@ body.content-page {
   .nav .active > a,
   .nav .active > a:hover,
   .nav .active > a:focus {
-    color: @navbarInverseLinkColorActive;
-    text-decoration: none;
-    .box-shadow(inset 0 3px 8px @navbarMindPoolActiveShadow);
-    background: @navbarMindPoolActive; /* Old browsers */
-    background: -moz-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @navbarMindPoolActive), color-stop(100%, @navbarMindPoolActiveHighlight)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* IE10+ */
-    background: linear-gradient(to bottom, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@navbarMindPoolActive', endColorstr='@navbarMindPoolActiveHighlight',GradientType=0 ); /* IE6-9 */
+    .mindpool-button-fade;
   }
 }
 
@@ -95,9 +106,11 @@ body.content-page {
 }
 
 .btn-mindpool {
-  .buttonBackground(@btnMindPoolBackground, @btnMindPoolBackgroundHighlight,
-                    @btnMindPoolTextColor, 0);
-  border-color: @btnMindPoolBorderColor;
+  .buttonBackground(@btnMindPoolDarkBackground,
+                    @btnMindPoolDarkBackgroundHighlight,
+                    @btnMindPoolDarkTextColor, 0);
+  border-color: @btnMindPoolDarkBorderColor;
+  .mindpool-button-shadow;
 }
 
 .splash-page-text {
