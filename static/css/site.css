@@ -10055,3 +10055,6 @@ body.content-page {
   background-color: rgba(220, 205, 225, 0.25);
   border: 1px solid rgba(204, 183, 212, 0.25);
 }
+.footer {
+  padding-top: 100px;
+}
