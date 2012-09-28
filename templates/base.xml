@@ -5,11 +5,12 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
       <t:transparent t:render="topnav" />
     </div>
 
-    <div class="container-fluid">
+    <div class="pageback pageback-masthead">
+      <div class="container">
       <div class="row-fluid">
         <div class="span3">
           <t:transparent t:render="sidebar" />
@@ -19,13 +20,10 @@
         </div><!--/span-->
       </div><!--/row-->
 
-      <hr/>
-
-      <footer>
-        <p t:render="copyright" />
-      </footer>
+      <t:transparent t:render="footer" />
 
     </div><!--/.fluid-container-->
+    </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <t:transparent t:render="jsloader" />

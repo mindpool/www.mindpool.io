@@ -1,4 +1,4 @@
-from twisted.web.static import File
+from twisted.web import static
 
 from klein import route
 
@@ -8,27 +8,7 @@ from mindpoolsite.views import pages
 
 @route(const.urls["root"])
 def root(request):
-    return pages.MainPage()
-
-
-@route(const.urls["search"])
-def search(request):
-    return pages.SearchPage()
-
-
-@route(const.urls["search-results"])
-def searchResults(request):
-    return pages.SearchResultsPage()
-
-
-@route(const.urls["dictionaries"])
-def dictionaries(request):
-    return pages.DictionariesPage()
-
-
-@route(const.urls["dictionary"])
-def dictionary(request, dictionary="eng-pie"):
-    return pages.DictionaryPage(dictionary)
+    return pages.SplashPage()
 
 
 @route(const.urls["about"])
@@ -41,6 +21,11 @@ def contact(request):
     return pages.ContactPage()
 
 
+@route(const.urls["people"])
+def contact(request):
+    return pages.PeoplePage()
+
+
 @route(const.urls["assets"])
 def assets(request):
-    return File(const.assetsDirectory)
+    return static.File(const.assetsDirectory)

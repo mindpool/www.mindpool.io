@@ -40,6 +40,15 @@ class BasePage(elements.TemplateLoader):
     def jsloader(self, request, tag):
         return elements.TemplateLoader(templateFile="jsloader.xml")
 
+    @renderer
+    def footer(self, request, tag):
+        return elements.FooterFragment()
+
+
+class SplashPage(BasePage):
+    """
+    """
+
 
 class SidebarPage(BasePage):
     """

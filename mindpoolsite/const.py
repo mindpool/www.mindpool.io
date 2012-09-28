@@ -1,57 +1,29 @@
-urlParams = {
-    "dictionary": "<string:dictionary>",
-    }
-
-
 urls = {
     "root": "/",
-    "search": "/search",
-    "search-results": "/search-results",
-    "dictionaries": "/dictionaries",
-    "dictionary": "/dictionaries/%s" % urlParams["dictionary"],
+    "services": "/services",
+    "consulting": "/services/consulting",
+    "training": "/services/training",
+    "people": "/people",
+    "teams": "/people/teams",
+    "cloud-tech": "/cloud-tech",
+    "open-source": "/open-source",
     "about": "/about",
-    "contact": "/contact",
-    "assets": "/assets/",
+    "who": "/about/who",
+    "what": "/about/what",
+    "culture": "/about/culture",
+    "contact": "/about/contact",
+    "assets": "/static/",
     }
 
 
-topNavLinks = [
-            ("Home", urls["root"]),
-            ("Search", urls["search"]),
-            ("Dictionaries", urls["dictionaries"]),
-            ("About", urls["about"]),
-            ("Contact", urls["contact"])]
+topNavLinksSplash = [
+    ("Services", urls["services"]),
+    ("People", urls["people"]),
+    ("Cloud Technologies", urls["cloud-tech"]),
+    ("Open Source", urls["open-source"]),
+    ("About", urls["about"])]
 
 
-langCodeMapper = {
-    "eng": "English",
-    "pie": "Proto-Indo-European",
-    "pcl": "Proto-Celtic",
-    "pgm": "Proto-Germanic",
-    "san": "Sanskrit",
-    "peo": "Old Persian",
-    "grc": "Ancient Greek",
-    "lat": "Latin",
-    "ave": "Avestan",
-    "pem": "Middle Persian",
-    "gal": "Gaulish",
-    "sga": "Old Irish",
-    "mga": "Middle Irish",
-    "ang": "Anglo-Saxon",
-    "non": "Old Norse",
-    "gla": "Scottish Gaelic",
-    }
-
-
-langMapper = dict([(y, x) for x, y in langCodeMapper.items()])
-
-
-dictionaries = [
-    "%s-%s" % (langMapper["English"], langMapper["Proto-Celtic"]),
-    "%s-%s" % (langMapper["Proto-Celtic"], langMapper["English"]),
-    "%s-%s" % (langMapper["Scottish Gaelic"], langMapper["English"]),
-    ]
-
-
+topNavLinks = [("Home", urls["root"])] + topNavLinksSplash
 assetsDirectory = "./static"
 breadcrumbDivider = "/"

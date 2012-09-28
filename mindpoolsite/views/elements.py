@@ -73,6 +73,21 @@ class TopNavFragment(BaseFragment):
         return tag(elements)
 
 
+class FooterFragment(BaseFragment):
+    """
+    """
+    templateFile = "footer.xml"
+
+    @renderer
+    def cities(self, request, tag):
+        return ""
+
+    @renderer
+    def copyright(self, request, tag):
+        return tag("%s :: %s" % (meta.displayName, meta.description))
+
+
+
 class DictionariesFragment(BaseFragment):
     """
     """

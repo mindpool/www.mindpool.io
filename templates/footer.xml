@@ -1,0 +1,26 @@
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
+  <div class="footer">
+  <div class="row-fluid">
+    <div class="well grey-well span12">
+
+      <div class="offices">
+        <center>
+          <span class="city">Bangalore</span>
+            &#183;
+          <span class="city">San Francisco</span>
+        </center>
+      </div>
+
+    </div>
+
+    <div class="span12">
+
+      <div class="copyright">
+        <p>&#169; 2012 MindPool, Inc.</p>
+      </div>
+
+    </div>
+  </div>
+  </div> <!-- end footer -->
+</t:transparent>
+
