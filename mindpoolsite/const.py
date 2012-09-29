@@ -6,8 +6,8 @@ urls = {
     "people": "/people",
     "teams": "/people/teams",
     "members": "/people/members",
-    "cloud-tech": "/cloud-tech",
-    "open-source": "/open-source",
+    "cloud-tech": "/cloud",
+    "open-source": "/opensource",
     "about": "/about",
     "who": "/about/who",
     "what": "/about/what",
@@ -29,3 +29,4 @@ topNavLinks = [("Home", urls["root"])] + splashTopNavLinks
 assetsDirectory = "./static"
 breadcrumbDivider = "/"
 tagline = "Providing Knowledge and Services for Tomorrow's Platforms"
+salesEmail = "sales@mindpool.io"

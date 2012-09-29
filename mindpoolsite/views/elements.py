@@ -130,9 +130,10 @@ class FooterFragment(BaseFragment):
     def copyright(self, request, tag):
         year = meta.startingYear
         thisYear = datetime.now().year
+        mailTo = "mailto:%s" % const.salesEmail
         if thisYear > year:
             year = "%s - %s" % (year, thisYear)
-        return tag("© %s %s" % (year, meta.author))
+        return tag("© %s " % year, tags.a(meta.author, href=mailTo))
 
 
 
