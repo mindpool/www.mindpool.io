@@ -107,16 +107,22 @@ class TrainingPage(ServicesPage):
 class PeoplePage(SidebarPage):
     """
     """
+    sidebarLinks = const.peopleLinks
+    htmlContent = content.people.people
 
 
 class TeamsPage(SidebarPage):
     """
     """
+    sidebarLinks = const.peopleLinks
+    htmlContent = content.people.teams
 
 
 class MembersPage(SidebarPage):
     """
     """
+    sidebarLinks = const.peopleLinks
+    htmlContent = content.people.members
 
 
 class AboutPage(SidebarPage):
