@@ -16,6 +16,8 @@ Fit and Finish
 * on regular pages, the "active" links in the sidebar aren't getting
   highlighted (and all links are active)
 
+* on regular pages, the page background seems to be white...
+
 
 Chopshop
 --------
