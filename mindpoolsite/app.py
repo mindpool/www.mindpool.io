@@ -6,7 +6,7 @@ from twisted.web import server
 
 from klein import resource
 
-from mindpoolsite import meta
+from mindpoolsite import meta, routes
 from mindpoolsite.scripts import sync
 
 
