@@ -69,23 +69,34 @@ class MembersPage(PeoplePage):
 class AboutPage(base.SidebarPage):
     """
     """
+    sidebarLinks = const.aboutLinks
 
 
 class WhoPage(AboutPage):
     """
     """
+    htmlContent = content.about.who
 
 
 class WhatPage(AboutPage):
     """
     """
+    htmlContent = content.about.what
 
 
 class CulturePage(AboutPage):
     """
     """
+    htmlContent = content.about.culture
+
+
+class JobsPage(AboutPage):
+    """
+    """
+    htmlContent = content.about.jobs
 
 
 class ContactPage(AboutPage):
     """
     """
+    htmlContent = content.about.contact

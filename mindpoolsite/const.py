@@ -18,6 +18,7 @@ urls = {
     "who": "/about/who",
     "what": "/about/what",
     "culture": "/about/culture",
+    "careers": "/about/careers",
     "contact": "/about/contact",
     "assets": "/static/",
     }
@@ -36,6 +37,7 @@ aboutDropDown = [
     ("Who We Are", urls["who"], LINK),
     ("What We Do", urls["what"], LINK),
     ("Our Culture", urls["culture"], LINK),
+    ("Careers", urls["careers"], LINK),
     ("Contact Us", urls["contact"], LINK),
     ("", "", DIVIDER),
     ("Velankani", "", HEADER),
