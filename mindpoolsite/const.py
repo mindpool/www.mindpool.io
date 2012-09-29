@@ -24,6 +24,9 @@ urls = {
     }
 
 
+splashAliases = ["/", "/index", "/index.html", "/index.htm"]
+
+
 splashTopNavLinks = [
     ("Services", urls["services"], LINK),
     ("People", urls["people"], LINK),

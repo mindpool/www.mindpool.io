@@ -153,7 +153,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #1b012f;
 }
 a {
   color: #0088cc;
@@ -9873,6 +9873,9 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
+  background-color: #1b012f;
+}
+body.splash {
   background-color: #ffffff;
 }
 body.content-page {

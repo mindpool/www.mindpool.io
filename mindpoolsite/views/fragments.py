@@ -16,7 +16,6 @@ class HeadFragment(base.BaseFragment):
     def title(self, request, tag):
         title = "mindpool"
         parts = [x for x in request.path.split("/") if x]
-        print parts
         if len(parts) > 0:
             if len(parts) > 1:
                 addendum = ".".join(parts)

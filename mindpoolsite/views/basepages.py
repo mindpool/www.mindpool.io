@@ -1,5 +1,6 @@
 from twisted.web.template import renderer
 
+from mindpoolsite import const
 from mindpoolsite.views import fragments, loaders
 
 
@@ -11,6 +12,13 @@ class BasePage(loaders.TemplateLoader):
     @renderer
     def head(self, request, tag):
         return fragments.HeadFragment()
+
+    @renderer
+    def bodyData(self, request, tag):
+        bodyClass = ""
+        if request.path in const.splashAliases:
+            bodyClass = "splash"
+        return tag.fillSlots(bodyClass=bodyClass)
 
     @renderer
     def topnav(self, request, tag):

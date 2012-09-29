@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
+<html lang="en" xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1"
+      t:render="bodyData">
   <head>
     <t:transparent t:render="head" />
   </head>
-  <body>
+  <body><t:attr name="class"><t:slot name="bodyClass" /></t:attr>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <t:transparent t:render="topnav" />
