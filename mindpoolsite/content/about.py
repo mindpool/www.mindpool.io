@@ -7,6 +7,9 @@ what = ""
 culture = ""
 
 
+social = ""
+
+
 jobs = ""
 
 

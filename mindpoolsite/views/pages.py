@@ -90,6 +90,12 @@ class CulturePage(AboutPage):
     htmlContent = content.about.culture
 
 
+class SocialLinksPage(AboutPage):
+    """
+    """
+    htmlContent = content.about.social
+
+
 class JobsPage(AboutPage):
     """
     """

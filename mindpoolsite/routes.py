@@ -71,6 +71,11 @@ def culture(request):
     return pages.CulturePage()
 
 
+@route(const.urls["social"])
+def social(request):
+    return pages.SocialLinksPage()
+
+
 @route(const.urls["careers"])
 def careers(request):
     return pages.JobsPage()
