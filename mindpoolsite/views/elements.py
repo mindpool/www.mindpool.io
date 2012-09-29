@@ -34,7 +34,7 @@ class BaseFragment(TemplateLoader):
 class HeadFragment(BaseFragment):
     """
     """
-    templateFile = "head.xml"
+    templateFile = "fragments/head.xml"
 
     @renderer
     def title(self, request, tag):
@@ -50,7 +50,7 @@ class HeadFragment(BaseFragment):
 class TopNavFragment(BaseFragment):
     """
     """
-    templateFile = "topnav.xml"
+    templateFile = "fragments/topnav.xml"
 
     @renderer
     def navData(self, request, tag):
@@ -82,7 +82,7 @@ class TopNavFragment(BaseFragment):
 class SplashFragment(BaseFragment):
     """
     """
-    templateFile = "splash.xml"
+    templateFile = "fragments/splash.xml"
 
     @renderer
     def splashContent(self, request, tag):
@@ -105,7 +105,7 @@ class SplashFragment(BaseFragment):
 class FooterFragment(BaseFragment):
     """
     """
-    templateFile = "footer.xml"
+    templateFile = "fragments/footer.xml"
 
     @renderer
     def cities(self, request, tag):

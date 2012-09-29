@@ -42,7 +42,7 @@ class BasePage(elements.TemplateLoader):
 
     @renderer
     def jsloader(self, request, tag):
-        return elements.TemplateLoader(templateFile="jsloader.xml")
+        return elements.TemplateLoader(templateFile="fragments/jsloader.xml")
 
     @renderer
     def footer(self, request, tag):
@@ -57,60 +57,17 @@ class SplashPage(BasePage):
         return elements.SplashFragment()
 
 
+class ServicesPage(BasePage):
+    """
+    """
+
+
 class SidebarPage(BasePage):
     """
     """
     @renderer
     def sidebar(self, request, tag):
         return elements.TemplateLoader(templateFile="content/sidebar.xml")
-
-
-class MainPage(SidebarPage):
-    """
-    """
-    @renderer
-    def content(self, request, tag):
-        return [
-            elements.TemplateLoader(templateFile="content/hero.xml"),
-            #elements.TemplateLoader(templateFile="content/bottom3x2.xml"),
-            elements.TemplateLoader(templateFile="search/form.xml"),
-            ]
-
-
-class SearchPage(SidebarPage):
-    """
-    """
-    @renderer
-    def content(self, request, tag):
-        return elements.TemplateLoader(templateFile="search/form.xml")
-
-
-class SearchResultsPage(SidebarPage):
-    """
-    """
-    @renderer
-    def content(self, request, tag):
-        return elements.TemplateLoader(templateFile="search/results.xml")
-
-
-class DictionariesPage(SidebarPage):
-    """
-    """
-    @renderer
-    def content(self, request, tag):
-        return elements.DictionariesFragment()
-
-
-class DictionaryPage(SidebarPage):
-    """
-    """
-    def __init__(self, dictionary):
-        super(DictionaryPage, self).__init__()
-        self.dictionary = dictionary
-
-    @renderer
-    def content(self, request, tag):
-        return elements.DictionaryFragment()
 
 
 class AboutPage(SidebarPage):
