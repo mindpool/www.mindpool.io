@@ -4,6 +4,7 @@ urls = {
     "consulting": "/services/consulting",
     "training": "/services/training",
     "people": "/people",
+    "members": "/people/members",
     "teams": "/people/teams",
     "cloud-tech": "/cloud-tech",
     "open-source": "/open-source",
