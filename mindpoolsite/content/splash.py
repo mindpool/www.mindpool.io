@@ -8,7 +8,7 @@ goals.
 training = """
 We not only bring you customized solutions, we can train your staff to become
 experts in their own right. Upholders of open source principles, we empower
-you, sharing our knowledge and experience freely.
+you by sharing our knowledge and experience.
 """
 
 
