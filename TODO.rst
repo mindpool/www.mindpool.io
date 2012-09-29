@@ -22,3 +22,5 @@ Fit and Finish
 * update logo on regular pages to link to the home page
 
 * clean up pyflakes and pep8
+
+* add google analytics to the base template
