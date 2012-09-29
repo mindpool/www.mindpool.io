@@ -1,15 +1,16 @@
-<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1"
+               t:render="data">
     <div class="pageback pageback-masthead">
       <div class="container">
         <div class="row-fluid">
           <div class="span3">
-            <t:transparent t:render="sidebar" />
+            <t:slot name="sidebar" />
           </div><!--/span-->
           <div class="span9">
-            <t:transparent t:render="content" />
+            <t:slot name="content" />
           </div><!--/span-->
         </div><!--/row-->
-        <t:transparent t:render="footer" />
+        <t:slot name="footer" />
       </div><!--/.fluid-container-->
     </div>
 </t:transparent>
