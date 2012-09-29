@@ -52,45 +52,61 @@ class HeadFragment(BaseFragment):
 class BaseTopNavFragment(BaseFragment):
     """
     """
-    templateFile = "fragments/topnav.xml"
     navLinks = []
 
     @renderer
-    def navData(self, request, tag):
-        """
-        """
+    def data(self, request, tag):
         tag.fillSlots(
-            projectName=meta.displayName,
-            userName="Anonymous",
-            )
+            links=self.getLinks(request)
+        )
         return tag
 
-    @renderer
-    def navLinks(self, request, tag):
-        """
-        """
-        currentPath = request.path
-        links = self.navLinks
+    def getLinks(self, request):
         elements = []
-        for text, url in links:
+        for text, url, type in self.navLinks:
             cssClass = ""
-            if url == currentPath:
+            if url.startswith(request.path):
                 cssClass = "active"
-            elements.append(
-                tags.li(tags.a(text, href=url), class_=cssClass),
-                )
-        return tag(elements)
+            if type == const.DROPDOWN:
+                cssClass += " dropdown"
+                element = self.getDropdown(text, url)
+            else:
+                element = tags.li(tags.a(text, href=url, class_=cssClass))
+            elements.append(element)
+        return elements
+
+    def getDropdown(self, title, url):
+        elements = []
+        if title == "About":
+            links = const.aboutDropDown
+        for text, url, type in links:
+            if type == const.DIVIDER:
+                element = tags.li(class_="divider")
+            elif type == const.HEADER:
+                element = tags.li(text, class_="nav-header")
+            else:
+                element = tags.li(tags.a(text, href=url))
+            elements.append(element)
+        return tags.li(
+            tags.a(
+                title, tags.b(class_="caret"),
+                href="#", class_="dropdown-toggle",
+                **{"data-toggle": "dropdown"}),
+            tags.ul(elements, class_="dropdown-menu"),
+            class_="dropdown")
 
 
 class TopNavFragment(BaseTopNavFragment):
     """
     """
+    templateFile = "fragments/topnav.xml"
     navLinks = const.topNavLinks
 
 
 class SplashTopNavFragment(BaseTopNavFragment):
     """
     """
+    templateFile = "fragments/splashtopnav.xml"
     navLinks = const.splashTopNavLinks
 
 
