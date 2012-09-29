@@ -32,6 +32,19 @@ class BaseFragment(TemplateLoader):
     def getRootURL(self, request, tag):
         return const.urls["root"]
 
+    def _isInSection(self, request, sectionURL, start=1, end=2):
+        current = request.path.split("/")[start:end]
+        section = sectionURL.split("/")[start:end]
+        if current == section:
+            return True
+        return False
+
+    def isInSection(self, request, sectionURL):
+        return self._isInSection(request, sectionURL)
+
+    def isInSubSection(self, request, sectionURL):
+        return self._isInSection(request, sectionURL, end=3)
+
 
 class HeadFragment(BaseFragment):
     """
@@ -61,13 +74,6 @@ class BaseTopNavFragment(BaseFragment):
         )
         return tag
 
-    def isInSection(self, request, sectionURL):
-        current = request.path.split("/")[1]
-        section = sectionURL.split("/")[1]
-        if current == section:
-            return True
-        return False
-
     def getLinks(self, request):
         elements = []
         for text, url, type in self.navLinks:
@@ -80,7 +86,6 @@ class BaseTopNavFragment(BaseFragment):
             else:
                 element = tags.li(tags.a(text, href=url), class_=cssClass)
             elements.append(element)
-        from pprint import pprint;pprint(elements)
         return elements
 
     def getDropdown(self, title, url):
@@ -178,10 +183,10 @@ class SidebarFragment(ContentFragment):
         elements = []
         for text, url, type in self.sidebarLinks:
             cssClass = ""
-            if url.startswith(request.path):
+            if self.isInSubSection(request, url):
                 cssClass = "active"
             elements.append(
-                tags.li(tags.a(text, href=url, class_=cssClass)))
+                tags.li(tags.a(text, href=url), class_=cssClass))
         return elements
 
 
