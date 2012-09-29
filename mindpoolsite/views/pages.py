@@ -62,6 +62,41 @@ class ServicesPage(BasePage):
     """
 
 
+class ConsultingPage(BasePage):
+    """
+    """
+
+
+class TrainingPage(BasePage):
+    """
+    """
+
+
+class PeoplePage(BasePage):
+    """
+    """
+
+
+class TeamsPage(BasePage):
+    """
+    """
+
+
+class MembersPage(BasePage):
+    """
+    """
+
+
+class CloudTechPage(BasePage):
+    """
+    """
+
+
+class OpenSourcePage(BasePage):
+    """
+    """
+
+
 class SidebarPage(BasePage):
     """
     """
@@ -76,6 +111,21 @@ class AboutPage(SidebarPage):
     @renderer
     def content(self, request, tag):
         return elements.TemplateLoader(templateFile="content/about.xml")
+
+
+class WhoPage(BasePage):
+    """
+    """
+
+
+class WhatPage(BasePage):
+    """
+    """
+
+
+class CulturePage(BasePage):
+    """
+    """
 
 
 class ContactPage(SidebarPage):
