@@ -32,7 +32,7 @@
           <p>
             <a class="btn btn-mindpool">
               <t:attr name="href">
-                <t:slot name="teamsURL" />
+                <t:slot name="consultingURL" />
               </t:attr>View details &#187;</a>
           </p>
         </div>
@@ -40,7 +40,7 @@
           <p>
             <a class="btn btn-mindpool">
               <t:attr name="href">
-                <t:slot name="teamsURL" />
+                <t:slot name="trainingURL" />
               </t:attr>View details &#187;</a>
           </p>
         </div>
