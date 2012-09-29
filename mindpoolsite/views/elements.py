@@ -61,18 +61,26 @@ class BaseTopNavFragment(BaseFragment):
         )
         return tag
 
+    def isInSection(self, request, sectionURL):
+        current = request.path.split("/")[1]
+        section = sectionURL.split("/")[1]
+        if current == section:
+            return True
+        return False
+
     def getLinks(self, request):
         elements = []
         for text, url, type in self.navLinks:
             cssClass = ""
-            if url.startswith(request.path):
+            if self.isInSection(request, url):
                 cssClass = "active"
             if type == const.DROPDOWN:
                 cssClass += " dropdown"
                 element = self.getDropdown(text, url)
             else:
-                element = tags.li(tags.a(text, href=url, class_=cssClass))
+                element = tags.li(tags.a(text, href=url), class_=cssClass)
             elements.append(element)
+        from pprint import pprint;pprint(elements)
         return elements
 
     def getDropdown(self, title, url):
