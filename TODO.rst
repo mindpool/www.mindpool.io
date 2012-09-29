@@ -20,3 +20,5 @@ Fit and Finish
   "Training" section to use a different, less easily misunderstood word
 
 * update logo on regular pages to link to the home page
+
+* clean up pyflakes and pep8
