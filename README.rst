@@ -38,6 +38,26 @@ sysmte that doesn't have pypy installed, you can do this::
 
   $ PYTHON=`which python` TWISTD=`which twistd` make start-dev
 
+Managing Content
+================
+
+Adding URLs, Pages, and Content
+-------------------------------
+
+#. Edit ``mindpoolsite.const.urls``.
+
+#. Add the new URL to whatever menus are appropriate in the same ``const``
+   module.
+
+#. Make the new URL routable by updating ``mindpoolsite.routes`` with a new
+   function that instantiates a page class appropriate for your URL.
+
+#. Add a new page class to ``mindpoolsite.views.pages``, subclassing the
+   appropriate parent class, defining the appropriate HTML content (see the
+   others in that module for example usage).
+
+#. Add your content to ``mindpoolsite.content.MODULE``, as appropriate.
+
 
 .. Links
 .. _pypy-1.9: http://pypy.org/download.html
