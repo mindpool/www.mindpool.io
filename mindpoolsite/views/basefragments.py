@@ -45,13 +45,13 @@ class BaseTopNavFragment(BaseFragment):
                 cssClass = "active"
             if type == const.DROPDOWN:
                 cssClass += " dropdown"
-                element = self.getDropdown(text, url)
+                element = self.getDropdown(text, url, cssClass)
             else:
                 element = tags.li(tags.a(text, href=url), class_=cssClass)
             elements.append(element)
         return elements
 
-    def getDropdown(self, title, url):
+    def getDropdown(self, title, url, cssClass):
         elements = []
         if title == "About":
             links = const.aboutDropDown
@@ -69,4 +69,4 @@ class BaseTopNavFragment(BaseFragment):
                 href="#", class_="dropdown-toggle",
                 **{"data-toggle": "dropdown"}),
             tags.ul(elements, class_="dropdown-menu"),
-            class_="dropdown")
+            class_=cssClass)

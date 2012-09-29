@@ -7,9 +7,6 @@ Fit and Finish
 
 * fix page padding on both templates when in smaller modes
 
-* on regular pages, the top nav element is not highlighting for the "About"
-  section
-
 * on regular pages, the footer needs to have white text
 
 * on regular pages, the page background seems to be white...
