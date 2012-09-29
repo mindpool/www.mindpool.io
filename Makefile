@@ -89,9 +89,11 @@ init-template: install-deps $(ASSETS_DIR) $(TEMPLATES_DIR)
 css:
 	$(LESSC) ./tools/less/mindpoolsite.less > ./static/css/site.css
 
-start-dev: css
+lint:
 	-pyflakes $(LIB)
 	-pep8 $(LIB)
+
+start-dev: css lint
 	$(TWISTD) -n mindpool-site
 
 start-static:
@@ -124,7 +126,7 @@ tail-mongo-log:
 
 init-db: import-content
 
-check:
+check: lint
 	rm -rf ./_trial_temp
 	@$(TRIAL) $(LIB)
 
