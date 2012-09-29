@@ -1,40 +1,10 @@
 from twisted.web.template import renderer
 
 from mindpoolsite import const, content, meta
-from mindpoolsite.views import elements
+from mindpoolsite.views import base, elements
 
 
-class BasePage(elements.TemplateLoader):
-    """
-    """
-    templateFile = "base.xml"
-
-    @renderer
-    def head(self, request, tag):
-        return elements.HeadFragment()
-
-    @renderer
-    def topnav(self, request, tag):
-        raise NotImplementedError()
-
-    @renderer
-    def contentarea(self, request, tag):
-        raise NotImplementedError()
-
-    @renderer
-    def sidebar(self, request, tag):
-        return tag
-
-    @renderer
-    def jsloader(self, request, tag):
-        return elements.TemplateLoader(templateFile="fragments/jsloader.xml")
-
-    @renderer
-    def footer(self, request, tag):
-        return elements.FooterFragment()
-
-
-class SplashPage(BasePage):
+class SplashPage(base.BasePage):
     """
     """
     @renderer
@@ -46,46 +16,19 @@ class SplashPage(BasePage):
         return elements.SplashFragment()
 
 
-class ContentPage(BasePage):
-    """
-    """
-    htmlContent = ""
-
-    @renderer
-    def topnav(self, request, tag):
-        return elements.TopNavFragment()
-
-    @renderer
-    def contentarea(self, request, tag):
-        return tag
-
-
-class CloudTechPage(ContentPage):
+class CloudTechPage(base.ContentPage):
     """
     """
     htmlContent = ""
 
 
-class OpenSourcePage(ContentPage):
+class OpenSourcePage(base.ContentPage):
     """
     """
     htmlContent = ""
 
 
-class SidebarPage(ContentPage):
-    """
-    """
-    sidebarHeading = ""
-    sidebarLinks = []
-    htmlContent = ""
-    
-    @renderer
-    def contentarea(self, request, tag):
-        return elements.ContentFragment(
-            self.htmlContent, self.sidebarLinks)
-
-
-class ServicesPage(SidebarPage):
+class ServicesPage(base.SidebarPage):
     """
     """
     sidebarLinks = const.servicesLinks
@@ -104,53 +47,45 @@ class TrainingPage(ServicesPage):
     htmlContent = content.services.training
 
 
-class PeoplePage(SidebarPage):
+class PeoplePage(base.SidebarPage):
     """
     """
     sidebarLinks = const.peopleLinks
     htmlContent = content.people.people
 
 
-class TeamsPage(SidebarPage):
+class TeamsPage(PeoplePage):
     """
     """
-    sidebarLinks = const.peopleLinks
     htmlContent = content.people.teams
 
 
-class MembersPage(SidebarPage):
+class MembersPage(PeoplePage):
     """
     """
-    sidebarLinks = const.peopleLinks
     htmlContent = content.people.members
 
 
-class AboutPage(SidebarPage):
-    """
-    """
-    @renderer
-    def contentarea(self, request, tag):
-        return elements.TemplateLoader(templateFile="content/about.xml")
-
-
-class WhoPage(SidebarPage):
+class AboutPage(base.SidebarPage):
     """
     """
 
 
-class WhatPage(SidebarPage):
+class WhoPage(AboutPage):
     """
     """
 
 
-class CulturePage(SidebarPage):
+class WhatPage(AboutPage):
     """
     """
 
 
-class ContactPage(SidebarPage):
+class CulturePage(AboutPage):
     """
     """
-    @renderer
-    def contentarea(self, request, tag):
-        return elements.TemplateLoader(templateFile="content/contact.xml")
+
+
+class ContactPage(AboutPage):
+    """
+    """

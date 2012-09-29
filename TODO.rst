@@ -14,6 +14,8 @@ Fit and Finish
 
 * on regular pages, the page background seems to be white...
 
+* on about pages, the title is missing a "." after "mindpool"
+
 
 Chopshop
 --------
