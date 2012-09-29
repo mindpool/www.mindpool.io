@@ -100,6 +100,10 @@ class SidebarFragment(ContentFragment):
     def getLinks(self, request):
         elements = []
         for text, url, type in self.sidebarLinks:
+            if type == const.HEADER:
+                elements.append(
+                    tags.li(text, class_="nav-header"))
+                continue
             cssClass = ""
             if self.isInSubSection(request, url):
                 cssClass = "active"
