@@ -16,6 +16,4 @@ Fit and Finish
 
 * update logo on regular pages to link to the home page
 
-* add google analytics to the base template
-
 * change link in footer for MindPool, Inc. to a better color
