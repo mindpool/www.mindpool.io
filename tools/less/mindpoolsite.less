@@ -10,7 +10,6 @@
 @bodyPaddingBottom:         40;
 @bodyMargin:                0;
 //@bodyBackgroundContentPage: #dacfdf;
-@bodyBackground:            @jumbotronBackgroundColor1;
 @bodyBackgroundContentPage: @jumbotronBackgroundColor1;
 @baseFontSize:              13px;
 @baseFontFamily:            @serifFontFamily;
@@ -64,7 +63,7 @@ body {
   font-size: @baseFontSize;
   line-height: @baseLineHeight;
   color: @textColor;
-  background-color: @bodyBackground;
+  background-color: @bodyBackgroundContentPage;
 }
 
 body.splash {
@@ -175,4 +174,8 @@ p.splash-blurb {
 
 body.content-page .footer {
   color: #ccc;
+}
+
+body.splash .footer a {
+  color: @jumbotronBackgroundColor1;
 }

@@ -153,7 +153,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
-  background-color: #1b012f;
+  background-color: #ffffff;
 }
 a {
   color: #0088cc;
@@ -10183,4 +10183,7 @@ p.splash-blurb {
 }
 body.content-page .footer {
   color: #ccc;
+}
+body.splash .footer a {
+  color: #1b012f;
 }
