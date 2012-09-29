@@ -7,6 +7,10 @@ Fit and Finish
 
 * fix page padding on both templates when in smaller modes
 
+* on regular pages, the top nav element that should be highlighted for the
+  current page, isn't getting highlighted; probably somethings up with the
+  logic for the computed CSS in the view
+
 
 Chopshop
 --------
