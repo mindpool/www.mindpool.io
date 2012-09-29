@@ -1,7 +1,15 @@
-consulting = ""
+consulting = """
+Whether you need help bringing up infrastructure for a private cloud,
+customizing project management for a big data push, or bespoke networking
+applications, we have the depth and experience to help your teams meet their
+goals.
+"""
 
-
-training = ""
+training = """
+We not only bring you customized solutions, we can train your staff to become
+experts in their own right. Upholders of open source principles, we empower
+you, sharing our knowledge and experience freely.
+"""
 
 
 teams = """
