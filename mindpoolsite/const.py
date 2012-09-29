@@ -29,4 +29,5 @@ topNavLinks = [("Home", urls["root"])] + splashTopNavLinks
 assetsDirectory = "./static"
 breadcrumbDivider = "/"
 tagline = "Providing Knowledge and Services for Tomorrow's Platforms"
+officeCities = ["Bangalore", "San Francisco"]
 salesEmail = "sales@mindpool.io"

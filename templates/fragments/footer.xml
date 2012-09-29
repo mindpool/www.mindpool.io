@@ -1,26 +1,21 @@
-<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1"
+               t:render="data">
   <div class="footer">
-  <div class="row-fluid">
-    <div class="well grey-well span12">
+    <div class="row-fluid">
 
-      <div class="offices">
-        <center>
-          <span class="city">Bangalore</span>
-            &#183;
-          <span class="city">San Francisco</span>
-        </center>
+      <div class="well grey-well span12">
+        <div class="offices">
+          <center>
+            <t:slot name="cities" />
+          </center>
+        </div>
+      </div>
+
+      <div class="span12">
+        <div class="copyright"><p><t:slot name="copyright" /></p></div>
       </div>
 
     </div>
-
-    <div class="span12">
-
-      <div class="copyright">
-        <p t:render="copyright"></p>
-      </div>
-
-    </div>
-  </div>
   </div> <!-- end footer -->
 </t:transparent>
 
