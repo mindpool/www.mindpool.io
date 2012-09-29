@@ -18,6 +18,8 @@ class BasePage(loaders.TemplateLoader):
         bodyClass = ""
         if request.path in const.splashAliases:
             bodyClass = "splash"
+        else:
+            bodyClass = "content-page"
         return tag.fillSlots(bodyClass=bodyClass)
 
     @renderer
