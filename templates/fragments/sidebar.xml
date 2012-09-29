@@ -1,0 +1,11 @@
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1"
+               t:render="data">
+<div class="well span4">
+
+  <li class="nav-header"><t:slot name="heading" /></li>
+  <ul class="nav nav-pills nav-stacked">
+    <t:slot name="links" />
+  </ul>
+
+</div>
+</t:transparent>

@@ -3,12 +3,8 @@
     <div class="pageback pageback-masthead">
       <div class="container">
         <div class="row-fluid">
-          <div class="span3">
-            <t:slot name="sidebar" />
-          </div><!--/span-->
-          <div class="span9">
-            <t:slot name="content" />
-          </div><!--/span-->
+          <t:slot name="sidebar" />
+          <t:slot name="content" />
         </div><!--/row-->
         <t:slot name="footer" />
       </div><!--/.fluid-container-->

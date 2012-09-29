@@ -133,10 +133,57 @@ class SplashFragment(BaseFragment):
         return FooterFragment()
 
 
+class ContentFragment(BaseFragment):
+    """
+    """
+    templateFile = "fragments/content.xml"
+
+    def __init__(self, htmlContent, sidebarLinks=None, sidebarHeading="",
+                 *args, **kwargs):
+        super(ContentFragment, self).__init__(*args, **kwargs)
+        self.htmlContent = htmlContent
+        self.sidebarLinks = sidebarLinks or []
+        self.sidebarHeading = sidebarHeading or ""
+
+    @renderer
+    def data(self, request, tag):
+        tag.fillSlots(
+            sidebar=SidebarFragment(self.sidebarHeading, self.sidebarLinks),
+            content=self.htmlContent,
+            footer=FooterFragment())
+        return tag
+
+
+class SidebarFragment(ContentFragment):
+    """
+    """
+    templateFile = "fragments/sidebar.xml"
+
+    @renderer
+    def data(self, request, tag):
+        tag.fillSlots(
+            heading=self.sidebarHeading,
+            links=self.getLinks(request))
+        return tag
+
+    def getLinks(self, request):
+        elements = []
+        for text, url, type in self.sidebarLinks:
+            cssClass = ""
+            if url.startswith(request.path):
+                cssClass = "active"
+            elements.append(
+                tags.li(tags.a(text, href=url, class_=cssClass)))
+        return elements
+
+
 class FooterFragment(BaseFragment):
     """
     """
     templateFile = "fragments/footer.xml"
+
+    # XXX - add __init__ here that takes isSplash as a parameter, and adjust
+    # the CSS for the footer accordingly
 
     @renderer
     def data(self, request, tag):

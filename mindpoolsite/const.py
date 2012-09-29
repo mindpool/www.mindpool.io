@@ -29,6 +29,7 @@ splashTopNavLinks = [
     ("Cloud Technologies", urls["cloud-tech"], LINK),
     ("Open Source", urls["open-source"], LINK),
     ("About", urls["about"], DROPDOWN)]
+topNavLinks = [("Home", urls["root"], LINK)] + splashTopNavLinks
 
 
 aboutDropDown = [
@@ -41,9 +42,21 @@ aboutDropDown = [
     ("The Velankani Group", "http://www.velankani.net/velankani_group.htm",
      LINK),
     ("VI Systems", "http://www.visystems.org/", LINK)]
+aboutLinks = aboutDropDown
 
 
-topNavLinks = [("Home", urls["root"], LINK)] + splashTopNavLinks
+servicesLinks = [
+    ("Services", urls["services"], LINK),
+    ("Consulting", urls["consulting"], LINK),
+    ("Training", urls["training"], LINK)]
+
+
+peopleLinks = [
+    ("People", urls["people"], LINK),
+    ("Teams", urls["teams"], LINK),
+    ("Members", urls["members"], LINK)]
+
+
 assetsDirectory = "./static"
 breadcrumbDivider = "/"
 tagline = "Providing Knowledge and Services for Tomorrow's Platforms"

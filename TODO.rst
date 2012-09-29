@@ -11,6 +11,11 @@ Fit and Finish
   current page, isn't getting highlighted; probably somethings up with the
   logic for the computed CSS in the view
 
+* on regular pages, the footer needs to have white text
+
+* on regular pages, the "active" links in the sidebar aren't getting
+  highlighted (and all links are active)
+
 
 Chopshop
 --------

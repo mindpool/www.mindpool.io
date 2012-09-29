@@ -1,6 +1,6 @@
 from twisted.web.template import renderer
 
-from mindpoolsite import meta
+from mindpoolsite import const, content, meta
 from mindpoolsite.views import elements
 
 
@@ -23,10 +23,6 @@ class BasePage(elements.TemplateLoader):
 
     @renderer
     def sidebar(self, request, tag):
-        return tag
-
-    @renderer
-    def content(self, request, tag):
         return tag
 
     @renderer
@@ -53,6 +49,8 @@ class SplashPage(BasePage):
 class ContentPage(BasePage):
     """
     """
+    htmlContent = ""
+
     @renderer
     def topnav(self, request, tag):
         return elements.TopNavFragment()
@@ -62,80 +60,91 @@ class ContentPage(BasePage):
         return tag
 
 
-class ServicesPage(ContentPage):
-    """
-    """
-
-
-class ConsultingPage(ContentPage):
-    """
-    """
-
-
-class TrainingPage(ContentPage):
-    """
-    """
-
-
-class PeoplePage(ContentPage):
-    """
-    """
-
-
-class TeamsPage(ContentPage):
-    """
-    """
-
-
-class MembersPage(ContentPage):
-    """
-    """
-
-
 class CloudTechPage(ContentPage):
     """
     """
+    htmlContent = ""
 
 
 class OpenSourcePage(ContentPage):
     """
     """
+    htmlContent = ""
 
 
 class SidebarPage(ContentPage):
     """
     """
+    sidebarHeading = ""
+    sidebarLinks = []
+    htmlContent = ""
+    
     @renderer
-    def sidebar(self, request, tag):
-        return elements.TemplateLoader(templateFile="content/sidebar.xml")
+    def contentarea(self, request, tag):
+        return elements.ContentFragment(
+            self.htmlContent, self.sidebarLinks)
 
 
-class AboutPage(ContentPage):
+class ServicesPage(SidebarPage):
+    """
+    """
+    sidebarLinks = const.servicesLinks
+    htmlContent = content.services.services
+
+
+class ConsultingPage(ServicesPage):
+    """
+    """
+    htmlContent = content.services.consulting
+
+
+class TrainingPage(ServicesPage):
+    """
+    """
+    htmlContent = content.services.training
+
+
+class PeoplePage(SidebarPage):
+    """
+    """
+
+
+class TeamsPage(SidebarPage):
+    """
+    """
+
+
+class MembersPage(SidebarPage):
+    """
+    """
+
+
+class AboutPage(SidebarPage):
     """
     """
     @renderer
-    def content(self, request, tag):
+    def contentarea(self, request, tag):
         return elements.TemplateLoader(templateFile="content/about.xml")
 
 
-class WhoPage(ContentPage):
+class WhoPage(SidebarPage):
     """
     """
 
 
-class WhatPage(ContentPage):
+class WhatPage(SidebarPage):
     """
     """
 
 
-class CulturePage(ContentPage):
+class CulturePage(SidebarPage):
     """
     """
 
 
-class ContactPage(ContentPage):
+class ContactPage(SidebarPage):
     """
     """
     @renderer
-    def content(self, request, tag):
+    def contentarea(self, request, tag):
         return elements.TemplateLoader(templateFile="content/contact.xml")
