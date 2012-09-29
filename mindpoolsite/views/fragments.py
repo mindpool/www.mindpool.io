@@ -8,10 +8,10 @@ from twisted.web.template import Element, XMLFile, renderer, tags
 from mindpoolsite import const, content, meta, utils
 from mindpoolsite.models import collection
 from mindpoolsite.controllers import retrieve
-from mindpoolsite.views import elements
+from mindpoolsite.views import basefragments as base
 
 
-class HeadFragment(elements.BaseFragment):
+class HeadFragment(base.BaseFragment):
     """
     """
     templateFile = "fragments/head.xml"
@@ -27,21 +27,21 @@ class HeadFragment(elements.BaseFragment):
         return tag(title)
 
 
-class TopNavFragment(elements.BaseTopNavFragment):
+class TopNavFragment(base.BaseTopNavFragment):
     """
     """
     templateFile = "fragments/topnav.xml"
     navLinks = const.topNavLinks
 
 
-class SplashTopNavFragment(elements.BaseTopNavFragment):
+class SplashTopNavFragment(base.BaseTopNavFragment):
     """
     """
     templateFile = "fragments/splashtopnav.xml"
     navLinks = const.splashTopNavLinks
 
 
-class SplashFragment(elements.BaseFragment):
+class SplashFragment(base.BaseFragment):
     """
     """
     templateFile = "fragments/splash.xml"
@@ -64,7 +64,7 @@ class SplashFragment(elements.BaseFragment):
         return FooterFragment()
 
 
-class ContentFragment(elements.BaseFragment):
+class ContentFragment(base.BaseFragment):
     """
     """
     templateFile = "fragments/content.xml"
@@ -108,7 +108,7 @@ class SidebarFragment(ContentFragment):
         return elements
 
 
-class FooterFragment(elements.BaseFragment):
+class FooterFragment(base.BaseFragment):
     """
     """
     templateFile = "fragments/footer.xml"

@@ -1,7 +1,7 @@
 from twisted.web.template import renderer
 
 from mindpoolsite import const, content, meta
-from mindpoolsite.views import base, fragments
+from mindpoolsite.views import basepages as base, fragments
 
 
 class SplashPage(base.BasePage):
