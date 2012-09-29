@@ -16,10 +16,13 @@ class HeadFragment(base.BaseFragment):
     def title(self, request, tag):
         title = "mindpool"
         parts = [x for x in request.path.split("/") if x]
-        if len(parts) > 1:
-            title = title + ".".join(parts)
-        elif len(parts) == 1:
-            title = "%s.%s" % (title, parts[0])
+        print parts
+        if len(parts) > 0:
+            if len(parts) > 1:
+                addendum = ".".join(parts)
+            elif len(parts) == 1:
+                addendum = parts[0]
+            title = "%s.%s" % (title, addendum)
         return tag(title)
 
 
