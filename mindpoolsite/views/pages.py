@@ -16,18 +16,6 @@ class SplashPage(base.BasePage):
         return fragments.SplashFragment()
 
 
-class CloudTechPage(base.ContentPage):
-    """
-    """
-    htmlContent = ""
-
-
-class OpenSourcePage(base.ContentPage):
-    """
-    """
-    htmlContent = ""
-
-
 class ServicesPage(base.SidebarPage):
     """
     """
@@ -64,6 +52,18 @@ class MembersPage(PeoplePage):
     """
     """
     htmlContent = content.people.members
+
+
+class CloudTechPage(base.ContentPage):
+    """
+    """
+    htmlContent = content.cloudtech.cloudtech
+
+
+class OpenSourcePage(base.ContentPage):
+    """
+    """
+    htmlContent = content.opensource.opensource
 
 
 class AboutPage(base.SidebarPage):

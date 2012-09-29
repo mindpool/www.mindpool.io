@@ -45,7 +45,7 @@ class ContentPage(BasePage):
 
     @renderer
     def contentarea(self, request, tag):
-        return tag
+        return fragments.ContentFragment(self.htmlContent)
 
 
 class SidebarPage(ContentPage):

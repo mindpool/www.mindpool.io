@@ -78,8 +78,11 @@ class ContentFragment(base.BaseFragment):
 
     @renderer
     def data(self, request, tag):
+        sidebar = ""
+        if self.sidebarLinks or self.sidebarHeading:
+            sidebar = SidebarFragment(self.sidebarHeading, self.sidebarLinks),
         tag.fillSlots(
-            sidebar=SidebarFragment(self.sidebarHeading, self.sidebarLinks),
+            sidebar=sidebar,
             content=self.htmlContent,
             footer=FooterFragment())
         return tag
