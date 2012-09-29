@@ -1,5 +1,3 @@
-# -*- coding: utf-8
-
 from twisted.web.template import renderer
 
 from mindpoolsite import meta
@@ -58,6 +56,10 @@ class ContentPage(BasePage):
     @renderer
     def topnav(self, request, tag):
         return elements.TopNavFragment()
+
+    @renderer
+    def contentarea(self, request, tag):
+        return tag
 
 
 class ServicesPage(ContentPage):
