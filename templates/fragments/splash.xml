@@ -10,31 +10,41 @@
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
+      <!-- row of content columns -->
       <div class="splash-page-text row">
         <div class="span4">
           <h2>Consulting</h2>
           <p class="splash-blurb"><t:slot name="consulting" /></p>
-          <p>
-            <a class="btn btn-mindpool">
-              <t:attr name="href">
-                <t:slot name="consultingURL" />
-              </t:attr>View details &#187;</a>
-          </p>
         </div>
         <div class="span4">
           <h2>Training</h2>
           <p class="splash-blurb"><t:slot name="training" /></p>
-          <p>
-            <a class="btn btn-mindpool">
-              <t:attr name="href">
-                <t:slot name="trainingURL" />
-              </t:attr>View details &#187;</a>
-          </p>
-       </div>
+        </div>
         <div class="span4">
           <h2>Teams</h2>
           <p class="splash-blurb"><t:slot name="teams" /></p>
+        </div>
+      </div>
+
+      <!-- row of button columns -->
+      <div class="row">
+        <div class="span4">
+          <p>
+            <a class="btn btn-mindpool">
+              <t:attr name="href">
+                <t:slot name="teamsURL" />
+              </t:attr>View details &#187;</a>
+          </p>
+        </div>
+        <div class="span4">
+          <p>
+            <a class="btn btn-mindpool">
+              <t:attr name="href">
+                <t:slot name="teamsURL" />
+              </t:attr>View details &#187;</a>
+          </p>
+        </div>
+        <div class="span4">
           <p>
             <a class="btn btn-mindpool">
               <t:attr name="href">
@@ -43,7 +53,6 @@
           </p>
         </div>
       </div>
-
       <t:transparent t:render="footer" />
     </div>
 
