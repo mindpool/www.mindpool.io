@@ -1,13 +1,9 @@
 # -*- coding: utf-8
 from datetime import datetime
-import os.path
 
-from twisted.python.filepath import FilePath
-from twisted.web.template import Element, XMLFile, renderer, tags
+from twisted.web.template import renderer, tags
 
-from mindpoolsite import const, content, meta, utils
-from mindpoolsite.models import collection
-from mindpoolsite.controllers import retrieve
+from mindpoolsite import const, content, meta
 from mindpoolsite.views import basefragments as base
 
 

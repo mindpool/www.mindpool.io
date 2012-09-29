@@ -1,6 +1,6 @@
 from twisted.web.template import renderer
 
-from mindpoolsite import const, content, meta
+from mindpoolsite import const, content
 from mindpoolsite.views import basepages as base, fragments
 
 

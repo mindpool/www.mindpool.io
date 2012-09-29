@@ -6,8 +6,8 @@ from twisted.web import server
 
 from klein import resource
 
-from mindpoolsite import meta, routes
-from mindpoolsite.scripts import async, sync
+from mindpoolsite import meta
+from mindpoolsite.scripts import sync
 
 
 class SubCommandOptions(usage.Options):
@@ -69,14 +69,6 @@ class Options(usage.Options):
             return
         elif self.subCommand == "stop":
             script = sync.StopDaemon()
-            script.run()
-            sys.exit(0)
-        elif self.subCommand == "update-source":
-            script = sync.UpdateSourceDispatch(self)
-            script.run()
-            sys.exit(0)
-        elif self.subCommand == "update-db":
-            script = async.UpdateDBDispatch(self)
             script.run()
             sys.exit(0)
 

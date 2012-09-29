@@ -1,6 +1,5 @@
 from twisted.web.template import renderer
 
-from mindpoolsite import const, content, meta, utils
 from mindpoolsite.views import fragments, loaders
 
 
@@ -54,7 +53,7 @@ class SidebarPage(ContentPage):
     sidebarHeading = ""
     sidebarLinks = []
     htmlContent = ""
-    
+
     @renderer
     def contentarea(self, request, tag):
         return fragments.ContentFragment(

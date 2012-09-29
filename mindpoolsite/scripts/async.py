@@ -1,11 +1,8 @@
 import sys
 
-from twisted.internet import defer, reactor, threads
+from twisted.internet import reactor
 from twisted.python import log
 
-from mindpoolsite import const
-from mindpoolsite.controllers import retrieve
-from mindpoolsite.models import collection
 from mindpoolsite.scripts import base
 
 
@@ -42,74 +39,24 @@ class AddCollection(TwistedScript):
         model = self.modelClass()
 
         def checkIndices(listResult):
-            for result in listResult:
-                if result[0]:
-                    log.msg("Successfully created index '%s'." % result[1])
-                else:
-                    log.err("Could not create index '%s'." % result[1])
+            pass
 
         def createIndices(ids):
-            log.msg("Inserted %s documents." % len(ids))
-            indexedFields = (
-                [x % model.langCode for x in self.indexFields] +
-                [x % model.translateCode for x in self.indexFields])
-            deferreds = []
-            for fieldName in indexedFields:
-                keyList = model.filter.ASCENDING(fieldName)
-                sortFields = model.filter.sort(keyList)
-                deferreds.append(model.collection.create_index(sortFields))
-            d = defer.DeferredList(deferreds)
-            d.addErrback(self.logError)
-            d.addCallback(checkIndices)
-            return d
-
-        def _prepData(row, key):
-            return [x.strip() for x in row[key].split(",")]
+            pass
 
         def insertData(csvReader):
-            data = []
-            counter = 0
-            log.msg("Preparing to iterate the CSV file ...")
-            for row in csvReader:
-                counter += 1
-                rowData = row
-                rowData["%s-keywords" % model.langCode] = _prepData(
-                    row, "%s-keywords" % model.langCode)
-                rowData["%s-keywords" % model.translateCode] = _prepData(
-                    row, "%s-keywords" % model.translateCode)
-                rowData["%s-metaphone" % model.langCode] = _prepData(
-                    row, "%s-metaphone" % model.langCode)
-                rowData["%s-metaphone" % model.translateCode] = _prepData(
-                    row, "%s-metaphone" % model.translateCode)
-                data.append(rowData)
-            log.msg("Finished iterating the CSV file (read %s rows)." % (
-                counter,))
-            d = model.collection.insert(data)
-            d.addErrback(self.logError)
-            d.addCallback(createIndices)
-            return d
+            pass
 
         def loadData(response):
-            if response["ok"] == 1:
-                log.msg(response["msg"])
-            d = threads.deferToThread(
-                lambda: unicsv.UnicodeReader(self.csvFile))
-            d.addCallback(insertData)
-            return d
+            pass
 
         def dropIndexes(noValue):
-            d = model.collection.drop_indexes()
-            d.addErrback(log.err)
-            d.addCallback(loadData)
-            return d
+            pass
 
         def dropCollection(database):
-            d = model.collection.drop(safe=True)
-            d.addErrback(log.msg)
-            d.addCallback(dropIndexes)
-            return d
+            pass
 
-        # get the database and load the data from a csv reader
+        # get the database and load the data
         d = model.getDB()
         d.addCallback(dropCollection)
         d.addErrback(self.logError)
@@ -152,147 +99,3 @@ class DropCollection(TwistedScript):
         d = self.doDrop()
         d.addCallback(self.stop)
         super(DropCollection, self).run()
-
-
-class ExportProtoCelticDictionary(TwistedScript):
-    """
-    """
-    def __init__(self, sortLang="eng"):
-        self.sortLang = sortLang
-        self.errors = ""
-
-    def doExport(self):
-
-        model = collection.ProtoCelticDictionaryV1()
-
-        def logResults(docs):
-            if len(docs) == 0:
-                log.msg("Query returned no documents.")
-            for doc in docs:
-                pcl = doc["pcl"].encode("utf-8")
-                eng = doc["eng"].encode("utf-8")
-                if self.sortLang == "eng":
-                    msg = "English: " + eng + "; Proto-Celtic: " + pcl
-                else:
-                    msg = "Proto-Celtic: " + pcl + "; English: " + eng
-                log.msg(msg)
-            msg = ("Wordlist results ordered by "
-                   "%s" % const.langCodeMapper[self.sortLang])
-            log.msg(msg)
-            log.msg("Total records found: %s" % len(docs))
-
-        def query(database):
-            """
-            A Twisted callback function.
-            """
-            fields = {"eng": 1, "pcl": 1, "_id": 0}
-            d = model.find(fields, sortField=self.sortLang)
-            d.addErrback(self.logError)
-            d.addCallback(logResults)
-            return d
-
-        d = model.getDB()
-        d.addCallback(query)
-        d.addErrback(self.logError)
-        return d
-
-    def run(self):
-        d = self.doExport()
-        d.addCallback(self.stop)
-        super(ExportProtoCelticDictionary, self).run()
-
-
-class BaseListAlphabet(TwistedScript):
-    """
-    """
-    modelClass = None
-    resultLang = None
-
-    def getAlphabet(self):
-
-        def logResults(letters, model):
-            letters = " ".join([x.encode("utf-8") for x in letters])
-            log.msg("%s alphabet: %s" % (model.title, letters))
-
-        # XXX add support for getting the English alphabet for this dictionry
-        model = self.modelClass()
-        d = retrieve.getAlphabet(model)
-        d.addCallback(logResults, model)
-        return d
-
-    def run(self):
-        d = self.getAlphabet()
-        d.addCallback(self.stop)
-        super(BaseListAlphabet, self).run()
-
-
-class ListAlphabetDispatch(TwistedScript):
-    """
-    """
-    def run(self):
-        dictionary = self.options.subOptions["dictionary"]
-        language = self.options.subOptions["language"]
-        if "pcl" in dictionary:
-            if language == "pcl":
-                script = ListProtoCelticAlphabet()
-            else:
-                script.resultLang = script.translationTitle
-        elif "pie" in dictionary:
-            if language == "pie":
-                script = ListProtoIndoEuropeanAlphabet()
-            else:
-                script.resultLang = script.translationTitle
-        elif "gla" in dictionary:
-            if language == "gla":
-                script = ListScottishGaelicAlphabet()
-            else:
-                script.resultLang = script.translationTitle
-        return script.run()
-
-
-class WordlistDispatch(TwistedScript):
-    """
-    """
-    def run(self):
-        dictionary = self.options.subOptions["dictionary"]
-        sortLang, other = dictionary.split("-")
-        # if we ever support non-English translations, this logic will have to
-        # change...
-        [mainLang] = [x for x in [sortLang, other] if x != "eng"]
-        if mainLang == "pie":
-            exporter = ExportProtoIndoEuropeanDictionary(sortLang)
-        elif mainLang == "pcl":
-            exporter = ExportProtoCelticDictionary(sortLang)
-        exporter.run()
-
-
-class UpdateDBDispatch(TwistedScript):
-    """
-    """
-    def run(self):
-        action = self.options.subOptions["action"]
-        language = self.options.subOptions["language"]
-        if action == "import":
-            if language == "pcl":
-                importer = ImportProtoCelticDictionary()
-            elif language == "gla":
-                importer = ImportScottishGaelicDictionary()
-            elif language == "pie":
-                importer = ImportProtoIndoEuropeanDictionary()
-            return importer.run()
-        elif action == "export":
-            if language == "pcl":
-                exporter = ExportProtoCelticDictionary()
-            elif language == "gla":
-                exporter = ExportScottishGaelicDictionary()
-            elif language == "pie":
-                exporter = ExportProtoIndoEuropeanDictionary()
-            return exporter.run()
-        elif action == "drop":
-            if language == "pcl":
-                dropper = DropProtoCelticDictionary()
-            elif language == "gla":
-                dropper = DropScottishGaelicDictionary()
-            elif language == "pie":
-                dropper = DropProtoIndoEuropeanDictionary()
-            return dropper.run()
