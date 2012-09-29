@@ -17,7 +17,7 @@ urls = {
     }
 
 
-topNavLinksSplash = [
+splashTopNavLinks = [
     ("Services", urls["services"]),
     ("People", urls["people"]),
     ("Cloud Technologies", urls["cloud-tech"]),
@@ -25,7 +25,7 @@ topNavLinksSplash = [
     ("About", urls["about"])]
 
 
-topNavLinks = [("Home", urls["root"])] + topNavLinksSplash
+topNavLinks = [("Home", urls["root"])] + splashTopNavLinks
 assetsDirectory = "./static"
 breadcrumbDivider = "/"
 tagline = "Providing Knowledge and Services for Tomorrow's Platforms"

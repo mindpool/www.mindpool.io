@@ -16,7 +16,7 @@
     <div class="span12">
 
       <div class="copyright">
-        <p>&#169; 2012 MindPool, Inc.</p>
+        <p t:render="copyright"></p>
       </div>
 
     </div>

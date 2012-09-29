@@ -1,5 +1,4 @@
 # -*- coding: utf-8
-from datetime import datetime
 
 from twisted.web.template import renderer
 
@@ -18,7 +17,7 @@ class BasePage(elements.TemplateLoader):
 
     @renderer
     def topnav(self, request, tag):
-        return elements.TopNavFragment()
+        raise NotImplementedError()
 
     @renderer
     def contentarea(self, request, tag):
@@ -33,14 +32,6 @@ class BasePage(elements.TemplateLoader):
         return tag
 
     @renderer
-    def copyright(self, request, tag):
-        year = meta.startingYear
-        thisYear = datetime.now().year
-        if thisYear > year:
-            year = "%s - %s" % (year, thisYear)
-        return tag("© %s %s" % (year, meta.author))
-
-    @renderer
     def jsloader(self, request, tag):
         return elements.TemplateLoader(templateFile="fragments/jsloader.xml")
 
@@ -53,51 +44,63 @@ class SplashPage(BasePage):
     """
     """
     @renderer
+    def topnav(self, request, tag):
+        return elements.SplashTopNavFragment()
+
+    @renderer
     def contentarea(self, request, tag):
         return elements.SplashFragment()
 
 
-class ServicesPage(BasePage):
+class ContentPage(BasePage):
+    """
+    """
+    @renderer
+    def topnav(self, request, tag):
+        return elements.TopNavFragment()
+
+
+class ServicesPage(ContentPage):
     """
     """
 
 
-class ConsultingPage(BasePage):
+class ConsultingPage(ContentPage):
     """
     """
 
 
-class TrainingPage(BasePage):
+class TrainingPage(ContentPage):
     """
     """
 
 
-class PeoplePage(BasePage):
+class PeoplePage(ContentPage):
     """
     """
 
 
-class TeamsPage(BasePage):
+class TeamsPage(ContentPage):
     """
     """
 
 
-class MembersPage(BasePage):
+class MembersPage(ContentPage):
     """
     """
 
 
-class CloudTechPage(BasePage):
+class CloudTechPage(ContentPage):
     """
     """
 
 
-class OpenSourcePage(BasePage):
+class OpenSourcePage(ContentPage):
     """
     """
 
 
-class SidebarPage(BasePage):
+class SidebarPage(ContentPage):
     """
     """
     @renderer
@@ -105,7 +108,7 @@ class SidebarPage(BasePage):
         return elements.TemplateLoader(templateFile="content/sidebar.xml")
 
 
-class AboutPage(SidebarPage):
+class AboutPage(ContentPage):
     """
     """
     @renderer
@@ -113,22 +116,22 @@ class AboutPage(SidebarPage):
         return elements.TemplateLoader(templateFile="content/about.xml")
 
 
-class WhoPage(BasePage):
+class WhoPage(ContentPage):
     """
     """
 
 
-class WhatPage(BasePage):
+class WhatPage(ContentPage):
     """
     """
 
 
-class CulturePage(BasePage):
+class CulturePage(ContentPage):
     """
     """
 
 
-class ContactPage(SidebarPage):
+class ContactPage(ContentPage):
     """
     """
     @renderer

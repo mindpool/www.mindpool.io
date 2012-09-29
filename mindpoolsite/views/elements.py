@@ -1,3 +1,5 @@
+# -*- coding: utf-8
+from datetime import datetime
 import os.path
 
 from twisted.python.filepath import FilePath
@@ -47,10 +49,11 @@ class HeadFragment(BaseFragment):
         return tag(title)
 
 
-class TopNavFragment(BaseFragment):
+class BaseTopNavFragment(BaseFragment):
     """
     """
     templateFile = "fragments/topnav.xml"
+    navLinks = []
 
     @renderer
     def navData(self, request, tag):
@@ -67,7 +70,7 @@ class TopNavFragment(BaseFragment):
         """
         """
         currentPath = request.path
-        links = const.topNavLinks
+        links = self.navLinks
         elements = []
         for text, url in links:
             cssClass = ""
@@ -77,6 +80,18 @@ class TopNavFragment(BaseFragment):
                 tags.li(tags.a(text, href=url), class_=cssClass),
                 )
         return tag(elements)
+
+
+class TopNavFragment(BaseTopNavFragment):
+    """
+    """
+    navLinks = const.topNavLinks
+
+
+class SplashTopNavFragment(BaseTopNavFragment):
+    """
+    """
+    navLinks = const.splashTopNavLinks
 
 
 class SplashFragment(BaseFragment):
@@ -113,7 +128,11 @@ class FooterFragment(BaseFragment):
 
     @renderer
     def copyright(self, request, tag):
-        return tag("%s :: %s" % (meta.displayName, meta.description))
+        year = meta.startingYear
+        thisYear = datetime.now().year
+        if thisYear > year:
+            year = "%s - %s" % (year, thisYear)
+        return tag("© %s %s" % (year, meta.author))
 
 
 
