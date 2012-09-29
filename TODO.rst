@@ -19,6 +19,8 @@ Fit and Finish
 * "freely" is not a good work to use on a company site ;-) Change the
   "Training" section to use a different, less easily misunderstood word
 
+* update logo on regular pages to link to the home page
+
 
 Chopshop
 --------

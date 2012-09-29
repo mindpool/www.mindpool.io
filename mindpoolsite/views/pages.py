@@ -1,7 +1,7 @@
 from twisted.web.template import renderer
 
 from mindpoolsite import const, content, meta
-from mindpoolsite.views import base, elements
+from mindpoolsite.views import base, fragments
 
 
 class SplashPage(base.BasePage):
@@ -9,11 +9,11 @@ class SplashPage(base.BasePage):
     """
     @renderer
     def topnav(self, request, tag):
-        return elements.SplashTopNavFragment()
+        return fragments.SplashTopNavFragment()
 
     @renderer
     def contentarea(self, request, tag):
-        return elements.SplashFragment()
+        return fragments.SplashFragment()
 
 
 class CloudTechPage(base.ContentPage):

@@ -1,17 +1,17 @@
 from twisted.web.template import renderer
 
-from mindpoolsite import const, content, meta
-from mindpoolsite.views import elements
+from mindpoolsite import const, content, meta, utils
+from mindpoolsite.views import fragments, loaders
 
 
-class BasePage(elements.TemplateLoader):
+class BasePage(loaders.TemplateLoader):
     """
     """
     templateFile = "base.xml"
 
     @renderer
     def head(self, request, tag):
-        return elements.HeadFragment()
+        return fragments.HeadFragment()
 
     @renderer
     def topnav(self, request, tag):
@@ -27,11 +27,11 @@ class BasePage(elements.TemplateLoader):
 
     @renderer
     def jsloader(self, request, tag):
-        return elements.TemplateLoader(templateFile="fragments/jsloader.xml")
+        return loaders.TemplateLoader(templateFile="fragments/jsloader.xml")
 
     @renderer
     def footer(self, request, tag):
-        return elements.FooterFragment()
+        return fragments.FooterFragment()
 
 
 class ContentPage(BasePage):
@@ -41,7 +41,7 @@ class ContentPage(BasePage):
 
     @renderer
     def topnav(self, request, tag):
-        return elements.TopNavFragment()
+        return fragments.TopNavFragment()
 
     @renderer
     def contentarea(self, request, tag):
@@ -57,5 +57,5 @@ class SidebarPage(ContentPage):
     
     @renderer
     def contentarea(self, request, tag):
-        return elements.ContentFragment(
+        return fragments.ContentFragment(
             self.htmlContent, self.sidebarLinks)
