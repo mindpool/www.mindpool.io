@@ -25,10 +25,17 @@ Development
 
 #. Install MongoDB.
 
+
 #. Run ``make install-dev``
 
    This step will install Bootstrap (in the local dir) and the LESS compiler
    (using ``npm``).
+
+   If you run into errors:
+
+   sudo ln -sf /usr/local/share/npm/bin/lessc /usr/local/bin/
+
+   export export PATH=$PATH:/usr/local/share/npm/bin/ (or .bashrc depending on your setup)
 
 #. Run ``make start-dev``
 
