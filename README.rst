@@ -35,7 +35,7 @@ Development
 
    sudo ln -sf /usr/local/share/npm/bin/lessc /usr/local/bin/
 
-   export export PATH=$PATH:/usr/local/share/npm/bin/ (or .bashrc depending on your setup)
+   export PATH=$PATH:/usr/local/share/npm/bin/ (or .bashrc depending on your setup)
 
 #. Run ``make start-dev``
 
