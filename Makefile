@@ -96,8 +96,8 @@ lint:
 start-dev: css lint
 	$(TWISTD) -n mindpool-site
 
-start-static:
-	$(TWISTD) web -p 9080 --path=./static/html/
+start-placeholder:
+	$(TWISTD) web -p 9080 --path=./static/placeholder/
 
 stop-static:
 	make stop-prod
