@@ -1,12 +1,13 @@
 import sys
 
 from twisted.application import service, internet
+from twisted.cred import portal
 from twisted.python import usage
 from twisted.web import server
 
 from klein import resource
 
-from mindpoolsite import meta, routes
+from mindpoolsite import const, meta, routes
 from mindpoolsite.scripts import sync
 
 
@@ -50,7 +51,8 @@ class Options(usage.Options):
     """
     """
     optParameters = [
-        ["webport", "p", 9080, "The port to listen for HTTP requests"],
+        ["webport", "p", const.defaultPort,
+         "The port to listen for HTTP requests"],
     ]
 
     subCommands = [
