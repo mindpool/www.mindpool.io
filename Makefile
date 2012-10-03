@@ -64,10 +64,13 @@ $(PIP):
 
 install-python-utils: $(DEPS_DIR) $(PYTHON_BIN)/easy_install $(PIP)
 
-install-python-deps: install-python-utils
+$(TWISTD):
 	$(PIP) install http://pypi.python.org/packages/source/T/Twisted/Twisted-12.2.0.tar.bz2
+
+install-python-deps: $(TWISTD) install-python-utils
 	$(PIP) install https://github.com/twisted/klein/zipball/master
 	$(PIP) install https://github.com/fiorix/mongo-async-python-driver/zipball/master
+	$(PIP) install https://github.com/oubiwann/txBrowserID/zipball/master
 
 install: install-python-deps
 
