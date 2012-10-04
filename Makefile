@@ -17,6 +17,7 @@ MONGO_ETC ?= $(MONGO_BASE)/etc
 MONGO_CONF ?= $(MONGO_ETC)/mongodb.conf
 MONGO_LOG ?= $(MONGO_BASE)/log
 MONGO_DATA ?= $(MONGO_BASE)/data
+CERTS ?= ./certs
 
 get-targets:
 	@egrep ':$$' Makefile|egrep -v '^\$$'|sed -e 's/://g'
@@ -64,16 +65,25 @@ $(PIP):
 
 install-python-utils: $(DEPS_DIR) $(PYTHON_BIN)/easy_install $(PIP)
 
-install-python-deps: install-python-utils
+$(TWISTD):
 	$(PIP) install http://pypi.python.org/packages/source/T/Twisted/Twisted-12.2.0.tar.bz2
+
+install-python-deps: $(TWISTD) install-python-utils
 	$(PIP) install https://github.com/twisted/klein/zipball/master
 	$(PIP) install https://github.com/fiorix/mongo-async-python-driver/zipball/master
+	$(PIP) install https://github.com/oubiwann/txBrowserID/zipball/master
 
 install: install-python-deps
 
 install-dev: install-python-deps $(DEPS_DIR) $(BOOTSTRAP_DIR) \
 $(BIN_DIR)/recess $(BIN_DIR)/uglifyjs $(BIN_DIR)/jshint $(BIN_DIR)/lessc \
 	cd $(BOOTSTRAP_DIR) && make
+
+$(CERTS):
+	mkdir -p $(CERTS)
+	openssl genrsa > $(CERTS)/privkey.pem
+	openssl req -new -x509 -days 1095 \
+	-key $(CERTS)/privkey.pem -out $(CERTS)/cacert.pem
 
 $(ASSETS_DIR):
 	mkdir $(ASSETS_DIR)
@@ -93,7 +103,7 @@ lint:
 	-pyflakes $(LIB)
 	-pep8 $(LIB)
 
-start-dev: css lint
+start-dev: css lint $(CERTS)
 	$(TWISTD) -n mindpool-site
 
 start-placeholder:
@@ -102,7 +112,7 @@ start-placeholder:
 stop-static:
 	make stop-prod
 
-start-prod:
+start-prod: $(CERTS)
 	$(TWISTD) mindpool-site
 
 stop-prod:
