@@ -1,8 +1,12 @@
+from twisted.cred import portal
 from twisted.web import static
 
-from klein import route
+from browserid import checker
 
-from mindpoolsite import const
+from klein import route
+from klein.app import _globalKleinApp as app
+
+from mindpoolsite import auth, const
 from mindpoolsite.views import pages
 
 
@@ -89,3 +93,17 @@ def contact(request):
 @route(const.urls["assets"])
 def assets(request):
     return static.File(const.assetsDirectory)
+
+
+@route(const.urls["login"], methods=["POST"])
+def login(request):
+    realm = auth.AccountRealm()
+    loginPortal = portal.Portal(realm)
+    loginPortal.registerChecker(checker.BrowserIDChecker(
+        const.pesonaAudience, certsDir=const.certsDirectory))
+    return pages.LoginPage(app, loginPortal)
+
+
+@route(const.urls["logout"])
+def logout(request):
+    return pages.LogoutPage()

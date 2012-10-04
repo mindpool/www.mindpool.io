@@ -7,6 +7,7 @@
     <meta name="keywords" content="mindpool,cloud,big data,openstack,web services,messaging,rabbitmq,zeromq,rest,python,javascript,lisp,api,api design,databases,cassandra,hadoop,riak,mongodb,redis,technology,consulting,networking,quantum,nova,horizon,cinder,keystone,swift"/>
 
     <link href="/static/css/site.css" rel="stylesheet"/>
+    <link href="/static/css/persona-buttons.css" rel="stylesheet"/>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,7 +19,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png"/>
 
+    <script src="https://login.persona.org/include.js"></script>
+    <script src="/static/js/jquery-min.js"></script>
+    <script src="/static/js/mindpool-auth.js"></script>
+
     <script type="text/javascript">
+      // Google Analytics
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-35180387-1']);
       _gaq.push(['_trackPageview']);
@@ -28,5 +34,12 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+
+      // Mozilla Persona Login
+      navigator.id.watch({
+        onlogin: mindpoolLogin,
+        onlogout: mindpoolLogout
+      });
+      $(document).ready(mindpoolOnReady);
     </script>
 </t:transparent>

@@ -1,3 +1,8 @@
+defaultPort = 9080
+domain = "localhost"
+pesonaAudience = "http://%s:%s" % (domain, defaultPort)
+
+
 LINK = 0
 DROPDOWN = 1
 DIVIDER = 2
@@ -22,6 +27,8 @@ urls = {
     "social": "/about/social",
     "contact": "/about/contact",
     "assets": "/static/",
+    "login": "/login",
+    "logout": "/logout",
     }
 
 
@@ -65,6 +72,7 @@ peopleLinks = [
 
 
 assetsDirectory = "./static"
+certsDirectory = "./certs"
 breadcrumbDivider = "/"
 tagline = "Providing Knowledge and Services for Tomorrow's Platforms"
 officeCities = ["Bangalore", "San Francisco"]
