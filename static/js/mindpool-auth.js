@@ -11,6 +11,7 @@ var mindpoolLogin = function(assertion) {
     data: data,
     dataType: "json"});
   request.done(function(data) {
+    console.log(data);
     $("#persona-login").text(data.results);
   });
   request.fail(function(jqXHR, status) {
