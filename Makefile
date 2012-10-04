@@ -17,6 +17,7 @@ MONGO_ETC ?= $(MONGO_BASE)/etc
 MONGO_CONF ?= $(MONGO_ETC)/mongodb.conf
 MONGO_LOG ?= $(MONGO_BASE)/log
 MONGO_DATA ?= $(MONGO_BASE)/data
+CERTS ?= ./certs
 
 get-targets:
 	@egrep ':$$' Makefile|egrep -v '^\$$'|sed -e 's/://g'
@@ -78,6 +79,12 @@ install-dev: install-python-deps $(DEPS_DIR) $(BOOTSTRAP_DIR) \
 $(BIN_DIR)/recess $(BIN_DIR)/uglifyjs $(BIN_DIR)/jshint $(BIN_DIR)/lessc \
 	cd $(BOOTSTRAP_DIR) && make
 
+$(CERTS):
+	mkdir -p $(CERTS)
+	openssl genrsa > $(CERTS)/privkey.pem
+	openssl req -new -x509 -days 1095 \
+	-key $(CERTS)/privkey.pem -out $(CERTS)/cacert.pem
+
 $(ASSETS_DIR):
 	mkdir $(ASSETS_DIR)
 	cp -r $(BOOTSTRAP_DIR)/docs/assets/* $(ASSETS_DIR)/
@@ -96,7 +103,7 @@ lint:
 	-pyflakes $(LIB)
 	-pep8 $(LIB)
 
-start-dev: css lint
+start-dev: css lint $(CERTS)
 	$(TWISTD) -n mindpool-site
 
 start-placeholder:
@@ -105,7 +112,7 @@ start-placeholder:
 stop-static:
 	make stop-prod
 
-start-prod:
+start-prod: $(CERTS)
 	$(TWISTD) mindpool-site
 
 stop-prod:
