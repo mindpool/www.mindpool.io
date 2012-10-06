@@ -7,6 +7,24 @@ Fit and Finish
 
 * fix page padding on both templates when in smaller modes
 
+* fix logo situation
+
+  * remove "Home" link on regular pages
+
+  * move small logo to where the "Home" link used to be
+
+  * link the small logo to the splash page
+
+
+Content Management
+------------------
+
+* start adding content in RST format
+
+* add support for rendering RST to HTML
+
+* update the styles of the content pages to display text properly
+
 
 Authentication
 --------------
