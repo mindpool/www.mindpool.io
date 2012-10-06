@@ -51,11 +51,9 @@ aboutDropDown = [
     ("Social Links", urls["social"], LINK),
     ("Careers", urls["careers"], LINK),
     ("Contact Us", urls["contact"], LINK),
-    ("", "", DIVIDER),
-    ("Velankani", "", HEADER),
-    ("The Velankani Group", "http://www.velankani.net/velankani_group.htm",
-     LINK),
-    ("VI Systems", "http://www.visystems.org/", LINK)]
+    #("", "", DIVIDER),
+    #("Investors", "", HEADER),
+    #("VI Systems", "http://www.visystems.org/", LINK)]
 aboutLinks = aboutDropDown
 
 
