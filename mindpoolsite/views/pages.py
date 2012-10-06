@@ -68,10 +68,11 @@ class CloudTechPage(base.ContentPage):
     htmlContent = content.cloudtech.cloudtech
 
 
-class OpenSourcePage(base.ContentPage):
+class OpenSourcePage(base.SidebarPage):
     """
     """
     htmlContent = content.opensource.opensource
+    sidebarLinks = const.openSourceLinks
 
 
 class AboutPage(base.SidebarPage):

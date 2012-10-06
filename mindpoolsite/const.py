@@ -29,6 +29,9 @@ urls = {
     "assets": "/static/",
     "login": "/login",
     "logout": "/logout",
+    "github": "http://mindpool.github.com/",
+    "projects": "http://github.com/mindpool",
+    "blog": "http://blog.mindpool.io",
     }
 
 
@@ -70,9 +73,15 @@ peopleLinks = [
     ("Members", urls["members"], LINK)]
 
 
+openSourceLinks = [
+    ("Open Source", urls["open-source"], LINK),
+    ("Github Page", urls["github"], LINK),
+    ("Sponsored Projects", urls["projects"], LINK),
+    ("Dev Blog", urls["blog"], LINK)]
+
 assetsDirectory = "./static"
 certsDirectory = "./certs"
 breadcrumbDivider = "/"
 tagline = "Providing Knowledge and Services for Tomorrow's Platforms"
-officeCities = ["Bangalore", "San Francisco"]
+officeCities = ["Bangalore", "San Francisco", "Atlanta"]
 salesEmail = "sales@mindpool.io"
