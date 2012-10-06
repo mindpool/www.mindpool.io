@@ -15,6 +15,10 @@ Fit and Finish
 
   * link the small logo to the splash page
 
+* add a custom 404 page
+
+* add a custom 401 page (and other permissions pages)
+
 
 Content Management
 ------------------

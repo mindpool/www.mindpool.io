@@ -18,7 +18,18 @@ urls = {
     "teams": "/people/teams",
     "members": "/people/members",
     "cloud-tech": "/cloud",
+    "langs": "/cloud/languages",
+    "frameworks": "/cloud/frameworks",
+    "concurrency": "/cloud/concurrency",
+    "messaging": "/cloud/messaging",
+    "distributed": "/cloud/distributed",
+    "big-data": "/cloud/data",
+    "virtual": "/cloud/virtualization",
+    "ux": "/cloud/ux",
     "open-source": "/opensource",
+    "github": "http://mindpool.github.com/",
+    "projects": "http://github.com/mindpool",
+    "blog": "http://blog.mindpool.io",
     "about": "/about",
     "who": "/about/who",
     "what": "/about/what",
@@ -29,9 +40,6 @@ urls = {
     "assets": "/static/",
     "login": "/login",
     "logout": "/logout",
-    "github": "http://mindpool.github.com/",
-    "projects": "http://github.com/mindpool",
-    "blog": "http://blog.mindpool.io",
     }
 
 
@@ -73,11 +81,24 @@ peopleLinks = [
     ("Members", urls["members"], LINK)]
 
 
+cloudTechLinks = [
+    ("Cloud Technologies", urls["cloud-tech"], LINK),
+    ("The Foundation of Language", urls["langs"], LINK),
+    ("Libraries and Frameworks", urls["frameworks"], LINK),
+    ("Concurrency", urls["concurrency"], LINK),
+    ("Messaging", urls["messaging"], LINK),
+    ("Distributed System", urls["distributed"], LINK),
+    ("Big Data", urls["big-data"], LINK),
+    ("Virtualization", urls["virtual"], LINK),
+    ("User Experience", urls["ux"], LINK)]
+
+
 openSourceLinks = [
     ("Open Source", urls["open-source"], LINK),
     ("Github Page", urls["github"], LINK),
     ("Sponsored Projects", urls["projects"], LINK),
     ("Dev Blog", urls["blog"], LINK)]
+
 
 assetsDirectory = "./static"
 certsDirectory = "./certs"

@@ -62,10 +62,59 @@ class MembersPage(PeoplePage):
     htmlContent = content.people.members
 
 
-class CloudTechPage(base.ContentPage):
+class CloudTechPage(base.SidebarPage):
     """
     """
     htmlContent = content.cloudtech.cloudtech
+    sidebarLinks = const.cloudTechLinks
+
+
+class LangsPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.langs
+
+
+class FrameworksPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.frameworks
+
+
+class ConcurrencyPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.concurrency
+
+
+class MessagingPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.messaging
+
+
+class DistributedPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.distributed
+
+
+class BigDataPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.data
+
+
+class VirtualizationPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.virtualization
+
+
+class UXPage(CloudTechPage):
+    """
+    """
+    htmlContent = content.cloudtech.ux
 
 
 class OpenSourcePage(base.SidebarPage):
