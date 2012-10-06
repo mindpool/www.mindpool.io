@@ -54,6 +54,7 @@ aboutDropDown = [
     #("", "", DIVIDER),
     #("Investors", "", HEADER),
     #("VI Systems", "http://www.visystems.org/", LINK)]
+    ]
 aboutLinks = aboutDropDown
 
 
