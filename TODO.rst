@@ -23,6 +23,9 @@ Content Management
 
   * headings on content pages are squished with little or no spaces
 
+  * there needs to be more vertical space between the heading and the first
+    paragraph
+
 
 Authentication / Authorization
 ------------------------------
