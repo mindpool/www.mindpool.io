@@ -23,18 +23,9 @@ Fit and Finish
 Content Management
 ------------------
 
-* start adding content in RST format
-
-* add support for rendering RST to HTML
+* finish adding content in RST format
 
 * update the styles of the content pages to display text properly
-
-  * prevent HTML-ized RST as rendering with escaped/quoted tags
-
-  * look at defining a custom renderer
-
-  * look at defining a custom _stan.Tag... or building tags instead of
-    rendering to HTML! This will require walking the tree...
 
   * update CSS on content pages: link colors are too light
 
