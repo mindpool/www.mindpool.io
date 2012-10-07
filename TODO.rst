@@ -22,10 +22,8 @@ Content Management
   * update CSS on content pages: link colors are too light
 
 
-Authentication
---------------
-
-* the login form should only display when a user is not logged in
+Authentication / Authorization
+------------------------------
 
 * a system needs to be put in place for protecting specific resources
 
@@ -40,6 +38,12 @@ Authentication
   * account objects will also have roles, so role data will need to be stored
     as well
 
+  * session object storage is one place, but we're going to need persistent
+    user account data
+
+  * what will the releationship be between session data and persisted account
+    data?
+
 * a "persona audience" parameter needs to be added to mindpoolsite.app, so that
   dev and production can run easily from the same code
 
@@ -52,18 +56,11 @@ Authentication
 
 * style the login in the top navs
 
-  * can we adjust the "logged in as ...@..." text to something shorter? Just
-    the username?
-
-    * looks like the only returned is the string itself, so this will have to
-      be parsed and adjusted in JS
-
   * fix the text rendering/styling; maybe bold the login text?
 
-  * add a login link next to thte logged in name: "Your Name | logout "
+  * add a logout link next to thte logged in name: "Your Name | logout "
 
-* add error pages
+* make the login process more robust
 
-  * what happens with a bad authentication?
-
-  * what happens with a good auth, but a user who is not in the system?
+  * right now, if a user bails mid-way through the process, the dom has been
+    edited with a status message, and this needs to go away
