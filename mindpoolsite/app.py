@@ -75,11 +75,19 @@ class Options(usage.Options):
             sys.exit(0)
 
 
+class MindPoolSession(server.Session):
+    """
+    """
+    # let's have our sessions last a full 24 hours
+    sessionTimeout = 24 * 60 * 60
+
+
 def makeService(options):
     """
     """
     port = int(options["webport"])
     site = server.Site(resource())
+    site.sessionFactory = MindPoolSession
     application = service.Application(meta.description)
     webService = internet.TCPServer(port, site)
     webService.setServiceParent(application)
