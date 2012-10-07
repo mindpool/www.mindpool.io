@@ -50,8 +50,6 @@ Authentication
   * when the logout functionality lands, be sure that the session is expired
     upon logout
 
-* chop up the login parts of the top navs to remove duplicate templating
-
 * style the login in the top navs
 
   * can we adjust the "logged in as ...@..." text to something shorter? Just
