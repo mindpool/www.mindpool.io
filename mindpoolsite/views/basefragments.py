@@ -37,8 +37,6 @@ class AuthFragment(BaseFragment):
 
     @renderer
     def data(self, request, tag):
-        print request
-        print self.request
         return tag
 
 
@@ -51,7 +49,7 @@ class BaseTopNavFragment(BaseFragment):
     def data(self, request, tag):
         tag.fillSlots(
             links=self.getLinks(request),
-            auth=AuthFragment(request=request)
+            auth=AuthFragment()
         )
         return tag
 

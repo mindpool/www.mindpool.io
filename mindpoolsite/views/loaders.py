@@ -9,9 +9,8 @@ class TemplateLoader(Element):
     templateDir = "templates"
     templateFile = ""
 
-    def __init__(self, loader=None, templateFile=None, request=None):
+    def __init__(self, loader=None, templateFile=None):
         super(TemplateLoader, self).__init__(loader=loader)
-        self.request = request
         if templateFile:
             self.templateFile = templateFile
         self.setLoader()
