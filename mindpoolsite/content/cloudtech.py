@@ -12,6 +12,6 @@ distributed = ""
 
 data = ""
 
-virtualization = ""
+aas = ""
 
 ux = ""

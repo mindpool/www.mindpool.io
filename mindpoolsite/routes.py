@@ -80,9 +80,9 @@ def data(request):
     return pages.BigDataPage()
 
 
-@route(const.urls["virtual"])
-def virtual(request):
-    return pages.VirtualizationPage()
+@route(const.urls["aas"])
+def aas(request):
+    return pages.AsAServicePage()
 
 
 @route(const.urls["ux"])

@@ -24,7 +24,7 @@ urls = {
     "messaging": "/cloud/messaging",
     "distributed": "/cloud/distributed",
     "big-data": "/cloud/data",
-    "virtual": "/cloud/virtualization",
+    "aas": "/cloud/aas",
     "ux": "/cloud/ux",
     "open-source": "/opensource",
     "github": "http://mindpool.github.com/",
@@ -84,13 +84,13 @@ peopleLinks = [
 
 cloudTechLinks = [
     ("Cloud Technologies", urls["cloud-tech"], LINK),
-    ("The Foundation of Language", urls["langs"], LINK),
+    ("Language as a Foundation", urls["langs"], LINK),
     ("Libraries and Frameworks", urls["frameworks"], LINK),
     ("Concurrency", urls["concurrency"], LINK),
     ("Messaging", urls["messaging"], LINK),
     ("Distributed System", urls["distributed"], LINK),
     ("Big Data", urls["big-data"], LINK),
-    ("Virtualization", urls["virtual"], LINK),
+    ("IaaS and PaaS", urls["aas"], LINK),
     ("User Experience", urls["ux"], LINK)]
 
 

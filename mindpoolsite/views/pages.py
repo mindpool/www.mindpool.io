@@ -105,10 +105,10 @@ class BigDataPage(CloudTechPage):
     contentData = content.cloudtech.data
 
 
-class VirtualizationPage(CloudTechPage):
+class AsAServicePage(CloudTechPage):
     """
     """
-    contentData = content.cloudtech.virtualization
+    contentData = content.cloudtech.aas
 
 
 class UXPage(CloudTechPage):
@@ -188,8 +188,12 @@ class LoginPage(KleinResource):
         account.setEmail(avatar.email)
         account.setDisplayName(avatar.email.split("@")[0])
         request.setHeader("content-type", "application/json")
-        request.write(
-            json.dumps({"results": "logged in as %s" % account.email}))
+        request.write(json.dumps({
+            "results": {
+                "email": account.email,
+                "displayName": account.displayName,
+            }
+        }))
         request.finish()
 
     def render(self, request):
