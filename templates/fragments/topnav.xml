@@ -8,12 +8,12 @@
         <span class="icon-bar"></span>
       </a>
       <div class="nav-collapse collapse">
+        <span class="pull-left">
+          <a href="/"><img border="0" src="/static/img/mindpool-logo-tiny.png" /></a>
+        </span>
         <ul class="nav">
           <t:slot name="links" />
         </ul>
-        <div class="pull-right">
-          <a href="/"><img border="0" src="/static/img/mindpool-logo-tiny.png" /></a>
-        </div>
         <!-- XXX put this in its own reusable teplate ... -->
         <div class="persona-assertion persona-text pull-right">
           <span id="persona-login">

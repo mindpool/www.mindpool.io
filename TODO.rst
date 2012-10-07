@@ -7,14 +7,6 @@ Fit and Finish
 
 * fix page padding on both templates when in smaller modes
 
-* fix logo situation
-
-  * remove "Home" link on regular pages
-
-  * move small logo to where the "Home" link used to be
-
-  * link the small logo to the splash page
-
 * add a custom 404 page
 
 * add a custom 401 page (and other permissions pages)

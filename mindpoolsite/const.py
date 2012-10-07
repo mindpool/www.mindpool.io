@@ -52,7 +52,8 @@ splashTopNavLinks = [
     ("Cloud Technologies", urls["cloud-tech"], LINK),
     ("Open Source", urls["open-source"], LINK),
     ("About", urls["about"], DROPDOWN)]
-topNavLinks = [("Home", urls["root"], LINK)] + splashTopNavLinks
+#topNavLinks = [("Home", urls["root"], LINK)] + splashTopNavLinks
+topNavLinks = splashTopNavLinks
 
 
 aboutDropDown = [
