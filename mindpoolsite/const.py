@@ -108,6 +108,8 @@ contentTypes = {
     }
 
 
+sessionUserVar = "mindpoolMemberUser"
+sessionEmailVar = "mindpoolMemberEmail"
 assetsDirectory = "./static"
 certsDirectory = "./certs"
 breadcrumbDivider = "/"

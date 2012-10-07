@@ -173,21 +173,30 @@ class LoginPage(KleinResource):
         KleinResource.__init__(self, app)
         self.portal = portal
 
+    def handleLoginError(self, failure):
+        print "Whoops ..."
+        print failure
+        print dir(failure)
+        print vars(failure)
+
     def writeLoginResults(self, results, request):
-            interface, avatar, logout = results
-            account = avatar
-            # XXX Now we need to set a session cookie and maintain a mapping to
-            # this Account object. Assertions are very short lived (5 minutes),
-            # so this code provides a one-shot login.
-            request.setHeader("content-type", "application/json")
-            request.write(
-                json.dumps({"results": "logged in as %s" % account.email}))
-            request.finish()
+        """
+        This callback is only fired upon successful BrowserID login.
+        """
+        interface, avatar, logout = results
+        account = auth.getSessionAccount(request)
+        account.setEmail(avatar.email)
+        account.setDisplayName(avatar.email.split("@")[0])
+        request.setHeader("content-type", "application/json")
+        request.write(
+            json.dumps({"results": "logged in as %s" % account.email}))
+        request.finish()
 
     def render(self, request):
         body = json.load(request.content)
         credentials = checker.BrowserIDAssertion(body["assertion"])
-        d = self.portal.login(credentials, None, auth.IAccount)
+        d = self.portal.login(credentials, None, auth.IPersona)
+        d.addErrback(self.handleLoginError)
         d.addCallback(self.writeLoginResults, request)
         return NOT_DONE_YET
 

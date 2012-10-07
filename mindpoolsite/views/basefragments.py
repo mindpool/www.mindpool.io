@@ -1,6 +1,6 @@
 from twisted.web.template import renderer, tags
 
-from mindpoolsite import const
+from mindpoolsite import auth, const
 from mindpoolsite.views import loaders
 
 
@@ -34,11 +34,31 @@ class AuthFragment(BaseFragment):
     #   * is the user logged in? (check session)
     #   * if so, get their user name, display it, and provide a signout link
     #   * if not, present the Persona login link
+    def getLoggedInAccount(self, request):
+        account = auth.getSessionAccount(request)
+        if account.email:
+            return account
+
+    def getSignInLink(self):
+        return tags.span(
+            tags.a(
+                tags.span("Persona Sign-in", class_="persona-link-text"),
+                href="#login", id="persona-login-link",
+                class_="persona-button dark"),
+            id="persona-login")
+
+    def getAuthedLink(self, account):
+        return " %s | Sign out " % account.displayName
 
     @renderer
     def data(self, request, tag):
-        return tag
-
+        account = self.getLoggedInAccount(request)
+        if account:
+            auth = self.getAuthedLink(account)
+        else:
+            auth = self.getSignInLink()
+        return tag.fillSlots(auth=auth)
+            
 
 class BaseTopNavFragment(BaseFragment):
     """
