@@ -73,6 +73,12 @@ install-python-deps: install-python-utils $(TWISTD)
 	$(PIP) install https://github.com/fiorix/mongo-async-python-driver/zipball/master
 	$(PIP) install https://github.com/oubiwann/txBrowserID/zipball/master
 
+upgrade-python-deps:
+	$(PIP) install --upgrade http://pypi.python.org/packages/source/T/Twisted/Twisted-12.2.0.tar.bz2
+	$(PIP) install --upgrade https://github.com/twisted/klein/zipball/master
+	$(PIP) install --upgrade https://github.com/fiorix/mongo-async-python-driver/zipball/master
+	$(PIP) install --upgrade https://github.com/oubiwann/txBrowserID/zipball/master
+
 install: install-python-deps
 
 install-dev: install-python-deps $(DEPS_DIR) $(BOOTSTRAP_DIR) \
