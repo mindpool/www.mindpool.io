@@ -25,6 +25,23 @@ class BaseFragment(loaders.TemplateLoader):
         return self._isInSection(request, sectionURL, end=3)
 
 
+class AuthFragment(BaseFragment):
+    """
+    """
+    templateFile = "fragments/auth.xml"
+
+    # XXX needs logic for:
+    #   * is the user logged in? (check session)
+    #   * if so, get their user name, display it, and provide a signout link
+    #   * if not, present the Persona login link
+
+    @renderer
+    def data(self, request, tag):
+        print request
+        print self.request
+        return tag
+
+
 class BaseTopNavFragment(BaseFragment):
     """
     """
@@ -33,7 +50,8 @@ class BaseTopNavFragment(BaseFragment):
     @renderer
     def data(self, request, tag):
         tag.fillSlots(
-            links=self.getLinks(request)
+            links=self.getLinks(request),
+            auth=AuthFragment(request=request)
         )
         return tag
 

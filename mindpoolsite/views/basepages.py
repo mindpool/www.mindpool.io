@@ -75,7 +75,7 @@ class ContentPage(BasePage):
 
     @renderer
     def topnav(self, request, tag):
-        return fragments.TopNavFragment()
+        return fragments.TopNavFragment(request=request)
 
     @renderer
     def contentarea(self, request, tag):

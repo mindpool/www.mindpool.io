@@ -1,0 +1,11 @@
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1"
+               t:render="data">
+    <!-- XXX put this in its own reusable teplate ... -->
+    <div class="persona-assertion persona-text pull-right">
+      <span id="persona-login">
+      <a href="#login" id="persona-login-link" class="persona-button dark">
+        <span class="persona-link-text">Persona Sign-in</span>
+      </a>
+      </span>
+    </div><!-- end login template -->
+</t:transparent>

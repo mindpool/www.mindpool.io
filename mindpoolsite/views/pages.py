@@ -17,7 +17,7 @@ class SplashPage(base.BasePage):
     """
     @renderer
     def topnav(self, request, tag):
-        return fragments.SplashTopNavFragment()
+        return fragments.SplashTopNavFragment(request=request)
 
     @renderer
     def contentarea(self, request, tag):

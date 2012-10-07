@@ -12,14 +12,7 @@
         <ul class="nav">
           <t:slot name="links" />
         </ul>
-        <!-- XXX put this in its own reusable teplate ... -->
-        <div class="persona-assertion persona-text pull-right">
-          <span id="persona-login">
-          <a href="#login" id="persona-login-link" class="persona-button dark">
-            <span class="persona-link-text">Persona Sign-in</span>
-          </a>
-          </span>
-        </div><!-- end login template -->
+        <t:slot name="auth" />
       </div><!--/.nav-collapse -->
     </div>
   </div>
