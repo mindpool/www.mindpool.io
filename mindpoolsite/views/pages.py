@@ -28,99 +28,99 @@ class ServicesPage(base.SidebarPage):
     """
     """
     sidebarLinks = const.servicesLinks
-    htmlContent = content.services.services
+    contentData = content.services.services
 
 
 class ConsultingPage(ServicesPage):
     """
     """
-    htmlContent = content.services.consulting
+    contentData = content.services.consulting
 
 
 class TrainingPage(ServicesPage):
     """
     """
-    htmlContent = content.services.training
+    contentData = content.services.training
 
 
 class PeoplePage(base.SidebarPage):
     """
     """
     sidebarLinks = const.peopleLinks
-    htmlContent = content.people.people
+    contentData = content.people.people
 
 
 class TeamsPage(PeoplePage):
     """
     """
-    htmlContent = content.people.teams
+    contentData = content.people.teams
 
 
 class MembersPage(PeoplePage):
     """
     """
-    htmlContent = content.people.members
+    contentData = content.people.members
 
 
 class CloudTechPage(base.SidebarPage):
     """
     """
-    htmlContent = content.cloudtech.cloudtech
+    contentData = content.cloudtech.cloudtech
     sidebarLinks = const.cloudTechLinks
 
 
 class LangsPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.langs
+    contentData = content.cloudtech.langs
 
 
 class FrameworksPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.frameworks
+    contentData = content.cloudtech.frameworks
 
 
 class ConcurrencyPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.concurrency
+    contentData = content.cloudtech.concurrency
 
 
 class MessagingPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.messaging
+    contentData = content.cloudtech.messaging
 
 
 class DistributedPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.distributed
+    contentData = content.cloudtech.distributed
 
 
 class BigDataPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.data
+    contentData = content.cloudtech.data
 
 
 class VirtualizationPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.virtualization
+    contentData = content.cloudtech.virtualization
 
 
 class UXPage(CloudTechPage):
     """
     """
-    htmlContent = content.cloudtech.ux
+    contentData = content.cloudtech.ux
 
 
 class OpenSourcePage(base.SidebarPage):
     """
     """
-    htmlContent = content.opensource.opensource
+    contentData = content.opensource.opensource
     sidebarLinks = const.openSourceLinks
 
 
@@ -133,37 +133,37 @@ class AboutPage(base.SidebarPage):
 class WhoPage(AboutPage):
     """
     """
-    htmlContent = content.about.who
+    contentData = content.about.who
 
 
 class WhatPage(AboutPage):
     """
     """
-    htmlContent = content.about.what
+    contentData = content.about.what
 
 
 class CulturePage(AboutPage):
     """
     """
-    htmlContent = content.about.culture
+    contentData = content.about.culture
 
 
 class SocialLinksPage(AboutPage):
     """
     """
-    htmlContent = content.about.social
+    contentData = content.about.social
 
 
 class JobsPage(AboutPage):
     """
     """
-    htmlContent = content.about.jobs
+    contentData = content.about.jobs
 
 
 class ContactPage(AboutPage):
     """
     """
-    htmlContent = content.about.contact
+    contentData = content.about.contact
 
 
 class LoginPage(KleinResource):
@@ -195,4 +195,4 @@ class LoginPage(KleinResource):
 class LogoutPage(base.ContentPage):
     """
     """
-    htmlContent = ""
+    contentData = ""

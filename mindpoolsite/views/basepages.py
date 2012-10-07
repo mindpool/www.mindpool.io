@@ -1,6 +1,9 @@
+from twisted.web.iweb import IRenderable
 from twisted.web.template import renderer
 
-from mindpoolsite import const
+from zope.interface import implements
+
+from mindpoolsite import const, utils
 from mindpoolsite.views import fragments, loaders
 
 
@@ -43,10 +46,33 @@ class BasePage(loaders.TemplateLoader):
         return fragments.FooterFragment()
 
 
+class RESTContent(object):
+    """
+    """
+    implements(IRenderable)
+
+    def __init__(self, rstData):
+        self.rstData = rstData
+
+    def render(self, request):
+        xpath = u".//div[@class='document']"
+        return utils.rstToStan(self.rstData, xpath)
+
+
 class ContentPage(BasePage):
     """
     """
-    htmlContent = ""
+    contentType = const.contentTypes["rst"]
+    contentData = ""
+    _cachedContent = ""
+
+    def renderContentData(self):
+        if not self._cachedContent:
+            if self.contentType == const.contentTypes["rst"]:
+                self._cachedContent = RESTContent(self.contentData)
+            elif self.contentType == const.contentTypes["html"]:
+                self._cachedContent = self.contentData
+        return self._cachedContent
 
     @renderer
     def topnav(self, request, tag):
@@ -54,7 +80,7 @@ class ContentPage(BasePage):
 
     @renderer
     def contentarea(self, request, tag):
-        return fragments.ContentFragment(self.htmlContent)
+        return fragments.ContentFragment(self.renderContentData())
 
 
 class SidebarPage(ContentPage):
@@ -62,9 +88,9 @@ class SidebarPage(ContentPage):
     """
     sidebarHeading = ""
     sidebarLinks = []
-    htmlContent = ""
+    contentData = ""
 
     @renderer
     def contentarea(self, request, tag):
         return fragments.ContentFragment(
-            self.htmlContent, self.sidebarLinks)
+            self.renderContentData(), self.sidebarLinks)

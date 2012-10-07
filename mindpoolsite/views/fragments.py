@@ -67,10 +67,10 @@ class ContentFragment(base.BaseFragment):
     """
     templateFile = "fragments/content.xml"
 
-    def __init__(self, htmlContent, sidebarLinks=None, sidebarHeading="",
+    def __init__(self, contentData, sidebarLinks=None, sidebarHeading="",
                  *args, **kwargs):
         super(ContentFragment, self).__init__(*args, **kwargs)
-        self.htmlContent = htmlContent
+        self.contentData = contentData
         self.sidebarLinks = sidebarLinks or []
         self.sidebarHeading = sidebarHeading or ""
 
@@ -81,7 +81,7 @@ class ContentFragment(base.BaseFragment):
             sidebar = SidebarFragment(self.sidebarHeading, self.sidebarLinks),
         tag.fillSlots(
             sidebar=sidebar,
-            content=self.htmlContent,
+            content=self.contentData,
             footer=FooterFragment())
         return tag
 
