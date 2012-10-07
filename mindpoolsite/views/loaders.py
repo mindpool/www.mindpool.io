@@ -14,6 +14,13 @@ class TemplateLoader(Element):
         self.request = request
         if templateFile:
             self.templateFile = templateFile
+        self.setLoader()
+
+    def setLoader(self, templateDir="", templateFile=""):
+        if not templateDir:
+            templateDir = self.templateDir
+        if not templateFile:
+            templateFile = self.templateFile
         template = FilePath(
-            "%s/%s" % (self.templateDir, self.templateFile))
+            "%s/%s" % (templateDir, templateFile))
         self.loader = XMLFile(template.path)
