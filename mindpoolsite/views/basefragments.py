@@ -48,7 +48,15 @@ class AuthFragment(BaseFragment):
             id="persona-login")
 
     def getAuthedLink(self, account):
-        return " %s | Sign out " % account.displayName
+        return tags.span(
+            tags.a(
+                tags.span(account.displayName, class_="persona-link-text"),
+                href="/members/account", class_="account-link"),
+            " | ",
+            tags.a(
+                tags.span("Sign out", class_="persona-link-text"),
+                href="/logout", class_="logout-link"),
+            id="member-links")
 
     @renderer
     def data(self, request, tag):
