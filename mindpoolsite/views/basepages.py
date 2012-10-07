@@ -46,7 +46,7 @@ class BasePage(loaders.TemplateLoader):
         return fragments.FooterFragment()
 
 
-class RESTContent(object):
+class ReSTContent(object):
     """
     """
     implements(IRenderable)
@@ -69,7 +69,7 @@ class ContentPage(BasePage):
     def renderContentData(self):
         if not self._cachedContent:
             if self.contentType == const.contentTypes["rst"]:
-                self._cachedContent = RESTContent(self.contentData)
+                self._cachedContent = ReSTContent(self.contentData)
             elif self.contentType == const.contentTypes["html"]:
                 self._cachedContent = self.contentData
         return self._cachedContent
