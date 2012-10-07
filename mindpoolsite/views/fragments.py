@@ -77,10 +77,13 @@ class ContentFragment(base.BaseFragment):
     @renderer
     def data(self, request, tag):
         sidebar = ""
+        spanClass = "well span12 main-content-mindpool"
         if self.sidebarLinks or self.sidebarHeading:
-            sidebar = SidebarFragment(self.sidebarHeading, self.sidebarLinks),
+            sidebar = SidebarFragment(self.sidebarHeading, self.sidebarLinks)
+            spanClass = "well span8 main-content-mindpool"
         tag.fillSlots(
             sidebar=sidebar,
+            spanClass=spanClass,
             content=self.contentData,
             footer=FooterFragment())
         return tag

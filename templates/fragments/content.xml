@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row-fluid">
           <t:slot name="sidebar" />
-          <div class="well span8 main-content-mindpool">
+          <div><t:attr name="class"><t:slot name="spanClass" /></t:attr>
             <t:slot name="content" />
           </div>
         </div><!--/row-->
