@@ -1,3 +1,14 @@
+var updateLoginDOM = function(results) {
+    // XXX we need to build a link to the acount page (/members/account) as
+    // well as a link to the log out page (/logout)
+    //
+    // If this doesn't match what is produced by the Python code at
+    // mindpoolsite.views.basefragments.AuthFragment.getAuthedLink, then
+    // there's something wrong.
+    $("#persona-login").text(results.displayName + " | Sign out ");
+};
+
+
 var mindpoolLogin = function(assertion) {
   //console.log("onlogin");
   //console.log(assertion);
@@ -12,11 +23,11 @@ var mindpoolLogin = function(assertion) {
     dataType: "json"});
   request.done(function(data) {
     console.log(data);
-    $("#persona-login").text(data.results);
+    updateLoginDOM(data.results);
   });
   request.fail(function(jqXHR, status) {
-    //console.log(jqXHR);
-    //console.log(status);
+    console.log(jqXHR);
+    console.log(status);
   });
 };
 
