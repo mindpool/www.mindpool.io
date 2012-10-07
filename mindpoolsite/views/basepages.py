@@ -55,8 +55,7 @@ class ReSTContent(object):
         self.rstData = rstData
 
     def render(self, request):
-        xpath = u".//div[@class='document']"
-        return utils.rstToStan(self.rstData, xpath)
+        return utils.rstToStan(self.rstData)
 
 
 class ContentPage(BasePage):

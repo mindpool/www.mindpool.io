@@ -18,7 +18,7 @@ def checkTag(tag):
     return True
 
 
-def rstToStan(rst, xpath=""):
+def rstToStan(rst):
     html = rstToHTML(rst)
     # fix a bad encoding in docutils
     html = html.replace('encoding="unicode"', '')
