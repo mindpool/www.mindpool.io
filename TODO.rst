@@ -49,18 +49,18 @@ Authentication / Authorization
 * a "persona audience" parameter needs to be added to mindpoolsite.app, so that
   dev and production can run easily from the same code
 
-* add logout logic in JS and Python
-
 * add session support so that logins are remembered
 
   * when the logout functionality lands, be sure that the session is expired
     upon logout
 
+  * add logout in Python
+
+  * add logout in JS
+
 * style the login in the top navs
 
   * fix the text rendering/styling; maybe bold the login text?
-
-  * add a logout link next to thte logged in name: "Your Name | logout "
 
 * make the login process more robust
 
