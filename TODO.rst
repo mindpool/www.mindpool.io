@@ -21,6 +21,7 @@ Content Management
 
   * update CSS on content pages: link colors are too light
 
+
 Authentication
 --------------
 
@@ -46,11 +47,12 @@ Authentication
 
 * add session support so that logins are remembered
 
+  * when the logout functionality lands, be sure that the session is expired
+    upon logout
+
 * chop up the login parts of the top navs to remove duplicate templating
 
 * style the login in the top navs
-
-  * maybe move the logo over to the far left?
 
   * can we adjust the "logged in as ...@..." text to something shorter? Just
     the username?
@@ -58,15 +60,12 @@ Authentication
     * looks like the only returned is the string itself, so this will have to
       be parsed and adjusted in JS
 
-  * fix the text rendering/styling
+  * fix the text rendering/styling; maybe bold the login text?
+
+  * add a login link next to thte logged in name: "Your Name | logout "
 
 * add error pages
 
   * what happens with a bad authentication?
 
   * what happens with a good auth, but a user who is not in the system?
-
-REST
-----
-
-* 
