@@ -21,6 +21,8 @@ Content Management
 
   * update CSS on content pages: link colors are too light
 
+  * headings on content pages are squished with little or no spaces
+
 
 Authentication / Authorization
 ------------------------------

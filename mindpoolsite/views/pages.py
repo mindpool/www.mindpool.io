@@ -208,4 +208,4 @@ class LoginPage(KleinResource):
 class LogoutPage(base.ContentPage):
     """
     """
-    contentData = ""
+    contentData = content.auth.loggedout
