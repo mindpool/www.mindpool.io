@@ -10021,7 +10021,7 @@ body.content-page {
   letter-spacing: 2px;
   padding-bottom: 1em;
 }
-.main-content-mindpool .document ul {
+.main-content-mindpool .document ul.simple {
   margin-top: -2em;
   padding-bottom: 1em;
 }
