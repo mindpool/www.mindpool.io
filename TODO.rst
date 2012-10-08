@@ -51,7 +51,3 @@ Authentication / Authorization
 
 * a "persona audience" parameter needs to be added to mindpoolsite.app, so that
   dev and production can run easily from the same code
-
-* style the login in the top navs
-
-  * fix the text rendering/styling; maybe bold the login text?

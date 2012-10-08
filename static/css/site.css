@@ -9984,6 +9984,17 @@ body.content-page {
 .persona-text {
   font-size: 90%;
 }
+.persona-text a {
+  color: #999999;
+}
+.persona-text a:hover,
+.persona-text a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+.persona-text #member-links {
+  font-size: 120%;
+}
 .persona-link-text {
   font-size: 80%;
 }
