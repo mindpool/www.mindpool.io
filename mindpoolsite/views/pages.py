@@ -6,8 +6,6 @@ from twisted.web.template import renderer
 
 from browserid import checker
 
-from klein.resource import KleinResource
-
 from mindpoolsite import auth, const, content
 from mindpoolsite.views import basepages as base, fragments
 
@@ -166,19 +164,9 @@ class ContactPage(AboutPage):
     contentData = content.about.contact
 
 
-class LoginPage(KleinResource):
+class LoginPage(base.BaseResourcePage):
     """
     """
-    def __init__(self, app, portal):
-        KleinResource.__init__(self, app)
-        self.portal = portal
-
-    def handleLoginError(self, failure):
-        print "Whoops ..."
-        print failure
-        print dir(failure)
-        print vars(failure)
-
     def writeLoginResults(self, results, request):
         """
         This callback is only fired upon successful BrowserID login.
@@ -200,12 +188,14 @@ class LoginPage(KleinResource):
         body = json.load(request.content)
         credentials = checker.BrowserIDAssertion(body["assertion"])
         d = self.portal.login(credentials, None, auth.IPersona)
-        d.addErrback(self.handleLoginError)
+        d.addErrback(self.handleError)
         d.addCallback(self.writeLoginResults, request)
         return NOT_DONE_YET
 
 
-class LogoutPage(base.ContentPage):
+class LogoutPage(base.BaseResourcePage):
     """
     """
-    contentData = content.auth.loggedout
+    def render(self, request):
+        request.getSession().expire()
+        return json.dumps({"results": "session expired (logout)"})

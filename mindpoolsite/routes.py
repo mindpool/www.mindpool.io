@@ -146,4 +146,4 @@ def login(request):
 
 @route(const.urls["logout"])
 def logout(request):
-    return pages.LogoutPage()
+    return pages.LogoutPage(app, None)

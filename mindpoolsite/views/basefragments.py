@@ -55,7 +55,7 @@ class AuthFragment(BaseFragment):
             " | ",
             tags.a(
                 tags.span("Sign out", class_="persona-link-text"),
-                href="/logout", class_="logout-link"),
+                href="#logout", id="persona-logout-link"),
             id="member-links")
 
     @renderer

@@ -23,7 +23,8 @@ var mindpoolLogin = function(assertion) {
     dataType: "json"});
   request.done(function(data) {
     console.log(data);
-    updateLoginDOM(data.results);
+    //updateLoginDOM(data.results);
+    window.location.reload();
   });
   request.fail(function(jqXHR, status) {
     console.log(jqXHR);
@@ -34,6 +35,16 @@ var mindpoolLogin = function(assertion) {
 
 var mindpoolLogout = function() {
   console.log("onlogout");
+  var request = $.ajax({
+    url: "/logout",
+    type: "POST"});
+  request.done(function(data) {
+    window.location.reload();
+  });
+  request.fail(function(jqXHR, status) {
+    console.log(jqXHR);
+    console.log(status);
+  });
 };
 
 
@@ -46,6 +57,16 @@ var mindpoolLoginOnClick = function() {
 };
 
 
+var mindpoolLogoutOnClick = function() {
+  navigator.id.logout();
+  // XXX hrm, for whatever reason, the logout function doesn't seem to be
+  // getting called by navigator.id.watch ... so, we'll do it manually here
+  mindpoolLogout();
+};
+
+
 var mindpoolOnReady = function() {
   $("#persona-login-link").click(mindpoolLoginOnClick);
+  console.log($("#persona-logout-link"));
+  $("#persona-logout-link").click(mindpoolLogoutOnClick);
 };

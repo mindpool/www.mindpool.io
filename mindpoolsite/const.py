@@ -101,7 +101,6 @@ openSourceLinks = [
     ("Dev Blog", urls["blog"], LINK)]
 
 
-
 contentTypes = {
     "json": "text/json",
     "html": "text/html",

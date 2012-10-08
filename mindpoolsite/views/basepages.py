@@ -3,6 +3,8 @@ from twisted.web.template import renderer
 
 from zope.interface import implements
 
+from klein.resource import KleinResource
+
 from mindpoolsite import const, utils
 from mindpoolsite.views import fragments, loaders
 
@@ -44,6 +46,20 @@ class BasePage(loaders.TemplateLoader):
     @renderer
     def footer(self, request, tag):
         return fragments.FooterFragment()
+
+
+class BaseResourcePage(KleinResource):
+    """
+    """
+    def __init__(self, app, portal):
+        KleinResource.__init__(self, app)
+        self.portal = portal
+
+    def handleError(self, failure):
+        print "Whoops ..."
+        print failure
+        print dir(failure)
+        print vars(failure)
 
 
 class ReSTContent(object):
