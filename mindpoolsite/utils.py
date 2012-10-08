@@ -39,7 +39,8 @@ def rstToStan(rst):
 
 
 class MemCacheHelper(object):
-
+    """
+    """
     def __init__(self, request, key, pageClass):
         self.request = request
         self.key = key
