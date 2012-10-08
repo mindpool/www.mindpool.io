@@ -42,3 +42,10 @@ Authentication / Authorization
 
 * a "persona audience" parameter needs to be added to mindpoolsite.app, so that
   dev and production can run easily from the same code
+
+
+Members' Area
+-------------
+
+* Need to add a /members/account page displaying what resources users have
+  access to
