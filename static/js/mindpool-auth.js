@@ -49,7 +49,7 @@ var mindpoolLogout = function() {
 
 
 var mindpoolLoginOnClick = function() {
-  $("#persona-login").text("logging in...");
+  //$("#persona-login").text("logging in...");
   return navigator.id.request({
   siteName: "MindPool Members' Site"});
   // XXX once we're running HTTPS, we can enable the siteLogo parameter
