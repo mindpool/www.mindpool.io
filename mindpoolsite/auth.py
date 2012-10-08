@@ -26,6 +26,7 @@ class Account(object):
         self.email = ""
         self.displayName = ""
         self.role = ""
+        self.sessionID = ""
 
     def setEmail(self, email):
         self.email = email
@@ -35,6 +36,9 @@ class Account(object):
 
     def setRole(self, role):
         self.role = role
+
+    def setSessionID(self, sessionID):
+        self.sessionID = sessionID
 
 
 class IPersona(Interface):
@@ -68,7 +72,10 @@ class AccountRealm(object):
 
 
 def getSessionAccount(request):
-    return IAccount(request.getSession())
+    session = request.getSession()
+    account = IAccount(session)
+    account.setSessionID(session.uid)
+    return account
 
 
 registerAdapter(Account, Session, IAccount)
