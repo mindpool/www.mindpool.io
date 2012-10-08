@@ -35,8 +35,8 @@ Programming Languages are the Foundation
 """
 
 frameworks = """
-Quicker Deliveries with Libraries and Frameworks
-------------------------------------------------
+Quicker Deliveries with Frameworks
+----------------------------------
 
 """
 

@@ -84,8 +84,8 @@ peopleLinks = [
 
 cloudTechLinks = [
     ("Cloud Technologies", urls["cloud-tech"], LINK),
-    ("Language as a Foundation", urls["langs"], LINK),
-    ("Libraries and Frameworks", urls["frameworks"], LINK),
+    ("Languages as the Foundation", urls["langs"], LINK),
+    ("Frameworks", urls["frameworks"], LINK),
     ("Concurrency", urls["concurrency"], LINK),
     ("Messaging", urls["messaging"], LINK),
     ("Distributed System", urls["distributed"], LINK),
