@@ -54,3 +54,29 @@ Members' Area
 
 * Need to add a /members/account page displaying what resources users have
   access to
+
+
+Data
+----
+
+* abstract the data-getting process
+
+  * right now it's getting from modules
+
+  * use a function that returns maybeDeferred so that we can plug any data
+    source into that later
+
+
+Optimization
+------------
+
+* add support for Memcached
+
+  * memcache is in Twisted now: http://twistedmatrix.com/documents/current/api/twisted.protocols.memcache.html
+
+  * look at expensive calls and put memcache there instead ... probably in
+    routes.py, come to think of it
+
+  * will need to key on url + session id
+
+  * 
