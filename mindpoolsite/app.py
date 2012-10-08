@@ -1,7 +1,6 @@
 import sys
 
 from twisted.application import service, internet
-from twisted.cred import portal
 from twisted.python import usage
 from twisted.web import server
 
@@ -79,7 +78,7 @@ class MindPoolSession(server.Session):
     """
     """
     # let's have our sessions last a full 24 hours
-    sessionTimeout = 24 * 60 * 60
+    sessionTimeout = const.sessionTimeout
 
 
 def makeService(options):
