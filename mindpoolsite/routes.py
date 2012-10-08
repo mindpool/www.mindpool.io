@@ -85,6 +85,11 @@ def aas(request):
     return pages.AsAServicePage()
 
 
+@route(const.urls["sdn"])
+def sdn(request):
+    return pages.SDNPage()
+
+
 @route(const.urls["ux"])
 def ux(request):
     return pages.UXPage()

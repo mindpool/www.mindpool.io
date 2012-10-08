@@ -109,6 +109,12 @@ class AsAServicePage(CloudTechPage):
     contentData = content.cloudtech.aas
 
 
+class SDNPage(CloudTechPage):
+    """
+    """
+    contentData = content.cloudtech.sdn
+
+
 class UXPage(CloudTechPage):
     """
     """

@@ -25,6 +25,7 @@ urls = {
     "distributed": "/cloud/distributed",
     "big-data": "/cloud/data",
     "aas": "/cloud/aas",
+    "sdn": "/cloud/sdn",
     "ux": "/cloud/ux",
     "open-source": "/opensource",
     "github": "http://mindpool.github.com/",
@@ -91,6 +92,7 @@ cloudTechLinks = [
     ("Distributed Systems", urls["distributed"], LINK),
     ("Big Data", urls["big-data"], LINK),
     ("IaaS and PaaS", urls["aas"], LINK),
+    ("SDNs", urls["sdn"], LINK),
     ("User Experience", urls["ux"], LINK)]
 
 

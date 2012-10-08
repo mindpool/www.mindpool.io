@@ -60,11 +60,14 @@ concurrency = """
 Do More with Concurrency
 ------------------------
 
+TBD
 """
 
 messaging = """
 Integrate Systems with Messaging
 --------------------------------
+
+TBD
 
 *A selection of supported messaging solutions:*
 
@@ -77,6 +80,7 @@ distributed = """
 Safeguard with Distributed Systems
 ----------------------------------
 
+TBD
 """
 
 
@@ -93,13 +97,15 @@ TBD
 +-------------------------------------------+------------------------------------------+
 | .. image:: /static/img/cassandra-x153.jpg | .. image:: /static/img/postgres-x153.jpg |
 +-------------------------------------------+                                          |
-|.. image:: /static/img/hadoop-x153.jpg     |                                          |
+| .. image:: /static/img/hadoop-x153.jpg    |                                          |
 +-------------------------------------------+------------------------------------------+
 """
 
 aas = """
 Infrastructure and Platforms as Services
 ----------------------------------------
+
+TBD
 
 *A selection of supported cloud platforms:*
 
@@ -108,8 +114,24 @@ Infrastructure and Platforms as Services
 =============================================  =============================================
 """
 
+sdn = """
+Software-Defined Networking
+---------------------------
+
+TDB
+
+*A selection of supported SDN solutions:*
+
++-----------------------------------------------------+-----------------------------------------------+
+| .. image:: /static/img/midokura-x153.jpg            | .. image:: /static/img/vmware-nicira-x153.jpg |
++-----------------------------------------------------+                                               |
+| .. image:: /static/img/Big-Switch-networks-x153.jpg |                                               |
++-----------------------------------------------------+-----------------------------------------------+
+"""
+
 ux = """
 The User Experience in the Cloud
 --------------------------------
 
+TBD
 """
