@@ -52,20 +52,6 @@ Authentication / Authorization
 * a "persona audience" parameter needs to be added to mindpoolsite.app, so that
   dev and production can run easily from the same code
 
-* add session support so that logins are remembered
-
-  * when the logout functionality lands, be sure that the session is expired
-    upon logout
-
-  * add logout in Python
-
-  * add logout in JS
-
 * style the login in the top navs
 
   * fix the text rendering/styling; maybe bold the login text?
-
-* make the login process more robust
-
-  * right now, if a user bails mid-way through the process, the dom has been
-    edited with a status message, and this needs to go away
