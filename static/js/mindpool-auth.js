@@ -24,6 +24,7 @@ var mindpoolLogin = function(assertion) {
   request.done(function(data) {
     console.log(data);
     //updateLoginDOM(data.results);
+    $("#persona-login").text("loading ...");
     window.location.reload();
   });
   request.fail(function(jqXHR, status) {
@@ -39,6 +40,7 @@ var mindpoolLogout = function() {
     url: "/logout",
     type: "POST"});
   request.done(function(data) {
+    $("#persona-login").text("loading ...");
     window.location.reload();
   });
   request.fail(function(jqXHR, status) {
