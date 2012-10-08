@@ -66,7 +66,7 @@ class AuthFragment(BaseFragment):
         else:
             auth = self.getSignInLink()
         return tag.fillSlots(auth=auth)
-            
+
 
 class BaseTopNavFragment(BaseFragment):
     """
