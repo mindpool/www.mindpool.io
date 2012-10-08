@@ -17,15 +17,6 @@ Content Management
 
 * finish adding content in RST format
 
-* update the styles of the content pages to display text properly
-
-  * update CSS on content pages: link colors are too light
-
-  * headings on content pages are squished with little or no spaces
-
-  * there needs to be more vertical space between the heading and the first
-    paragraph
-
 
 Authentication / Authorization
 ------------------------------
