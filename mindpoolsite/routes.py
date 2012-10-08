@@ -92,7 +92,7 @@ def ux(request):
 
 @route(const.urls["open-source"])
 def openSource(request):
-    return pages.OpenSourcePage()
+    return utils.cacheOrStash(request, pages.OpenSourcePage, auth)
 
 
 @route(const.urls["about"])
