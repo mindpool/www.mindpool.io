@@ -10025,6 +10025,16 @@ body.content-page {
   margin-top: -2em;
   padding-bottom: 1em;
 }
+.main-content-mindpool table.docutils {
+  background-color: #ffffff;
+  width: 100%;
+}
+.main-content-mindpool table.docutils td {
+  border: none;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
 p.tagline {
   padding-top: 20px;
   padding-bottom: 20px;
