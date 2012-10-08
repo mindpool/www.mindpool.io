@@ -70,15 +70,4 @@ Data
 Optimization
 ------------
 
-* add support for Memcached
-
-  * memcache is in Twisted now: http://twistedmatrix.com/documents/current/api/twisted.protocols.memcache.html
-
-  * look at expensive calls and put memcache there instead ... probably in
-    routes.py, come to think of it
-
-  * will need to key on url + session id + user email
-
-  * logging out should also purge memcache for that key combo
-
-  * explore usage of memcache with deferreds in one or two routes
+* clean up new Memcache support

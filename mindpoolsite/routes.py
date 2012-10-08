@@ -6,7 +6,7 @@ from browserid import checker
 from klein import route
 from klein.app import _globalKleinApp as app
 
-from mindpoolsite import auth, const
+from mindpoolsite import auth, const, utils
 from mindpoolsite.views import pages
 
 
@@ -47,7 +47,7 @@ def members(request):
 
 @route(const.urls["cloud-tech"])
 def cloudTech(request):
-    return pages.CloudTechPage()
+    return utils.cacheOrStash(request, pages.CloudTechPage, auth)
 
 
 @route(const.urls["langs"])
