@@ -7,6 +7,11 @@ Fit and Finish
 
 * fix page padding on both templates when in smaller modes
 
+  * also, in smaller modes the hover background color for the drop-down menu
+    items is wrong (bright blue)
+
+  * the footer in smaller modes doesn't display well...
+
 * add a custom 404 page
 
 * add a custom 401 page (and other permissions pages)
