@@ -10,6 +10,7 @@ Setup
 Production Deployments
 ----------------------
 
+#. Install ``memcached`` on your system
 #. Download `pypy-1.9`_.
 
 #. Unzip it and move it to ``/usr/local``.
@@ -40,8 +41,8 @@ Development
 #. Run ``make start-dev``
 
 If you don't want to use the default of ``pypy`` as your Python binary, then
-you can pass make variables to select the one that you want. For example, on a
-sysmte that doesn't have pypy installed, you can do this::
+you can pass ``make`` variables to select the one that you want. For example,
+on a sysmte that doesn't have pypy installed, you can do this::
 
   $ PYTHON=`which python` TWISTD=`which twistd` make start-dev
 
