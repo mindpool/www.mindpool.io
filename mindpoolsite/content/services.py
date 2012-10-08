@@ -1,13 +1,24 @@
 services = """
-Open Source, Delivered
-----------------------
+Services
+--------
 
-[DRAFT]
+*Open Source, Delivered*
+
+
+TBD
 
 """
 
 
-consulting = ""
+consulting = """
+Consulting
+----------
+
+"""
 
 
-training = ""
+training = """
+Training
+--------
+
+"""
