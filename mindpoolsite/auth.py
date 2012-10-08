@@ -1,6 +1,6 @@
 from zope.interface import Interface, implements
 
-from twisted.cred.portal import IRealm, Portal
+from twisted.cred.portal import IRealm
 from twisted.python.components import registerAdapter
 from twisted.web.server import Session
 
