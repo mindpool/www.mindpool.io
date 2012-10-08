@@ -14,7 +14,7 @@ One day at a time, the world becomes a more technically knowledgeable place.
 
 All the code that we work on is available on github. These are our `sponsored
 projects`_. Feel free to use what we have created, or base your next project on
-one of ours.
+one of ours. And when you need help, we're ready for you.
 
 .. Links:
 .. _sponsored projects: http://github.com/mindpool
