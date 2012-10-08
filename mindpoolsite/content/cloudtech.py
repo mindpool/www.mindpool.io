@@ -32,12 +32,28 @@ langs = """
 Programming Languages are the Foundation
 ----------------------------------------
 
+TBD
+
+*A selection of supported languages:*
+
+=================================================  =================================================
+.. image:: /static/img/python-logo-x153-v3-TM.jpg  .. image:: /static/img/made-with-lisp-x153.jpg
+.. image:: /static/img/ruby-logo-R-x153.jpg        .. image:: /static/img/coffeescript_logo_x153.jpg
+=================================================  =================================================
 """
 
 frameworks = """
 Quicker Deliveries with Frameworks
 ----------------------------------
 
+TBD
+
+*A selection of supported frameworks:*
+
+====================================================  ========================================
+.. image:: /static/img/Twisted_Logo_x153.jpg          .. image:: /static/img/zmq-x153.jpg
+.. image:: /static/img/django-logo-negative-x153.jpg  .. image:: /static/img/knockout-x153.jpg
+====================================================  ========================================
 """
 
 concurrency = """
@@ -50,6 +66,11 @@ messaging = """
 Integrate Systems with Messaging
 --------------------------------
 
+*A selection of supported messaging solutions:*
+
+========================================  ===================================
+.. image:: /static/img/RabbitMQ-x153.jpg  .. image:: /static/img/zmq-x153.jpg
+========================================  ===================================
 """
 
 distributed = """
@@ -63,12 +84,28 @@ data = """
 Mine Your Data
 --------------
 
+TBD
+
+*A selection of supported databases:*
+
++-------------------------------------------+------------------------------------------+
+| .. image:: /static/img/riak-x153.jpg      | .. image:: /static/img/mongodb-x153.jpg  |
++-------------------------------------------+------------------------------------------+
+| .. image:: /static/img/cassandra-x153.jpg | .. image:: /static/img/postgres-x153.jpg |
++-------------------------------------------+                                          |
+|.. image:: /static/img/hadoop-x153.jpg     |                                          |
++-------------------------------------------+------------------------------------------+
 """
 
 aas = """
 Infrastructure and Platforms as Services
 ----------------------------------------
 
+*A selection of supported cloud platforms:*
+
+=============================================  =============================================
+.. image:: /static/img/OpenStackLogo-x153.jpg  .. image:: /static/img/cloud-foundry-x153.jpg
+=============================================  =============================================
 """
 
 ux = """

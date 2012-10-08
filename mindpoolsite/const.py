@@ -88,7 +88,7 @@ cloudTechLinks = [
     ("Frameworks", urls["frameworks"], LINK),
     ("Concurrency", urls["concurrency"], LINK),
     ("Messaging", urls["messaging"], LINK),
-    ("Distributed System", urls["distributed"], LINK),
+    ("Distributed Systems", urls["distributed"], LINK),
     ("Big Data", urls["big-data"], LINK),
     ("IaaS and PaaS", urls["aas"], LINK),
     ("User Experience", urls["ux"], LINK)]
