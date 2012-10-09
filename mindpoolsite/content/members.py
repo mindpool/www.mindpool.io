@@ -11,7 +11,7 @@ this site, you will need to enable cookies in your browser.
 """
 
 
-accountLoggedIn ="""
+accountLoggedIn = """
 Account Information
 ===================
 *for user %(displayName)s*
