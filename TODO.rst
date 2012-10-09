@@ -75,3 +75,5 @@ Optimization
 ------------
 
 * clean up new Memcache support
+
+* add an admin URL that we can hit to purge the memcache page
