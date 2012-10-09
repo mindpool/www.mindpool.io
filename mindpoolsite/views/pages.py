@@ -16,11 +16,11 @@ from mindpoolsite.views import basepages as base, fragments
 class MemCacheHelper(object):
     """
     """
-    def __init__(self, request, key, pageClass):
+    def __init__(self, request, pageClass):
         self.request = request
-        self.key = key
         self.pageClass = pageClass
         self.memcache = None
+        self.key = ""
 
     def getHTML(self, page):
         d = self.memcache.set(self.key, page)
@@ -47,23 +47,19 @@ class MemCacheHelper(object):
         d.addCallback(self.getMemPage)
         return d
 
-
-# XXX these parameters are ugly... we can probably fix this with a class
-def cacheOrStash(request, pageClass):
-    """
-    """
-    account = auth.getSessionAccount(request)
-    key = account.getKey(request.path)
-    # XXX change to debug log
-    print "Generated key:", key
-    memHelper = MemCacheHelper(request, key, pageClass)
-
-    client = protocol.ClientCreator(reactor, memcache.MemCacheProtocol)
-    d = client.connectTCP("localhost", memcache.DEFAULT_PORT)
-    d.addErrback(log.msg)
-    d.addCallback(memHelper.getPage)
-    d.addErrback(log.msg)
-    return d
+    def cacheOrStash(self):
+        """
+        """
+        self.key = auth.getSessionAccount(
+            self.request).getKey(self.request.path)
+        # XXX change to debug log
+        print "Generated key:", self.key
+        client = protocol.ClientCreator(reactor, memcache.MemCacheProtocol)
+        d = client.connectTCP("localhost", memcache.DEFAULT_PORT)
+        d.addErrback(log.msg)
+        d.addCallback(self.getPage)
+        d.addErrback(log.msg)
+        return d
 
 
 class SplashPage(base.BasePage):
