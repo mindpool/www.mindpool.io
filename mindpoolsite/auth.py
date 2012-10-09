@@ -23,22 +23,42 @@ class Account(object):
 
     def __init__(self, session):
         self.session = session
-        self.email = ""
+        self.primaryEmail = ""
         self.displayName = ""
-        self.role = ""
+        self.fullName = ""
+        self.associatedEmails = []
+        self.grantedRoles = []
         self.sessionID = ""
 
     def setEmail(self, email):
-        self.email = email
+        self.primaryEmail = email
+
+    def getEmail(self):
+        return self.primaryEmail
+
+    def addEmail(self, email):
+        if not self.getEmail():
+            self.setEmail(email)
+        else:
+            self.associatedEmails.append(email)
 
     def setDisplayName(self, name):
         self.displayName = name
 
-    def setRole(self, role):
-        self.role = role
+    def getDisplayName(self):
+        return self.displayName
 
-    def setSessionID(self, sessionID):
-        self.sessionID = sessionID
+    def addRole(self, role):
+        self.grantedRoles.append(role)
+
+    def getSessionID(self):
+        return self.session.uid
+
+    def getKey(self, data):
+        """
+        For use by memcached; can't be unicode.
+        """
+        return str("%s%s%s" % (data, self.sessionID, self.primaryEmail))
 
 
 class IPersona(Interface):
@@ -62,7 +82,6 @@ class AccountRealm(object):
     implements(IRealm)
 
     def requestAvatar(self, avatarId, mind, *interfaces):
-        print "In requestAvatar:", avatarId, mind, interfaces
         if IPersona in interfaces:
             # this is a good place to pull information from a DB
             avatar = Persona(avatarId)
@@ -72,9 +91,13 @@ class AccountRealm(object):
 
 
 def getSessionAccount(request):
-    session = request.getSession()
-    account = IAccount(session)
-    account.setSessionID(session.uid)
+    return IAccount(request.getSession())
+
+
+def createSessionAccount(request, avatar):
+    account = getSessionAccount(request)
+    account.setEmail(avatar.email)
+    account.setDisplayName(avatar.email.split("@")[0])
     return account
 
 

@@ -78,7 +78,7 @@ def cacheOrStash(request, pageClass, auth):
     """
     """
     account = auth.getSessionAccount(request)
-    key = "%s%s%s" % (request.path, account.sessionID, str(account.email))
+    key = account.getKey(request.path)
     # XXX change to debug log
     print "Generated key:", key
     memHelper = MemCacheHelper(request, key, pageClass)

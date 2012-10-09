@@ -36,7 +36,7 @@ class AuthFragment(BaseFragment):
     #   * if not, present the Persona login link
     def getLoggedInAccount(self, request):
         account = auth.getSessionAccount(request)
-        if account.email:
+        if account.getEmail():
             return account
 
     def getSignInLink(self):
@@ -50,7 +50,8 @@ class AuthFragment(BaseFragment):
     def getAuthedLink(self, account):
         return tags.span(
             tags.a(
-                tags.span(account.displayName, class_="persona-link-text"),
+                tags.span(
+                    account.getDisplayName(), class_="persona-link-text"),
                 href="/members/account", class_="account-link"),
             " | ",
             tags.a(

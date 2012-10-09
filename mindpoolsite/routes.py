@@ -42,7 +42,7 @@ def teams(request):
 
 @route(const.urls["members"])
 def members(request):
-    return pages.WhoPage()
+    return pages.MembersPage()
 
 
 @route(const.urls["cloud-tech"])
@@ -152,3 +152,8 @@ def login(request):
 @route(const.urls["logout"])
 def logout(request):
     return pages.LogoutPage(app, None)
+
+
+@route(const.urls["account"])
+def account(request):
+    return pages.AccountPage()

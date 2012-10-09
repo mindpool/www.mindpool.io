@@ -11,12 +11,15 @@ HEADER = 3
 
 urls = {
     "root": "/",
+    # services
     "services": "/services",
     "consulting": "/services/consulting",
     "training": "/services/training",
+    # people
     "people": "/people",
     "teams": "/people/teams",
     "members": "/people/members",
+    # cloud tech
     "cloud-tech": "/cloud",
     "langs": "/cloud/languages",
     "frameworks": "/cloud/frameworks",
@@ -27,10 +30,12 @@ urls = {
     "aas": "/cloud/aas",
     "sdn": "/cloud/sdn",
     "ux": "/cloud/ux",
+    # open source
     "open-source": "/opensource",
     "github": "http://mindpool.github.com/",
     "projects": "http://github.com/mindpool",
     "blog": "http://blog.mindpool.io",
+    # about
     "about": "/about",
     "who": "/about/who",
     "what": "/about/what",
@@ -38,9 +43,12 @@ urls = {
     "careers": "/about/careers",
     "social": "/about/social",
     "contact": "/about/contact",
-    "assets": "/static/",
+    # members area
     "login": "/login",
     "logout": "/logout",
+    "account": "/members/account",
+    # misc
+    "assets": "/static/",
     }
 
 
@@ -101,6 +109,11 @@ openSourceLinks = [
     ("Github Page", urls["github"], LINK),
     ("Sponsored Projects", urls["projects"], LINK),
     ("Dev Blog", urls["blog"], LINK)]
+
+
+membersLinks = [
+    ("Account", urls["account"], LINK),
+    ]
 
 
 contentTypes = {

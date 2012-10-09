@@ -28,7 +28,7 @@ var mindpoolLogin = function(assertion) {
     window.location.reload();
   });
   request.fail(function(jqXHR, status) {
-    console.log(jqXHR);
+    //console.log(jqXHR);
     console.log(status);
   });
 };
@@ -44,7 +44,7 @@ var mindpoolLogout = function() {
     window.location.reload();
   });
   request.fail(function(jqXHR, status) {
-    console.log(jqXHR);
+    //console.log(jqXHR);
     console.log(status);
   });
 };
@@ -53,9 +53,9 @@ var mindpoolLogout = function() {
 var mindpoolLoginOnClick = function() {
   //$("#persona-login").text("logging in...");
   return navigator.id.request({
-  siteName: "MindPool Members' Site"});
-  // XXX once we're running HTTPS, we can enable the siteLogo parameter
-  //siteLogo : "/static/img/mindpool-logo-tiny.png"});
+    siteName: "MindPool Members' Site"});
+    // XXX once we're running HTTPS, we can enable the siteLogo parameter
+    //siteLogo : "/static/img/mindpool-logo-tiny.png"});
 };
 
 
@@ -69,6 +69,5 @@ var mindpoolLogoutOnClick = function() {
 
 var mindpoolOnReady = function() {
   $("#persona-login-link").click(mindpoolLoginOnClick);
-  console.log($("#persona-logout-link"));
   $("#persona-logout-link").click(mindpoolLogoutOnClick);
 };

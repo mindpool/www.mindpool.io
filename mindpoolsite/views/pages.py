@@ -173,19 +173,17 @@ class ContactPage(AboutPage):
 class LoginPage(base.BaseResourcePage):
     """
     """
-    def writeLoginResults(self, results, request):
+    def success(self, results, request):
         """
         This callback is only fired upon successful BrowserID login.
         """
         interface, avatar, logout = results
-        account = auth.getSessionAccount(request)
-        account.setEmail(avatar.email)
-        account.setDisplayName(avatar.email.split("@")[0])
+        account = auth.createSessionAccount(request, avatar)
         request.setHeader("content-type", "application/json")
         request.write(json.dumps({
             "results": {
-                "email": account.email,
-                "displayName": account.displayName,
+                "email": account.getEmail(),
+                "displayName": account.getDisplayName(),
             }
         }))
         request.finish()
@@ -195,7 +193,7 @@ class LoginPage(base.BaseResourcePage):
         credentials = checker.BrowserIDAssertion(body["assertion"])
         d = self.portal.login(credentials, None, auth.IPersona)
         d.addErrback(self.handleError)
-        d.addCallback(self.writeLoginResults, request)
+        d.addCallback(self.success, request)
         return NOT_DONE_YET
 
 
@@ -205,3 +203,22 @@ class LogoutPage(base.BaseResourcePage):
     def render(self, request):
         request.getSession().expire()
         return json.dumps({"results": "session expired (logout)"})
+
+
+class AccountPage(base.ContentPage):
+    """
+    """
+    #sidebarLinks = const.membersLinks
+
+    def getContentDataTemplate(self, request):
+        account = auth.getSessionAccount(request)
+        template = content.members.accountAnonymous
+        if account.getEmail():
+            template = content.members.accountLoggedIn
+        return template % {
+            "primaryEmail": account.getEmail(),
+            "displayName": account.getDisplayName(),
+            "fullName": account.fullName,
+            "associatedEmails": account.associatedEmails,
+            "grantedRoles": account.grantedRoles,
+            "sessionID": account.getSessionID()}

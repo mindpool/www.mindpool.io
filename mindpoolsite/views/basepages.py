@@ -79,14 +79,36 @@ class ContentPage(BasePage):
     """
     contentType = const.contentTypes["rst"]
     contentData = ""
+    contentDataTemplate = ""
     _cachedContent = ""
 
-    def renderContentData(self):
+    def getContentData(self, request):
+        pass
+
+    def getContentDataTemplate(self, request):
+        pass
+
+    def getContent(self, request, templateData=""):
+        if self.contentData:
+            content = self.contentData
+        elif self.contentDataTemplate:
+            content = self.contentDataTemplate
+            if templateData:
+                content = content % templateData
+        else:
+            content = self.getContentData(request)
+            if not content:
+                content = self.getContentDataTemplate(request)
+                if content and templateData:
+                    content = content % templateData
+        return content
+
+    def renderContentData(self, request):
         if not self._cachedContent:
             if self.contentType == const.contentTypes["rst"]:
-                self._cachedContent = ReSTContent(self.contentData)
+                self._cachedContent = ReSTContent(self.getContent(request))
             elif self.contentType == const.contentTypes["html"]:
-                self._cachedContent = self.contentData
+                self._cachedContent = self.getContent(request)
         return self._cachedContent
 
     @renderer
@@ -95,7 +117,7 @@ class ContentPage(BasePage):
 
     @renderer
     def contentarea(self, request, tag):
-        return fragments.ContentFragment(self.renderContentData())
+        return fragments.ContentFragment(self.renderContentData(request))
 
 
 class SidebarPage(ContentPage):
@@ -108,4 +130,4 @@ class SidebarPage(ContentPage):
     @renderer
     def contentarea(self, request, tag):
         return fragments.ContentFragment(
-            self.renderContentData(), self.sidebarLinks)
+            self.renderContentData(request), self.sidebarLinks)
