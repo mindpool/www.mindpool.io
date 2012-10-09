@@ -47,7 +47,7 @@ def members(request):
 
 @route(const.urls["cloud-tech"])
 def cloudTech(request):
-    return pages.MemCacheHelper(request, pages.CloudTechPage).cacheOrStash()
+    return pages.MemCacheHelper(request, pages.CloudTechPage).getPage()
 
 
 @route(const.urls["langs"])
@@ -97,7 +97,7 @@ def ux(request):
 
 @route(const.urls["open-source"])
 def openSource(request):
-    return pages.MemCacheHelper(request, pages.OpenSourcePage).cacheOrStash()
+    return pages.MemCacheHelper(request, pages.OpenSourcePage).getPage()
 
 
 @route(const.urls["about"])

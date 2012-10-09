@@ -22,12 +22,12 @@ class MemCacheHelper(object):
         self.memcache = None
         self.key = ""
 
-    def getHTML(self, page):
+    def setPage(self, page):
         d = self.memcache.set(self.key, page)
         d.addErrback(log.msg)
         return page
 
-    def getMemPage(self, result):
+    def getOrFlattenPage(self, result):
         flags, page = result
         if page:
             # XXX change to debug log
@@ -37,17 +37,17 @@ class MemCacheHelper(object):
         print "No page in cache; getting and setting ..."
         d = flattenString(self.request, self.pageClass())
         d.addErrback(log.msg)
-        d.addCallback(self.getHTML)
+        d.addCallback(self.setPage)
         return d
 
-    def getPage(self, mem):
+    def pokeMemCache(self, mem):
         self.memcache = mem
         d = self.memcache.get(self.key)
         d.addErrback(log.msg)
-        d.addCallback(self.getMemPage)
+        d.addCallback(self.getOrFlattenPage)
         return d
 
-    def cacheOrStash(self):
+    def getPage(self):
         """
         """
         self.key = auth.getSessionAccount(
@@ -57,7 +57,7 @@ class MemCacheHelper(object):
         client = protocol.ClientCreator(reactor, memcache.MemCacheProtocol)
         d = client.connectTCP("localhost", memcache.DEFAULT_PORT)
         d.addErrback(log.msg)
-        d.addCallback(self.getPage)
+        d.addCallback(self.pokeMemCache)
         d.addErrback(log.msg)
         return d
 
