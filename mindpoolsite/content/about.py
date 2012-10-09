@@ -49,8 +49,21 @@ If you want to keep tabs on the MindPool, here are some links:
 
 
 jobs = """
-Careers in the MindPool
------------------------
+Swimming in the MindPool
+------------------------
+
+If you're an extraordinary software or systems engineer with smooth people
+skills and would enjoy working with an adventurous crew that's living in the
+future, you've come to the right place ;-)
+
+Send an email to the address below with a copy of your recent resume or a
+LinkedIn URL and tell us a little something about yourself that's not in the
+resume...
+
+`jobs@mindpool.io`_
+
+.. Links
+.. _jobs@mindpool.io: mailto:jobs@mindpool.io
 
 """
 
@@ -72,6 +85,8 @@ How to Reach Us
 
 * `Training`_
 
+* `Career Opportunities`_
+
 
 *Mailing Address*::
 
@@ -85,4 +100,6 @@ How to Reach Us
 .. _General Sales: mailto:sales@mindpool.io
 .. _Consulting: mailto:consulting@mindpool.io
 .. _Training: mailto:training@mindpool.io
+.. _Career Opportunities: mailto:jobs@mindpool.io
+
 """
