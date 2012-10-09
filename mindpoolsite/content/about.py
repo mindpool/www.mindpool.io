@@ -2,6 +2,39 @@ who = """
 Who We Are
 ----------
 
+    "Henceforth, we're all to be known as Team Alpha Super Awesome Cool
+    Dynamite Wolf Squadron."
+
+What we're not:
+
+* We're not looking for exit strategies.
+
+* We're not in business to stroke our egos, get famous, or make one beeellion
+  dollars.
+
+* We're not another group of engineers that's "gone independent".
+
+What we are:
+
+* We're a *services* company exploring new frontiers in global software
+  engineering.
+
+* We're seasoned entrepreneurs with many start-ups under our collective belt,
+  but who wanted to work on fresh ideas at a bigger scale.
+
+* We are engineers who share a vision of the future, one where MindPool is the
+  first logical step toward our goals.
+
+* We are altruists who actively pursue projects that are focused on improving
+  our world, now.
+
+* We're green. Super-green.
+
+If you're curious and want to know more, be sure to check out our `Culture`_
+page.
+
+.. Links
+.. _Culture: /about/culture
 """
 
 
@@ -9,6 +42,21 @@ what = """
 What We Do
 ----------
 
+We have placed our collective technical expertise at the disposal of
+organizations that are interested in engaging with dynamic, creative thinkers
+to solve difficult technical problems. This, in a nutshell, is what we do.
+
+Here's another view: we bring up clouds, integreate with existing, systems, put
+web services and enterprise messaging in place, create bespoke software meeting
+your exact needs, manager projects, provide coaching for becoming contributing
+members of various open source communities, and offer a wide range of technical
+training.
+
+The tools that we use and the knowledge that we have are diplayed in other
+pages on the site, on our blog, or in our code repositories. But what you won't
+find there is that our skills and experience is not *all* you get. We bring our
+founding vision, our work ethic, our natural camaraderie, and our company
+culture to every project.
 """
 
 
