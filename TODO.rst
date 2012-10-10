@@ -52,8 +52,8 @@ Authentication / Authorization
 Members' Area
 -------------
 
-* Need to add a /members/account page displaying what resources users have
-  access to
+* need to add links for areas of the site that logged in users have been
+  granted access to
 
 
 Data
@@ -69,7 +69,5 @@ Data
 
 Optimization
 ------------
-
-* clean up new Memcache support
 
 * add an admin URL that we can hit to purge the memcache page
