@@ -4,7 +4,7 @@ from twisted.cred.portal import IRealm
 from twisted.python.components import registerAdapter
 from twisted.web.server import Session
 
-from mindpool import iface
+from mindpoolsite import iface
 
 
 # XXX this likely will go wherever the datamodels end up ... or maybe I'll
