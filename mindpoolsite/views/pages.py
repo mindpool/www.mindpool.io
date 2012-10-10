@@ -9,7 +9,7 @@ from twisted.web.template import flattenString, renderer
 
 from browserid import checker
 
-from mindpoolsite import auth, config, content, urls
+from mindpoolsite import auth, config, content, iface, urls
 from mindpoolsite.views import basepages as base, fragments
 
 
@@ -260,7 +260,7 @@ class LoginPage(base.BaseResourcePage):
     def render(self, request):
         body = json.load(request.content)
         credentials = checker.BrowserIDAssertion(body["assertion"])
-        d = self.portal.login(credentials, None, auth.IPersona)
+        d = self.portal.login(credentials, None, iface.IPersona)
         d.addErrback(self.handleError)
         d.addCallback(self.success, request)
         return NOT_DONE_YET

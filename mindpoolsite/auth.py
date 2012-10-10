@@ -70,7 +70,7 @@ class AccountRealm(object):
     implements(IRealm)
 
     def requestAvatar(self, avatarId, mind, *interfaces):
-        if IPersona in interfaces:
+        if iface.IPersona in interfaces:
             # this is a good place to pull information from a DB
             avatar = Persona(avatarId)
             logout = None

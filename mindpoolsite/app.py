@@ -38,6 +38,8 @@ class Options(usage.Options):
     optFlags = [
         ["debug", "b", "Enable debugging"],
         ["cache", "c", "Enable the use of memcache"],
+        # XXX add support for the following
+        #["purge-cache", None, "Purge memcache before starting"],
     ]
 
     optParameters = [
