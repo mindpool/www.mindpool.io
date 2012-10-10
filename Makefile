@@ -110,7 +110,7 @@ lint:
 	-pep8 $(LIB)
 
 start-dev: css lint $(CERTS)
-	$(TWISTD) -n mindpool-site
+	$(TWISTD) -n mindpool-site --debug --cache
 
 start-placeholder:
 	$(TWISTD) web -p 9080 --path=./static/html/placeholder/
