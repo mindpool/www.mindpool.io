@@ -46,6 +46,29 @@ on a sysmte that doesn't have pypy installed, you can do this::
 
   $ PYTHON=`which python` TWISTD=`which twistd` make start-dev
 
+Using the Twisted Plugin
+------------------------
+
+The ``Makefile`` is provided for convenience, but one also has the option of
+overriding various defaults for the site pluging when using it directly. For
+instance:
+
+* **enable caching** - ``twistd -n mindpool-site --cache
+
+* **enable debugging** - ``twistd -n mindpool-site --debug
+
+* **change the port** - ``twistd -n mindpool-site --webport 10080
+
+As one might expect, you can do them all at the same time ;-)
+
+::
+
+  $ twistd -n mindpool-site --cache --debug --webport 10080
+
+You can also start in daemonized mode: ``twistd mindpool-site``. To stop the
+daemon, simply do: ``twistd mindpool-site stop``. Note that in damonized mode
+you can still use all of the plugin options, just as above.
+
 Managing Content
 ================
 
