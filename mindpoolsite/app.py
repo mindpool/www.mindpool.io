@@ -6,7 +6,7 @@ from twisted.web import server
 
 from klein import resource
 
-from mindpoolsite import config, meta, routes
+from mindpoolsite import config, const, meta, routes
 from mindpoolsite.scripts import sync
 
 
@@ -16,20 +16,6 @@ class SubCommandOptions(usage.Options):
 
     Can also be used directly for subcommands that don't have options.
     """
-
-
-class UpdateSourceOptions(SubCommandOptions):
-    """
-    """
-    optParameters = [
-        ["language", "l", None,
-         ("the language code whose source files you want to update; "
-          "see 'twistd tharsk language' for the 3-letter codes of the "
-          "supported languages")],
-        ["action", "a", None,
-         ("the type of update action to perform; valid options are "
-          "'parse-wordlist' and 'add-keywords'")],
-    ]
 
 
 class UpdateDBOptions(SubCommandOptions):
@@ -49,23 +35,34 @@ class UpdateDBOptions(SubCommandOptions):
 class Options(usage.Options):
     """
     """
+    optFlags = [
+        ["debug", "b", "Enable debugging"],
+        ["cache", "c", "Enable the use of memcache"],
+    ]
+
     optParameters = [
         ["webport", "p", config.defaultPort,
          "The port to listen for HTTP requests"],
+        # XXX add an option for setting the session timeout
+        # XXX add a persona audience parameter
     ]
 
     subCommands = [
         ["stop", None, SubCommandOptions,
          "Stop the server"],
-        ["update-db", None, UpdateDBOptions,
+        ["update-db", None, UpdateDBOptionss
          "update one of the language databases"],
-        ["update-source", None, UpdateSourceOptions,
-         "update one of the language source files"],
     ]
 
     def parseOptions(self, options):
         usage.Options.parseOptions(self, options)
-        # check options
+        # override debug configuration if the option is passed
+        if self.opts["debug"]:
+            config.debug = True
+        # override the caching configuration if the option is passed
+        if self.opts["cache"]:
+            config.cache = True
+        # check options for subcommands
         if not self.subCommand:
             return
         elif self.subCommand == "stop":

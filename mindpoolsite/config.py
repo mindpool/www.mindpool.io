@@ -1,3 +1,5 @@
+debug = False
+cache = False
 defaultPort = 9080
 domain = "localhost"
 pesonaAudience = "http://%s:%s" % (domain, defaultPort)

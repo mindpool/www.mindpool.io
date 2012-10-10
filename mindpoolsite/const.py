@@ -1,3 +1,4 @@
+DEFAULT = None
 LINK = 0
 DROPDOWN = 1
 DIVIDER = 2

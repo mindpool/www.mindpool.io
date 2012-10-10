@@ -4,13 +4,12 @@ import json
 from twisted.internet import protocol, reactor
 from twisted.protocols import memcache
 from twisted.python import log
-#from twisted.web import resource
 from twisted.web.server import NOT_DONE_YET
 from twisted.web.template import flattenString, renderer
 
 from browserid import checker
 
-from mindpoolsite import auth, content, urls
+from mindpoolsite import auth, config, content, urls
 from mindpoolsite.views import basepages as base, fragments
 
 
@@ -31,11 +30,11 @@ class MemCacheHelper(object):
     def getOrFlattenPage(self, result):
         flags, page = result
         if page:
-            # XXX change to debug log
-            print "Cache hit; skipping page generation ..."
+            if config.debug:
+                log.msg("Cache hit; skipping page generation ...")
             return page
-        # XXX change to debug log
-        print "No page in cache; getting and setting ..."
+        if config.debug:
+            log.msg("No page in cache; getting and setting ...")
         d = flattenString(self.request, self.pageInstance)
         d.addErrback(log.msg)
         d.addCallback(self.setPage)
@@ -53,8 +52,8 @@ class MemCacheHelper(object):
         """
         self.key = auth.getSessionAccount(
             self.request).getKey(self.request.path)
-        # XXX change to debug log
-        print "Generated key:", self.key
+        if config.debug:
+            log.msg("Generated key:", self.key)
         client = protocol.ClientCreator(reactor, memcache.MemCacheProtocol)
         d = client.connectTCP("localhost", memcache.DEFAULT_PORT)
         d.addErrback(log.msg)
@@ -69,7 +68,10 @@ def cache(routeFunction):
     """
     @functools.wraps(routeFunction)
     def wrapper(request):
-        return MemCacheHelper(request, routeFunction(request)).getPage()
+        pageInstance = routeFunction(request)
+        if not config.cache:
+            return pageInstance
+        return MemCacheHelper(request, pageInstance).getPage()
     return wrapper
 
 

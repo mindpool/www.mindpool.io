@@ -21,6 +21,8 @@ Fit and Finish
 
   http://twitter.github.com/bootstrap/javascript.html#carousel
 
+* add session timeout command line option
+
 
 Content Management
 ------------------
