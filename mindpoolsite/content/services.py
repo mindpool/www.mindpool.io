@@ -28,6 +28,20 @@ consulting = """
 Consulting
 ----------
 
+Do you need help getting a cloud up and running? Is your organization moving to
+SOA? Are you converting legacy applications to web services? Are you interested
+in exploring ways in which you can leverage the vast amounts of data your
+systems are saving?
+
+
+Are you in too deep, and need to augment your engineering teams with
+experienced developers who will hit the ground running?
+
+Did this only whet your appetite? Then take a look at the `cloud
+technologies`_ around which we provide consulting services.
+
+.. Links
+.. _cloud technologies: /cloud-tech
 """
 
 
