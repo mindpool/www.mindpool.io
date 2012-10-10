@@ -35,4 +35,17 @@ training = """
 Training
 --------
 
+Education is a passion we share at MindPool. This is equal only to our passion
+for contributing to an improved world through better integrations of new
+technologies and the systems that they support.
+
+When we hand off a completed project to you, we want you to be thoroughly
+delighted. Sometimes this means ensuring that your team knows how to maintain
+what we've delivered, or empowering them add new features over time.
+
+Some organizations have contacted us simply for our decades of expertise. As
+they were building out their own teams, we provided instruction on their
+chosen technologies.
+
+In short, we can provide the desired training your teams may need.
 """

@@ -74,7 +74,7 @@ def cache(routeFunction):
     def wrapper(request):
         pageClass = routeFunction(request)
         if not config.cache:
-            return pageClass
+            return pageClass()
         return MemCacheHelper(request, pageClass).getPage()
     return wrapper
 
