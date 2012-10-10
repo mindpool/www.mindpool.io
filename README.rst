@@ -52,13 +52,15 @@ Managing Content
 Adding URLs, Pages, and Content
 -------------------------------
 
-#. Edit ``mindpoolsite.const.urls``.
+#. Edit ``mindpoolsite.urls.urls``.
 
-#. Add the new URL to whatever menus are appropriate in the same ``const``
+#. Add the new URL to whatever menus are appropriate in the same ``urls``
    module.
 
 #. Make the new URL routable by updating ``mindpoolsite.routes`` with a new
    function that instantiates a page class appropriate for your URL.
+
+#. If you new page can be cached, add the ``@pages.cache`` decorator.
 
 #. Add a new page class to ``mindpoolsite.views.pages``, subclassing the
    appropriate parent class, defining the appropriate HTML content (see the

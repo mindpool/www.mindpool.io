@@ -3,7 +3,7 @@ from datetime import datetime
 
 from twisted.web.template import renderer, tags
 
-from mindpoolsite import const, content, meta
+from mindpoolsite import config, const, content, meta, urls
 from mindpoolsite.views import basefragments as base
 
 
@@ -29,14 +29,14 @@ class TopNavFragment(base.BaseTopNavFragment):
     """
     """
     templateFile = "fragments/topnav.xml"
-    navLinks = const.topNavLinks
+    navLinks = urls.topNavLinks
 
 
 class SplashTopNavFragment(base.BaseTopNavFragment):
     """
     """
     templateFile = "fragments/splashtopnav.xml"
-    navLinks = const.splashTopNavLinks
+    navLinks = urls.splashTopNavLinks
 
 
 class SplashFragment(base.BaseFragment):
@@ -47,13 +47,13 @@ class SplashFragment(base.BaseFragment):
     @renderer
     def data(self, request, tag):
         tag.fillSlots(
-            tagline=const.tagline,
+            tagline=config.tagline,
             consulting=content.splash.consulting,
             training=content.splash.training,
             teams=content.splash.teams,
-            consultingURL=const.urls["consulting"],
-            trainingURL=const.urls["training"],
-            teamsURL=const.urls["teams"]
+            consultingURL=urls.map["consulting"],
+            trainingURL=urls.map["training"],
+            teamsURL=urls.map["teams"]
             )
         return tag
 
@@ -136,7 +136,7 @@ class FooterFragment(base.BaseFragment):
 
     def getCities(self):
         elements = []
-        for index, city in enumerate(sorted(const.officeCities)):
+        for index, city in enumerate(sorted(config.officeCities)):
             if index >= 1:
                 elements.append("·")
             elements.append(tags.span(city, class_="city"))
@@ -145,7 +145,7 @@ class FooterFragment(base.BaseFragment):
     def getCopyright(self):
         year = meta.startingYear
         thisYear = datetime.now().year
-        mailTo = "mailto:%s" % const.salesEmail
+        mailTo = "mailto:%s" % config.salesEmail
         if thisYear > year:
             year = "%s - %s" % (year, thisYear)
         return ("© %s " % year, tags.a(meta.author, href=mailTo))

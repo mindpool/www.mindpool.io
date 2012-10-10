@@ -1,6 +1,6 @@
 from twisted.web.template import renderer, tags
 
-from mindpoolsite import auth, const
+from mindpoolsite import auth, const, urls
 from mindpoolsite.views import loaders
 
 
@@ -9,7 +9,7 @@ class BaseFragment(loaders.TemplateLoader):
     """
     @renderer
     def getRootURL(self, request, tag):
-        return const.urls["root"]
+        return urls.map["root"]
 
     def _isInSection(self, request, sectionURL, start=1, end=2):
         current = request.path.split("/")[start:end]
@@ -99,7 +99,7 @@ class BaseTopNavFragment(BaseFragment):
     def getDropdown(self, title, url, cssClass):
         elements = []
         if title == "About":
-            links = const.aboutDropDown
+            links = urls.aboutDropDown
         for text, url, type in links:
             if type == const.DIVIDER:
                 element = tags.li(class_="divider")

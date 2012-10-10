@@ -6,179 +6,179 @@ from browserid import checker
 import klein
 from klein.app import _globalKleinApp as app
 
-from mindpoolsite import auth, const, utils
+from mindpoolsite import auth, config, urls
 from mindpoolsite.views import pages
 
 
-@klein.route(const.urls["root"])
+@klein.route(urls.map["root"])
 @pages.cache
 def root(request):
     return pages.SplashPage()
 
 
-@klein.route(const.urls["services"])
+@klein.route(urls.map["services"])
 @pages.cache
 def services(request):
     return pages.ServicesPage()
 
 
-@klein.route(const.urls["consulting"])
+@klein.route(urls.map["consulting"])
 @pages.cache
 def consulting(request):
     return pages.ConsultingPage()
 
 
-@klein.route(const.urls["training"])
+@klein.route(urls.map["training"])
 @pages.cache
 def training(request):
     return pages.TrainingPage()
 
 
-@klein.route(const.urls["people"])
+@klein.route(urls.map["people"])
 @pages.cache
 def people(request):
     return pages.PeoplePage()
 
 
-@klein.route(const.urls["teams"])
+@klein.route(urls.map["teams"])
 @pages.cache
 def teams(request):
     return pages.TeamsPage()
 
 
-@klein.route(const.urls["members"])
+@klein.route(urls.map["members"])
 @pages.cache
 def members(request):
     return pages.MembersPage()
 
 
-@klein.route(const.urls["cloud-tech"])
+@klein.route(urls.map["cloud-tech"])
 @pages.cache
 def cloudTech(request):
     return pages.CloudTechPage()
 
 
-@klein.route(const.urls["langs"])
+@klein.route(urls.map["langs"])
 @pages.cache
 def langs(request):
     return pages.LangsPage()
 
 
-@klein.route(const.urls["frameworks"])
+@klein.route(urls.map["frameworks"])
 @pages.cache
 def frameworks(request):
     return pages.FrameworksPage()
 
 
-@klein.route(const.urls["concurrency"])
+@klein.route(urls.map["concurrency"])
 @pages.cache
 def concurrency(request):
     return pages.ConcurrencyPage()
 
 
-@klein.route(const.urls["messaging"])
+@klein.route(urls.map["messaging"])
 @pages.cache
 def messaging(request):
     return pages.MessagingPage()
 
 
-@klein.route(const.urls["distributed"])
+@klein.route(urls.map["distributed"])
 @pages.cache
 def distributed(request):
     return pages.DistributedPage()
 
 
-@klein.route(const.urls["big-data"])
+@klein.route(urls.map["big-data"])
 @pages.cache
 def data(request):
     return pages.BigDataPage()
 
 
-@klein.route(const.urls["aas"])
+@klein.route(urls.map["aas"])
 @pages.cache
 def aas(request):
     return pages.AsAServicePage()
 
 
-@klein.route(const.urls["sdn"])
+@klein.route(urls.map["sdn"])
 @pages.cache
 def sdn(request):
     return pages.SDNPage()
 
 
-@klein.route(const.urls["ux"])
+@klein.route(urls.map["ux"])
 @pages.cache
 def ux(request):
     return pages.UXPage()
 
 
-@klein.route(const.urls["open-source"])
+@klein.route(urls.map["open-source"])
 @pages.cache
 def openSource(request):
     return pages.OpenSourcePage()
 
 
-@klein.route(const.urls["about"])
+@klein.route(urls.map["about"])
 @pages.cache
 def about(request):
     return pages.AboutPage()
 
 
-@klein.route(const.urls["who"])
+@klein.route(urls.map["who"])
 @pages.cache
 def who(request):
     return pages.WhoPage()
 
 
-@klein.route(const.urls["what"])
+@klein.route(urls.map["what"])
 @pages.cache
 def what(request):
     return pages.WhatPage()
 
 
-@klein.route(const.urls["culture"])
+@klein.route(urls.map["culture"])
 @pages.cache
 def culture(request):
     return pages.CulturePage()
 
 
-@klein.route(const.urls["social"])
+@klein.route(urls.map["social"])
 @pages.cache
 def social(request):
     return pages.SocialLinksPage()
 
 
-@klein.route(const.urls["careers"])
+@klein.route(urls.map["careers"])
 @pages.cache
 def careers(request):
     return pages.JobsPage()
 
 
-@klein.route(const.urls["contact"])
+@klein.route(urls.map["contact"])
 @pages.cache
 def contact(request):
     return pages.ContactPage()
 
 
-@klein.route(const.urls["assets"])
+@klein.route(urls.map["assets"])
 def assets(request):
-    return static.File(const.assetsDirectory)
+    return static.File(config.assetsDirectory)
 
 
-@klein.route(const.urls["login"], methods=["POST"])
+@klein.route(urls.map["login"], methods=["POST"])
 def login(request):
     realm = auth.AccountRealm()
     loginPortal = portal.Portal(realm)
     loginPortal.registerChecker(checker.BrowserIDChecker(
-        const.pesonaAudience, certsDir=const.certsDirectory))
+        config.pesonaAudience, certsDir=config.certsDirectory))
     return pages.LoginPage(app, loginPortal)
 
 
-@klein.route(const.urls["logout"])
+@klein.route(urls.map["logout"])
 def logout(request):
     return pages.LogoutPage(app, None)
 
 
-@klein.route(const.urls["account"])
+@klein.route(urls.map["account"])
 def account(request):
     return pages.AccountPage()

@@ -5,7 +5,7 @@ from zope.interface import implements
 
 from klein.resource import KleinResource
 
-from mindpoolsite import const, utils
+from mindpoolsite import config, urls, utils
 from mindpoolsite.views import fragments, loaders
 
 
@@ -21,7 +21,7 @@ class BasePage(loaders.TemplateLoader):
     @renderer
     def bodyData(self, request, tag):
         bodyClass = ""
-        if request.path in const.splashAliases:
+        if request.path in urls.splashAliases:
             bodyClass = "splash"
         else:
             bodyClass = "content-page"
@@ -77,7 +77,7 @@ class ReSTContent(object):
 class ContentPage(BasePage):
     """
     """
-    contentType = const.contentTypes["rst"]
+    contentType = config.contentTypes["rst"]
     contentData = ""
     contentDataTemplate = ""
     _cachedContent = ""
@@ -105,9 +105,9 @@ class ContentPage(BasePage):
 
     def renderContentData(self, request):
         if not self._cachedContent:
-            if self.contentType == const.contentTypes["rst"]:
+            if self.contentType == config.contentTypes["rst"]:
                 self._cachedContent = ReSTContent(self.getContent(request))
-            elif self.contentType == const.contentTypes["html"]:
+            elif self.contentType == config.contentTypes["html"]:
                 self._cachedContent = self.getContent(request)
         return self._cachedContent
 

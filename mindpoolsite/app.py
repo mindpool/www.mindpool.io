@@ -6,7 +6,7 @@ from twisted.web import server
 
 from klein import resource
 
-from mindpoolsite import const, meta, routes
+from mindpoolsite import config, meta, routes
 from mindpoolsite.scripts import sync
 
 
@@ -50,7 +50,7 @@ class Options(usage.Options):
     """
     """
     optParameters = [
-        ["webport", "p", const.defaultPort,
+        ["webport", "p", config.defaultPort,
          "The port to listen for HTTP requests"],
     ]
 
@@ -78,7 +78,7 @@ class MindPoolSession(server.Session):
     """
     """
     # let's have our sessions last a full 24 hours
-    sessionTimeout = const.sessionTimeout
+    sessionTimeout = config.sessionTimeout
 
 
 def makeService(options):

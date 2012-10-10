@@ -10,7 +10,7 @@ from twisted.web.template import flattenString, renderer
 
 from browserid import checker
 
-from mindpoolsite import auth, const, content
+from mindpoolsite import auth, content, urls
 from mindpoolsite.views import basepages as base, fragments
 
 
@@ -88,7 +88,7 @@ class SplashPage(base.BasePage):
 class ServicesPage(base.SidebarPage):
     """
     """
-    sidebarLinks = const.servicesLinks
+    sidebarLinks = urls.servicesLinks
     contentData = content.services.services
 
 
@@ -107,7 +107,7 @@ class TrainingPage(ServicesPage):
 class PeoplePage(base.SidebarPage):
     """
     """
-    sidebarLinks = const.peopleLinks
+    sidebarLinks = urls.peopleLinks
     contentData = content.people.people
 
 
@@ -127,7 +127,7 @@ class CloudTechPage(base.SidebarPage):
     """
     """
     contentData = content.cloudtech.cloudtech
-    sidebarLinks = const.cloudTechLinks
+    sidebarLinks = urls.cloudTechLinks
 
 
 class LangsPage(CloudTechPage):
@@ -188,13 +188,13 @@ class OpenSourcePage(base.SidebarPage):
     """
     """
     contentData = content.opensource.opensource
-    sidebarLinks = const.openSourceLinks
+    sidebarLinks = urls.openSourceLinks
 
 
 class AboutPage(base.SidebarPage):
     """
     """
-    sidebarLinks = const.aboutLinks
+    sidebarLinks = urls.aboutLinks
 
 
 class WhoPage(AboutPage):
@@ -271,7 +271,7 @@ class LogoutPage(base.BaseResourcePage):
 class AccountPage(base.ContentPage):
     """
     """
-    #sidebarLinks = const.membersLinks
+    #sidebarLinks = urls.membersLinks
 
     def getContentDataTemplate(self, request):
         account = auth.getSessionAccount(request)
