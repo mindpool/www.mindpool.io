@@ -78,3 +78,5 @@ Optimization
 ------------
 
 * add an admin URL that we can hit to purge the memcache page
+
+* don't have the page classes instantiated unless they need to be

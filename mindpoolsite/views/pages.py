@@ -41,6 +41,10 @@ class MemCacheHelper(object):
         return d
 
     def pokeMemCache(self, mem):
+        if not mem:
+            if config.debug:
+                log.msg("Cannot connect to memcache server!")
+            return self.pageInstance
         self.memcache = mem
         d = self.memcache.get(self.key)
         d.addErrback(log.msg)
