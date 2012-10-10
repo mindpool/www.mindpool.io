@@ -16,6 +16,11 @@ Fit and Finish
 
 * add a custom 401 page (and other permissions pages)
 
+* add a caruosel to the front page that highlights some of our expertise
+  (starting with the main logo)
+
+  http://twitter.github.com/bootstrap/javascript.html#carousel
+
 
 Content Management
 ------------------
