@@ -60,7 +60,7 @@ topNavLinks = splashTopNavLinks
 aboutDropDown = [
     ("Who We Are", map["who"], const.LINK),
     ("What We Do", map["what"], const.LINK),
-    ("Our Culture", map["culture"], const.LINK),
+    #("Our Culture", map["culture"], const.LINK),
     ("Social Links", map["social"], const.LINK),
     ("Careers", map["careers"], const.LINK),
     ("Contact Us", map["contact"], const.LINK),
