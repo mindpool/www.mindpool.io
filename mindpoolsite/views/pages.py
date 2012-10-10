@@ -1,3 +1,4 @@
+import functools
 import json
 
 from twisted.internet import protocol, reactor
@@ -60,6 +61,16 @@ class MemCacheHelper(object):
         d.addCallback(self.pokeMemCache)
         d.addErrback(log.msg)
         return d
+
+
+def cache(routeFunction):
+    """
+    A decorator for caching pages.
+    """
+    @functools.wraps(routeFunction)
+    def wrapper(request):
+        return MemCacheHelper(request, routeFunction(request)).getPage()
+    return wrapper
 
 
 class SplashPage(base.BasePage):

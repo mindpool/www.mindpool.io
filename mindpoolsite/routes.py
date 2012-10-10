@@ -3,146 +3,169 @@ from twisted.web import static
 
 from browserid import checker
 
-from klein import route
+import klein
 from klein.app import _globalKleinApp as app
 
 from mindpoolsite import auth, const, utils
 from mindpoolsite.views import pages
 
 
-@route(const.urls["root"])
+@klein.route(const.urls["root"])
+@pages.cache
 def root(request):
     return pages.SplashPage()
 
 
-@route(const.urls["services"])
+@klein.route(const.urls["services"])
+@pages.cache
 def services(request):
     return pages.ServicesPage()
 
 
-@route(const.urls["consulting"])
+@klein.route(const.urls["consulting"])
+@pages.cache
 def consulting(request):
     return pages.ConsultingPage()
 
 
-@route(const.urls["training"])
+@klein.route(const.urls["training"])
+@pages.cache
 def training(request):
     return pages.TrainingPage()
 
 
-@route(const.urls["people"])
+@klein.route(const.urls["people"])
+@pages.cache
 def people(request):
     return pages.PeoplePage()
 
 
-@route(const.urls["teams"])
+@klein.route(const.urls["teams"])
+@pages.cache
 def teams(request):
     return pages.TeamsPage()
 
 
-@route(const.urls["members"])
+@klein.route(const.urls["members"])
+@pages.cache
 def members(request):
     return pages.MembersPage()
 
 
-@route(const.urls["cloud-tech"])
+@klein.route(const.urls["cloud-tech"])
+@pages.cache
 def cloudTech(request):
-    page = pages.CloudTechPage()
-    return pages.MemCacheHelper(request, page).getPage()
+    return pages.CloudTechPage()
 
 
-@route(const.urls["langs"])
+@klein.route(const.urls["langs"])
+@pages.cache
 def langs(request):
     return pages.LangsPage()
 
 
-@route(const.urls["frameworks"])
+@klein.route(const.urls["frameworks"])
+@pages.cache
 def frameworks(request):
     return pages.FrameworksPage()
 
 
-@route(const.urls["concurrency"])
+@klein.route(const.urls["concurrency"])
+@pages.cache
 def concurrency(request):
     return pages.ConcurrencyPage()
 
 
-@route(const.urls["messaging"])
+@klein.route(const.urls["messaging"])
+@pages.cache
 def messaging(request):
     return pages.MessagingPage()
 
 
-@route(const.urls["distributed"])
+@klein.route(const.urls["distributed"])
+@pages.cache
 def distributed(request):
     return pages.DistributedPage()
 
 
-@route(const.urls["big-data"])
+@klein.route(const.urls["big-data"])
+@pages.cache
 def data(request):
     return pages.BigDataPage()
 
 
-@route(const.urls["aas"])
+@klein.route(const.urls["aas"])
+@pages.cache
 def aas(request):
     return pages.AsAServicePage()
 
 
-@route(const.urls["sdn"])
+@klein.route(const.urls["sdn"])
+@pages.cache
 def sdn(request):
     return pages.SDNPage()
 
 
-@route(const.urls["ux"])
+@klein.route(const.urls["ux"])
+@pages.cache
 def ux(request):
     return pages.UXPage()
 
 
-@route(const.urls["open-source"])
+@klein.route(const.urls["open-source"])
+@pages.cache
 def openSource(request):
-    page = pages.OpenSourcePage()
-    return pages.MemCacheHelper(request, page).getPage()
+    return pages.OpenSourcePage()
 
 
-@route(const.urls["about"])
+@klein.route(const.urls["about"])
+@pages.cache
 def about(request):
     return pages.AboutPage()
 
 
-@route(const.urls["who"])
+@klein.route(const.urls["who"])
+@pages.cache
 def who(request):
     return pages.WhoPage()
 
 
-@route(const.urls["what"])
+@klein.route(const.urls["what"])
+@pages.cache
 def what(request):
     return pages.WhatPage()
 
 
-@route(const.urls["culture"])
+@klein.route(const.urls["culture"])
+@pages.cache
 def culture(request):
     return pages.CulturePage()
 
 
-@route(const.urls["social"])
+@klein.route(const.urls["social"])
+@pages.cache
 def social(request):
     return pages.SocialLinksPage()
 
 
-@route(const.urls["careers"])
+@klein.route(const.urls["careers"])
+@pages.cache
 def careers(request):
     return pages.JobsPage()
 
 
-@route(const.urls["contact"])
+@klein.route(const.urls["contact"])
+@pages.cache
 def contact(request):
     return pages.ContactPage()
 
 
-@route(const.urls["assets"])
+@klein.route(const.urls["assets"])
 def assets(request):
     return static.File(const.assetsDirectory)
 
 
-@route(const.urls["login"], methods=["POST"])
+@klein.route(const.urls["login"], methods=["POST"])
 def login(request):
     realm = auth.AccountRealm()
     loginPortal = portal.Portal(realm)
@@ -151,11 +174,11 @@ def login(request):
     return pages.LoginPage(app, loginPortal)
 
 
-@route(const.urls["logout"])
+@klein.route(const.urls["logout"])
 def logout(request):
     return pages.LogoutPage(app, None)
 
 
-@route(const.urls["account"])
+@klein.route(const.urls["account"])
 def account(request):
     return pages.AccountPage()
