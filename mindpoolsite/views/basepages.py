@@ -1,12 +1,68 @@
+from twisted.internet import protocol, reactor
+from twisted.protocols import memcache
+from twisted.python import log
 from twisted.web.iweb import IRenderable
-from twisted.web.template import renderer
+from twisted.web.template import flattenString, renderer
 
 from zope.interface import implements
 
 from klein.resource import KleinResource
 
-from mindpoolsite import config, urls, utils
+from mindpoolsite import auth, config, urls, utils
 from mindpoolsite.views import fragments, loaders
+
+
+class MemCacheHelper(object):
+    """
+    """
+    def __init__(self, request, pageClass):
+        self.request = request
+        self.pageClass = pageClass
+        self.memcache = None
+        self.key = ""
+
+    def setPage(self, page):
+        d = self.memcache.set(self.key, page)
+        d.addErrback(log.msg)
+        return page
+
+    def getOrFlattenPage(self, result):
+        flags, page = result
+        if page:
+            if config.debug:
+                log.msg("Cache hit; skipping page generation ...")
+            return page
+        if config.debug:
+            log.msg("No page in cache; getting and setting ...")
+        d = flattenString(self.request, self.pageClass())
+        d.addErrback(log.msg)
+        d.addCallback(self.setPage)
+        return d
+
+    def pokeMemCache(self, mem):
+        if not mem:
+            if config.debug:
+                log.msg("Cannot connect to memcache server!")
+            return self.pageClass()
+        self.memcache = mem
+        d = self.memcache.get(self.key)
+        d.addErrback(log.msg)
+        d.addCallback(self.getOrFlattenPage)
+        return d
+
+    def getPage(self):
+        """
+        """
+        self.key = auth.getSessionAccount(
+            self.request).getKey(self.request.path)
+        if config.debug:
+            log.msg("Generated key:", self.key)
+        client = protocol.ClientCreator(reactor, memcache.MemCacheProtocol)
+        d = client.connectTCP("localhost", memcache.DEFAULT_PORT)
+        d.addErrback(log.msg)
+        d.addCallback(self.pokeMemCache)
+        d.addErrback(log.msg)
+        return d
 
 
 class BasePage(loaders.TemplateLoader):
