@@ -50,7 +50,7 @@ class Options(usage.Options):
     subCommands = [
         ["stop", None, SubCommandOptions,
          "Stop the server"],
-        ["update-db", None, UpdateDBOptionss
+        ["update-db", None, UpdateDBOptions,
          "update one of the language databases"],
     ]
 
