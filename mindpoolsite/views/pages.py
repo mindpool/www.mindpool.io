@@ -16,9 +16,9 @@ from mindpoolsite.views import basepages as base, fragments
 class MemCacheHelper(object):
     """
     """
-    def __init__(self, request, pageInstance):
+    def __init__(self, request, pageClass):
         self.request = request
-        self.pageInstance = pageInstance
+        self.pageClass = pageClass
         self.memcache = None
         self.key = ""
 
@@ -35,7 +35,7 @@ class MemCacheHelper(object):
             return page
         if config.debug:
             log.msg("No page in cache; getting and setting ...")
-        d = flattenString(self.request, self.pageInstance)
+        d = flattenString(self.request, self.pageClass())
         d.addErrback(log.msg)
         d.addCallback(self.setPage)
         return d
@@ -44,7 +44,7 @@ class MemCacheHelper(object):
         if not mem:
             if config.debug:
                 log.msg("Cannot connect to memcache server!")
-            return self.pageInstance
+            return self.pageClass()
         self.memcache = mem
         d = self.memcache.get(self.key)
         d.addErrback(log.msg)
@@ -72,10 +72,10 @@ def cache(routeFunction):
     """
     @functools.wraps(routeFunction)
     def wrapper(request):
-        pageInstance = routeFunction(request)
+        pageClass = routeFunction(request)
         if not config.cache:
-            return pageInstance
-        return MemCacheHelper(request, pageInstance).getPage()
+            return pageClass
+        return MemCacheHelper(request, pageClass).getPage()
     return wrapper
 
 
