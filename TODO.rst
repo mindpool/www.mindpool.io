@@ -16,10 +16,6 @@ Fit and Finish
 
 * add a custom 401 page (and other permissions pages)
 
-* add the careers page to the people pages too
-
-* move interfaces into their own iface module
-
 
 Content Management
 ------------------

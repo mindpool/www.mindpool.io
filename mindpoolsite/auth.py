@@ -4,13 +4,7 @@ from twisted.cred.portal import IRealm
 from twisted.python.components import registerAdapter
 from twisted.web.server import Session
 
-
-# XXX this needs to go in an iface module
-class IAccount(Interface):
-    """
-    A marker interface for Account objects.
-    """
-    pass
+from mindpool import iface
 
 
 # XXX this likely will go wherever the datamodels end up ... or maybe I'll
@@ -19,7 +13,7 @@ class IAccount(Interface):
 class Account(object):
     """
     """
-    implements(IAccount)
+    implements(iface.IAccount)
 
     def __init__(self, session):
         self.session = session
@@ -61,16 +55,10 @@ class Account(object):
         return str("%s%s%s" % (data, self.sessionID, self.primaryEmail))
 
 
-class IPersona(Interface):
-    """
-    A marker interface for Mozilla Persona (Browser ID) objects.
-    """
-
-
 class Persona(object):
     """
     """
-    implements(IPersona)
+    implements(iface.IPersona)
 
     def __init__(self, email, role=""):
         self.email = email
@@ -86,12 +74,12 @@ class AccountRealm(object):
             # this is a good place to pull information from a DB
             avatar = Persona(avatarId)
             logout = None
-            return (IPersona, avatar, logout)
+            return (iface.IPersona, avatar, logout)
         raise NotImplementedError("no interface")
 
 
 def getSessionAccount(request):
-    return IAccount(request.getSession())
+    return iface.IAccount(request.getSession())
 
 
 def createSessionAccount(request, avatar):
@@ -101,4 +89,4 @@ def createSessionAccount(request, avatar):
     return account
 
 
-registerAdapter(Account, Session, IAccount)
+registerAdapter(Account, Session, iface.IAccount)
