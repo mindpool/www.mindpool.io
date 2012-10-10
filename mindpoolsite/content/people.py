@@ -2,18 +2,19 @@ people = """
 People
 ------
 
+MindPool is a people company. We know all of our engineers personally and know
+who can help you the most.
+
+We're not a shop for bodies. We don't provide fleets of drone workers for use
+in assembly-line software dev sweatshops. We are a close-knit team of software
+and systems engineers that love working with each other, love tackling hard
+problems, and most of all, have a passion for delivering world-class solutions.
 """
 
 
 teams = """
 Teams
 -----
-
-We're not a shop for bodies. We don't provide fleets of drone workers for use
-in assembly-line software dev sweatshops. We are a close-knit team of software
-and systems engineers that love working with each other, love tackling hard
-problems, and most of all, have a passion for delivering world-class solutions.
-
 Our teams nurture technical excellence in each member of the team. As such, you
 know you're getting dedication when you bring us on board. Furthermore, we
 thrive on our close connections with each other and with the teams that we join
@@ -31,4 +32,7 @@ members = """
 Members
 -------
 
+We'd like to give you the change to know our engineers better. Below is a list
+of links, each going to a page where you can find out more about the engineer
+in question.
 """

@@ -80,7 +80,7 @@ servicesLinks = [
 peopleLinks = [
     ("People", map["people"], const.LINK),
     ("Teams", map["teams"], const.LINK),
-    ("Members", map["members"], const.LINK)]
+    #("Members", map["members"], const.LINK)]
 
 
 cloudTechLinks = [
