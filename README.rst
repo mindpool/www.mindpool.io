@@ -53,11 +53,11 @@ The ``Makefile`` is provided for convenience, but one also has the option of
 overriding various defaults for the site pluging when using it directly. For
 instance:
 
-* **enable caching** - ``twistd -n mindpool-site --cache
+* **enable caching** - ``twistd -n mindpool-site --cache``
 
-* **enable debugging** - ``twistd -n mindpool-site --debug
+* **enable debugging** - ``twistd -n mindpool-site --debug``
 
-* **change the port** - ``twistd -n mindpool-site --webport 10080
+* **change the port** - ``twistd -n mindpool-site --webport 10080``
 
 As one might expect, you can do them all at the same time ;-)
 
