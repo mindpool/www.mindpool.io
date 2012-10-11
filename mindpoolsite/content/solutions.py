@@ -130,11 +130,11 @@ sdn = """
 Software-Defined Networking
 ---------------------------
 
-We can help you build custom Software Defined Networking Solutions. 
+We can help you build custom Software Defined Networking solutions around
+OpenStack Quantum Plugins and OpenFlow controllers.
 
 *A selection of supported SDN solutions:*
 
-OpenFlow controllers and OpenStack Quantum Plugins
 
 +-----------------------------------------------------+-----------------------------------------------+
 | .. image:: /static/img/OpenStackLogo-x153.jpg       | .. image:: /static/img/openflow-logo-x153.jpg |
