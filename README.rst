@@ -75,7 +75,7 @@ Managing Content
 Adding URLs, Pages, and Content
 -------------------------------
 
-#. Edit ``mindpoolsite.urls.urls``.
+#. Edit ``mindpoolsite.urls.map``.
 
 #. Add the new URL to whatever menus are appropriate in the same ``urls``
    module.
@@ -83,7 +83,10 @@ Adding URLs, Pages, and Content
 #. Make the new URL routable by updating ``mindpoolsite.routes`` with a new
    function that instantiates a page class appropriate for your URL.
 
-#. If you new page can be cached, add the ``@pages.cache`` decorator.
+#. If your new page can be cached, add the ``@pages.cache`` decorator. Note
+   that the caching decorator has to be right above the function definition (if
+   ``@klein.route`` is directly above the function, ``@pages.cache`` will get
+   swallowed by it and no caching will happen).
 
 #. Add a new page class to ``mindpoolsite.views.pages``, subclassing the
    appropriate parent class, defining the appropriate HTML content (see the

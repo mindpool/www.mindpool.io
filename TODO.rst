@@ -80,3 +80,7 @@ Optimization
 * add an admin URL that we can hit to purge the memcache page
 
   * then add a command line option for doing it
+
+* can the routes be organized into classes?
+
+  * this would make them easier to maintain...
