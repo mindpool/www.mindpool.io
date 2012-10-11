@@ -94,7 +94,8 @@ SolutionsLinks = [
     ("Big Data", map["big-data"], const.LINK),
     ("Cloud", map["aas"], const.LINK),
     ("Software Defined Networking", map["sdn"], const.LINK),
-    #("User Experience", map["ux"], const.LINK)]
+    #("User Experience", map["ux"], const.LINK)
+    ]
 
 
 openSourceLinks = [
