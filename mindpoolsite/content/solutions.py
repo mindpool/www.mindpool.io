@@ -48,10 +48,11 @@ We build upon the fundamental building blocks - Open Source Programming language
 
 *A selection of supported languages:*
 
-=================================================  =================================================
-.. image:: /static/img/python-logo-x153-v3-TM.jpg  .. image:: /static/img/made-with-lisp-x153.jpg
-.. image:: /static/img/ruby-logo-R-x153.jpg        .. image:: /static/img/coffeescript_logo_x153.jpg
-=================================================  =================================================
++----------------------------------------------------+---------------------------------------------------+
+| .. image:: /static/img/python-logo-x153-v3-TM.jpg  | .. image:: /static/img/made-with-lisp-x153.jpg    |
++----------------------------------------------------+---------------------------------------------------+
+| .. image:: /static/img/ruby-logo-R-x153.jpg        | .. image:: /static/img/coffeescript_logo_x153.jpg |
++----------------------------------------------------+---------------------------------------------------+
 """
 
 frameworks = """
@@ -62,10 +63,11 @@ TBD
 
 *A selection of supported frameworks:*
 
-====================================================  ========================================
-.. image:: /static/img/Twisted_Logo_x153.jpg          .. image:: /static/img/zmq-x153.jpg
-.. image:: /static/img/django-logo-negative-x153.jpg  .. image:: /static/img/knockout-x153.jpg
-====================================================  ========================================
++------------------------------------------------------+------------------------------------------+
+| .. image:: /static/img/Twisted_Logo_x153.jpg         | .. image:: /static/img/zmq-x153.jpg      |
++------------------------------------------------------+------------------------------------------+
+| .. image:: /static/img/django-logo-negative-x153.jpg | .. image:: /static/img/knockout-x153.jpg |
++------------------------------------------------------+------------------------------------------+
 """
 
 concurrency = """
@@ -83,9 +85,9 @@ TBD
 
 *A selection of supported messaging solutions:*
 
-========================================  ===================================
-.. image:: /static/img/RabbitMQ-x153.jpg  .. image:: /static/img/zmq-x153.jpg
-========================================  ===================================
++-------------------------------------------+-------------------------------------+
+| .. image:: /static/img/RabbitMQ-x153.jpg  | .. image:: /static/img/zmq-x153.jpg |
++-------------------------------------------+-------------------------------------+
 """
 
 distributed = """
@@ -121,9 +123,9 @@ MindPool contributes to the following Cloud Platforms.
 
 *A selection of supported cloud platforms:*
 
-=============================================  =============================================
-.. image:: /static/img/OpenStackLogo-x153.jpg  .. image:: /static/img/cloud-foundry-x153.jpg
-=============================================  =============================================
++------------------------------------------------+-----------------------------------------------+
+| .. image:: /static/img/OpenStackLogo-x153.jpg  | .. image:: /static/img/cloud-foundry-x153.jpg |
++------------------------------------------------+-----------------------------------------------+
 """
 
 sdn = """
