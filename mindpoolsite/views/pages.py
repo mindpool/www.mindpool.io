@@ -4,6 +4,8 @@ import json
 from twisted.web.server import NOT_DONE_YET
 from twisted.web.template import renderer
 
+import klein
+
 from browserid import checker
 
 from mindpoolsite import auth, config, content, iface, urls
@@ -21,6 +23,10 @@ def cache(routeFunction):
             return pageClass()
         return base.MemCacheHelper(request, pageClass).getPage()
     return wrapper
+
+
+def route(url, cache=False, *args, **kwargs):
+    return klein.route(url, *args, **kwargs)
 
 
 class SplashPage(base.BasePage):

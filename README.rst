@@ -86,7 +86,7 @@ Adding URLs, Pages, and Content
 
 #. If your new page can be cached, add the ``@pages.cache`` decorator. Note
    that the caching decorator has to be right above the function definition (if
-   ``@klein.route`` is directly above the function, ``@pages.cache`` will get
+   ``@pages.route`` is directly above the function, ``@pages.cache`` will get
    swallowed by it and no caching will happen).
 
 #. Add a new page class to ``mindpoolsite.views.pages``, subclassing the
