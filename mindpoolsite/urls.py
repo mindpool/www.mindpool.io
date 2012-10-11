@@ -92,8 +92,8 @@ SolutionsLinks = [
     ("Messaging", map["messaging"], const.LINK),
     ("Distributed Systems", map["distributed"], const.LINK),
     ("Big Data", map["big-data"], const.LINK),
-    ("IaaS and PaaS", map["aas"], const.LINK),
-    ("SDNs", map["sdn"], const.LINK),
+    ("Cloud", map["aas"], const.LINK),
+    ("Software Defined Networking", map["sdn"], const.LINK),
     ("User Experience", map["ux"], const.LINK)]
 
 

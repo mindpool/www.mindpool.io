@@ -122,7 +122,7 @@ How to Reach Us
 
 *Voice*
 
-* Atlanta: `(404) XXX-XXXX`_
+* Atlanta: `(404) 492-9652`_
 
 
 *Email*

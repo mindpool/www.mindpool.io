@@ -5,7 +5,11 @@ Solutions
 We are able to assemble various solutions based on our Client needs built
 from Open Source foundations. Our current solutions fall into popular implementations
 such as Cloud, Software-Defined-Networking, Big Data as well as building custom solutions
-around messaging, concurrency and machine learning problems for our Clients.
+around messaging, distributed systems (web-scale), concurrency and machine learning 
+problems for our Clients.
+
+Learn more about the Frameworks, Concurrency, Messaging, Distributed Systems, Big Data,
+Cloud, Software-Defined Networking and User Experience expertise by browsing the links.
 
 """
 
@@ -40,7 +44,7 @@ langs = """
 Programming Languages are the Foundation
 ----------------------------------------
 
-We build upon the fundamental building blocks - Open Source languages. 
+We build upon the fundamental building blocks - Open Source Programming languages. 
 
 *A selection of supported languages:*
 
@@ -113,7 +117,7 @@ aas = """
 Infrastructure and Platforms as Services
 ----------------------------------------
 
-TBD
+MindPool contributes to the following Cloud Platforms.
 
 *A selection of supported cloud platforms:*
 
@@ -126,19 +130,19 @@ sdn = """
 Software-Defined Networking
 ---------------------------
 
-TDB
+We can help you build custom Software Defined Networking Solutions. 
 
 *A selection of supported SDN solutions:*
 
+OpenFlow controllers and OpenStack Quantum Plugins
+
 +-----------------------------------------------------+-----------------------------------------------+
-| .. image:: /static/img/midokura-x153.jpg            | .. image:: /static/img/vmware-nicira-x153.jpg |
-+-----------------------------------------------------+                                               |
-| .. image:: /static/img/Big-Switch-networks-x153.jpg |                                               |
+| .. image:: /static/img/OpenStackLogo-x153.jpg       | .. image:: /static/img/openflow-logo.png      |
 +-----------------------------------------------------+-----------------------------------------------+
 """
 
 ux = """
-The User Experience in the Cloud
+User Experience
 --------------------------------
 
 TBD
