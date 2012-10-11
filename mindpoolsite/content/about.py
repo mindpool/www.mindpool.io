@@ -5,14 +5,6 @@ Who We Are
     "Henceforth, we're all to be known as Team Alpha Super Awesome Cool
     Dynamite Wolf Squadron."
 
-What we're not:
-
-* We're not looking for exit strategies.
-
-* We're not in business to stroke our egos, get famous, or make one beeellion
-  dollars.
-
-* We're not another group of engineers that's "gone independent".
 
 What we are:
 
@@ -29,6 +21,17 @@ What we are:
   our world, now.
 
 * We're green. Super-green.
+
+
+What we're not:
+
+* We're not looking for exit strategies.
+
+* We're not in business to stroke our egos, get famous, or make one beeellion
+  dollars.
+
+* We're not another group of engineers that's "gone independent".
+
 
 If you're curious and want to know more, be sure to check out our `Culture`_
 page.
