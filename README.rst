@@ -81,7 +81,8 @@ Adding URLs, Pages, and Content
    module.
 
 #. Make the new URL routable by updating ``mindpoolsite.routes`` with a new
-   function that instantiates a page class appropriate for your URL.
+   function (or static method, if you're putting it into an organizing class)
+   that instantiates a page class appropriate for your URL.
 
 #. If your new page can be cached, add the ``@pages.cache`` decorator. Note
    that the caching decorator has to be right above the function definition (if
