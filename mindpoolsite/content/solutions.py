@@ -137,7 +137,7 @@ We can help you build custom Software Defined Networking Solutions.
 OpenFlow controllers and OpenStack Quantum Plugins
 
 +-----------------------------------------------------+-----------------------------------------------+
-| .. image:: /static/img/OpenStackLogo-x153.jpg       | .. image:: /static/img/openflow-logo.png      |
+| .. image:: /static/img/OpenStackLogo-x153.jpg       | .. image:: /static/img/openflow-logo-x153.jpg |
 +-----------------------------------------------------+-----------------------------------------------+
 """
 
