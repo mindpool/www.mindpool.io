@@ -73,65 +73,65 @@ class MembersPage(PeoplePage):
     contentData = content.people.members
 
 
-class CloudTechPage(base.SidebarPage):
+class SolutionsPage(base.SidebarPage):
     """
     """
-    contentData = content.cloudtech.cloudtech
-    sidebarLinks = urls.cloudTechLinks
+    contentData = content.solutions.solutions
+    sidebarLinks = urls.SolutionsLinks
 
 
-class LangsPage(CloudTechPage):
+class LangsPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.langs
+    contentData = content.solutions.langs
 
 
-class FrameworksPage(CloudTechPage):
+class FrameworksPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.frameworks
+    contentData = content.solutions.frameworks
 
 
-class ConcurrencyPage(CloudTechPage):
+class ConcurrencyPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.concurrency
+    contentData = content.solutions.concurrency
 
 
-class MessagingPage(CloudTechPage):
+class MessagingPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.messaging
+    contentData = content.solutions.messaging
 
 
-class DistributedPage(CloudTechPage):
+class DistributedPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.distributed
+    contentData = content.solutions.distributed
 
 
-class BigDataPage(CloudTechPage):
+class BigDataPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.data
+    contentData = content.solutions.data
 
 
-class AsAServicePage(CloudTechPage):
+class AsAServicePage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.aas
+    contentData = content.solutions.aas
 
 
-class SDNPage(CloudTechPage):
+class SDNPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.sdn
+    contentData = content.solutions.sdn
 
 
-class UXPage(CloudTechPage):
+class UXPage(SolutionsPage):
     """
     """
-    contentData = content.cloudtech.ux
+    contentData = content.solutions.ux
 
 
 class OpenSourcePage(base.SidebarPage):

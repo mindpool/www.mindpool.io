@@ -52,10 +52,10 @@ def members(request):
     return pages.MembersPage
 
 
-@klein.route(urls.map["cloud-tech"])
+@klein.route(urls.map["solutions"])
 @pages.cache
-def cloudTech(request):
-    return pages.CloudTechPage
+def Solutions(request):
+    return pages.SolutionsPage
 
 
 @klein.route(urls.map["langs"])

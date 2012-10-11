@@ -1,1 +1,1 @@
-import about, auth, cloudtech, members, opensource, people, services, splash
+import about, auth, solutions, members, opensource, people, services, splash
