@@ -82,7 +82,3 @@ Optimization
 * add an admin URL that we can hit to purge the memcache page
 
   * then add a command line option for doing it
-
-* don't do page instantiation in the routes
-
-  * override this behaviour in custom decorator

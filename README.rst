@@ -4,8 +4,15 @@ www.mindpool.io
 
 This is the application that runs the company internet properties.
 
+Known Issues
+============
+
+* When running with ``pypy``, logging in with Persona causes the process to hang.
+
+
 Setup
 =====
+
 
 Production Deployments
 ----------------------
@@ -18,6 +25,7 @@ Production Deployments
 #. Run ``make install``.
 
 #. Run ``make start-prod``.
+
 
 Development
 -----------
@@ -46,6 +54,7 @@ on a sysmte that doesn't have pypy installed, you can do this::
 
   $ PYTHON=`which python` TWISTD=`which twistd` make start-dev
 
+
 Using the Twisted Plugin
 ------------------------
 
@@ -72,6 +81,7 @@ you can still use all of the plugin options, just as above.
 
 Managing Content
 ================
+
 
 Adding URLs, Pages, and Content
 -------------------------------
