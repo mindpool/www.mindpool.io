@@ -113,7 +113,6 @@ class Technologies(object):
 
 
 @pages.route(urls.map["open-source"], caching=True)
-@pages.cache
 def openSource(request):
     return pages.OpenSourcePage
 
