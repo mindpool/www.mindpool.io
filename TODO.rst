@@ -24,6 +24,12 @@ Fit and Finish
 * add session timeout command line option
 
 
+Testing
+-------
+
+* add automated testing support (is Selenium still the best option for this?)
+
+
 Deployments
 -----------
 
