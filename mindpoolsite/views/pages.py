@@ -29,7 +29,6 @@ def cache(routeFunction):
     @functools.wraps(routeFunction)
     def wrapper(request):
         pageClass = routeFunction(request)
-        #import pdb;pdb.set_trace()
         if not config.cache:
             return pageClass()
         return base.MemCacheHelper(request, pageClass).getPage()
@@ -68,6 +67,8 @@ def route(url, caching=False, *args, **kwargs):
 
     def cacheWrapper(routeFunction):
         if caching:
+            # note that before the '@' syntax, this is how we used to decorate
+            # functions ...
             routeFunction = cache(routeFunction)
         return router(routeFunction)
     return cacheWrapper
