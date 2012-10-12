@@ -5,8 +5,6 @@ Who We Are
 We are a Technology Services company comprised of seasoned engineers with 
 over three decades of riding technology waves.
 
-What we are:
-
 * We're a *services* company exploring new frontiers in global software
   engineering.
 
