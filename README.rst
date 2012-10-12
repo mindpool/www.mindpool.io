@@ -69,6 +69,7 @@ You can also start in daemonized mode: ``twistd mindpool-site``. To stop the
 daemon, simply do: ``twistd mindpool-site stop``. Note that in damonized mode
 you can still use all of the plugin options, just as above.
 
+
 Managing Content
 ================
 
@@ -84,12 +85,11 @@ Adding URLs, Pages, and Content
    function (or static method, if you're putting it into an organizing class)
    that instantiates a page class appropriate for your URL.
 
-#. If your new page can be cached, add the ``@pages.cache`` decorator. Cached
-   route methods return a class, not an instance, in order to decrease
-   unnecessary overhead. Also, note that the caching decorator has to be right
-   above the function definition (if ``@pages.route`` is directly above the
-   function, ``@pages.cache`` will get swallowed by it and no caching will
-   happen).
+#. If your new page can be cached, be sure to add the ``caching=True``
+   parameter to the ``@pages.route`` decorator. Cached route methods return a
+   class, not an instance (in order to decrease unnecessary overhead), so make
+   sure you're not creating an instance in route functions/methods when you
+   have caching enabled.
 
 #. Add a new page class to ``mindpoolsite.views.pages``, subclassing the
    appropriate parent class, defining the appropriate HTML content (see the
