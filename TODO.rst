@@ -41,6 +41,8 @@ Content Management
 Authentication / Authorization
 ------------------------------
 
+* when a default email is added, it needs to be added to the list of emails
+
 * a system needs to be put in place for protecting specific resources
 
   * once that's done, we'll be able to allow resouces by Account
