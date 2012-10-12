@@ -2,7 +2,11 @@ who = """
 Who We Are
 ----------
 
-We are a Technology Services company comprised of seasoned engineers with 
+
+  "Henceforth, we're to be known as 'Team Alpha Super Awesome Cool
+  Dynamite Wolf Squadron.'" -- |Shrek quote|_
+
+We are a Technology Services company comprised of seasoned engineers with
 over three decades of riding technology waves.
 
 * We're a *services* company exploring new frontiers in global software
@@ -17,14 +21,16 @@ over three decades of riding technology waves.
 * We are altruists who actively pursue projects that are focused on improving
   our world, now.
 
-* We're green. Super-green.
+* We're green. `Super-green`_.
+
+.. Links
+.. _Shrek quote: http://www.youtube.com/watch?v=GyobvtzCtLE
+.. _Super-green: http://www.youtube.com/watch?v=rKHh3EIFcZw
+
+.. Replacements
+.. |Shrek quote| replace:: *Donkey*
 
 """
-
-
-# "Henceforth, we're all to be known as Team Alpha Super Awesome Cool
-# Dynamite Wolf Squadron."
-
 
 # What we're not:
 
