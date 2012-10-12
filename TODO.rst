@@ -24,6 +24,14 @@ Fit and Finish
 * add session timeout command line option
 
 
+Deployments
+-----------
+
+* create a staging vhost
+
+* test pypy andn auth on the staging server
+
+
 Content Management
 ------------------
 
