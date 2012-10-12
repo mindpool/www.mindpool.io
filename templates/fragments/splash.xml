@@ -49,7 +49,7 @@
             <a class="btn btn-mindpool">
               <t:attr name="href">
                 <t:slot name="teamsURL" />
-              </t:attr>View details &#187;</a>
+              </t:attr>Learn more &#187;</a>
           </p>
         </div>
       </div>

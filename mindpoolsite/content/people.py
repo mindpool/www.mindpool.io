@@ -3,9 +3,9 @@ People
 ------
 
 MindPool is a people company. Through best practices in engineering and
-management, we continually focus our attention on what is best for our people.
-This keeps the company fresh and our staff highly motivated; and this is what
-you get from us.
+management, we continually focus our attention on what is best for our each of
+our employees.  This keeps the company fresh and our staff highly motivated;
+and this is what you get from us.
 
 We're not a shop for bodies. We don't provide fleets of drone workers for use
 in assembly-line software dev sweatshops.
@@ -26,6 +26,11 @@ know you're getting dedication when you bring us on board. Furthermore, we
 thrive on our close connections with each other and with the teams that we join
 for the duration of our engagements. This keeps project momentum strong, even
 during crunch times.
+
+This approach has transformed our consulting teams into something more like
+what open source projects do. MindPool has evolved a meritocratic approach,
+where excellence and efficiency are rewarded and morale is derrived from the
+benefits of this shared investment.
 
 When you hire our services, you are getting engineers that know how to
 communicate, know how to engage, know the meaning of strong community

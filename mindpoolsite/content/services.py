@@ -32,18 +32,22 @@ Consulting
 
 *Open Source, Delivered*
 
-* Do you need help getting a Cloud up and running powered by Open Source? 
+MindPool offers consulting services around open source engineering. Here are
+some questions you can ask to see if you might benefit from our integration and
+development expertise: 
 
-* Are you converting legacy applications to Web Services/APIs? 
+* Do you need help getting a cloud up and running powered by open source? 
+
+* Are you converting legacy applications to web services/APIs? 
 
 * Are you interested in exploring ways in which you can leverage the 
   vast amounts of data your systems generate?
-
 
 * Are you in too deep, and need to augment your engineering teams with
   experienced developers who will hit the ground running?
 
 Take a look at the `solutions`_ around which we provide consulting services.
+
 
 .. Links
 .. _solutions: /solutions
@@ -62,9 +66,10 @@ When we hand off a completed project to you, we want you to be thoroughly
 delighted. Sometimes this means ensuring that your team knows how to maintain
 what we've delivered, or empowering them add new features over time.
 
-Some organizations have contacted us simply for our decades of expertise. As
-they were building out their own teams, we provided instruction on their
-chosen technologies.
+Some organizations have contacted us simply for our decades of experience. As
+they were building out their own teams, we provided instruction and training on
+their chosen technologies and how they could integrate with the appropriate
+open source communities.
 
 In short, we can provide the desired training your teams may need.
 """

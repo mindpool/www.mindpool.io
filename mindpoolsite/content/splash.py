@@ -14,5 +14,7 @@ you by sharing our knowledge and experience.
 
 teams = """
 Our teams form the core of our consulting practices. We've got a proven
-approach that will deliver you a final working solution.
+approach that will deliver you a final working solution. With our new take on
+providing cuting-edge technology services, you will find integrating our
+engineers into your teams a fresh change to the usual consulting experience.
 """
