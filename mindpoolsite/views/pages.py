@@ -15,6 +15,16 @@ from mindpoolsite.views import basepages as base, fragments
 def cache(routeFunction):
     """
     A decorator for caching pages.
+
+    Initially intended to be used with klein route functions like this:
+
+        @route("/some/path")
+        @cache
+        def somePath(request):
+            return somePageClass
+
+    this decortator is now being used to do the caching via parameters passed
+    to the route decorator.
     """
     @functools.wraps(routeFunction)
     def wrapper(request):
@@ -25,8 +35,42 @@ def cache(routeFunction):
     return wrapper
 
 
-def route(url, cache=False, *args, **kwargs):
-    return klein.route(url, *args, **kwargs)
+def route(url, caching=False, *args, **kwargs):
+    """
+    A decorator that overrides the standard klein route decorator with
+    additional keyword arguments.
+
+    Using this decorator is a short-cut; you would otherwise need to use this:
+
+        @klein.route("/my/url")
+        @cache
+        def getSomePage(request):
+            return GetSomePageClass
+
+    With this decorator, you only need to do the following:
+
+        @route("/my/url", caching=True)
+        def getSomePage(request):
+            return GetSomePageClass
+
+    In order to allow additional keyword arguments on the route decorator
+    (above and beyond what Klein provides), we need do inside the decorator
+    what we would have done by decorating the function itself:
+        * check to see if the caching argument was set
+        * if it was, pass the decorated function to the cache decorator
+        * then apply the Klein route decorator (to the function that is now
+          possibly decorated for caching)
+        * return the wrapper that does this bit of jiggery-pokery
+    """
+    router = klein.route(url, *args, **kwargs)
+
+    def cacheWrapper(routeFunction):
+        if caching:
+            # note that before the '@' syntax, this is how we used to decorate
+            # functions ...
+            routeFunction = cache(routeFunction)
+        return router(routeFunction)
+    return cacheWrapper
 
 
 class SplashPage(base.BasePage):
