@@ -1,18 +1,29 @@
 solutions = """
 Solutions
-------------------
+---------
 
-We are able to assemble various solutions based on our Client needs built
-from Open Source foundations. Our current solutions fall into popular implementations
-such as Cloud, Software-Defined-Networking, Big Data as well as building custom solutions
-around messaging, distributed systems (web-scale), concurrency and machine learning 
-problems for our Clients.
+We assemble our solutions -- built from open source foundations -- based on
+customers' needs.  These currently fall into categories commonly referred to as
+*Cloud*, *Software Defined Networking*, and *Big Data*. Additionally, we
+provide custom applications and system integration around enterprise messaging,
+distributed ("web scale") systems, diverse concurrency requirements, and the
+field of machine learning.
 
-Learn more about the Frameworks, Concurrency, Messaging, Distributed Systems, Big Data,
-Cloud, Software-Defined Networking and User Experience expertise by browsing the links.
+We provide systematic, repeatable engineering of these technologies. After the
+development cycle, we assist with packaging, installation, configuration,
+deployment, maintenance and training -- all on an as-needed basis.
 """
 
+# from duncan: I commented out the following chunk, since it duplicates some of
+# what's listed in the menus, and requires maintenance every time we change the
+# menus...
+#
+# Learn more about the Frameworks, Concurrency, Messaging, Distributed Systems,
+# Big Data, Cloud, Software-Defined Networking and User Experience expertise by
+# browsing the links.
 
+
+# from murali: commented out
 # Ah, the ever-present buzzword, "cloud." Despite the protest of armies of
 # systems engineers, it's a useful term. It certainly saves a lot of time typing!
 # In the left menu we've outlined only *some* of the technologies encapsulated in
@@ -45,13 +56,25 @@ Programming Languages are the Foundation
 
 We build upon the fundamental building blocks - Open Source Programming languages. 
 
-*A selection of supported languages:*
+In our digital age, it is programming languages that form the basis of much of
+our modern lives. It is with the languages that everything starts, closely
+followed by libraries and then `frameworks`_.
+
+By choosing intelligently the most effective tools for the job, the end product
+is more stable, more flexible, more robust, and delivered more quickly.
+Languages and their libraries (and, of course, the frameworks that build upon
+these) are what decide that for software engineering.
+
+*Below is a selection of language that we are currently supporting:*
 
 +----------------------------------------------------+---------------------------------------------------+
 | .. image:: /static/img/python-logo-x153-v3-TM.jpg  | .. image:: /static/img/made-with-lisp-x153.jpg    |
 +----------------------------------------------------+---------------------------------------------------+
 | .. image:: /static/img/ruby-logo-R-x153.jpg        | .. image:: /static/img/coffeescript_logo_x153.jpg |
 +----------------------------------------------------+---------------------------------------------------+
+
+.. Links
+.. _frameworks: /solutions/frameworks
 """
 
 frameworks = """
