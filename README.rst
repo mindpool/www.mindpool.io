@@ -84,10 +84,12 @@ Adding URLs, Pages, and Content
    function (or static method, if you're putting it into an organizing class)
    that instantiates a page class appropriate for your URL.
 
-#. If your new page can be cached, add the ``@pages.cache`` decorator. Note
-   that the caching decorator has to be right above the function definition (if
-   ``@pages.route`` is directly above the function, ``@pages.cache`` will get
-   swallowed by it and no caching will happen).
+#. If your new page can be cached, add the ``@pages.cache`` decorator. Cached
+   route methods return a class, not an instance, in order to decrease
+   unnecessary overhead. Also, note that the caching decorator has to be right
+   above the function definition (if ``@pages.route`` is directly above the
+   function, ``@pages.cache`` will get swallowed by it and no caching will
+   happen).
 
 #. Add a new page class to ``mindpoolsite.views.pages``, subclassing the
    appropriate parent class, defining the appropriate HTML content (see the
