@@ -37,9 +37,8 @@ def cache(routeFunction):
 
 def route(url, caching=False, *args, **kwargs):
     """
-    A decorator that overrites the standard klein route decorator with
+    A decorator that overrides the standard klein route decorator with
     additional keyword arguments.
-
 
     Using this decorator is a short-cut; you would otherwise need to use this:
 
@@ -50,7 +49,7 @@ def route(url, caching=False, *args, **kwargs):
 
     With this decorator, you only need to do the following:
 
-        @klein.route("/my/url", caching=True)
+        @route("/my/url", caching=True)
         def getSomePage(request):
             return GetSomePageClass
 
