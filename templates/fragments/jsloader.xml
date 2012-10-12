@@ -5,7 +5,6 @@
     <script src="/static/js/bootstrap-dropdown.js"></script>
     <script src="/static/js/bootstrap-button.js"></script>
     <script src="/static/js/bootstrap-collapse.js"></script>
-    <script src="/static/js/bootstrap-carousel.js"></script>
     <script type="text/javascript">
       // Google Analytics
       var _gaq = _gaq || [];

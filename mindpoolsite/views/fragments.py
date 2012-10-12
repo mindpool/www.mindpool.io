@@ -42,7 +42,8 @@ class SplashTopNavFragment(base.BaseTopNavFragment):
 class SplashFragment(base.BaseFragment):
     """
     """
-    templateFile = "fragments/splash.xml"
+    #templateFile = "fragments/splash.xml"
+    templateFile = "fragments/splashcarousel.xml"
 
     @renderer
     def data(self, request, tag):

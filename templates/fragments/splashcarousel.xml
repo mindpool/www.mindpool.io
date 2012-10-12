@@ -1,0 +1,88 @@
+<t:transparent xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1"
+               t:render="data">
+
+    <div class="jumbotron masthead">
+      <div class="container">
+        <div id="mindpoolCarousel" class="carousel slide">
+          <div class="carousel-inner pull-center">
+            <div class="active item">
+              <div style="width: 100%;">
+                <img src="/static/img/mindpool-carousel-1.png" />
+              </div>
+            </div>
+            <div class="item">
+              <div style="width: 100%;">
+                <a href="/solutions">
+                  <img src="/static/img/mindpool-carousel-2.png" />
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div style="width: 100%;">
+                <a href="/opensource">
+                  <img src="/static/img/mindpool-carousel-3.png" />
+                </a>
+              </div>
+            </div>
+          </div><!-- end carousel-inner -->
+          <!-- carousel nav -->
+          <a class="carousel-control left" href="#mindpoolCarousel"
+             data-slide="prev">&#8249;</a>
+          <a class="carousel-control right" href="#mindpoolCarousel"
+             data-slide="next">&#8250;</a>
+        </div><!-- end carousel -->
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- row of content columns -->
+      <div class="splash-page-text row">
+        <div class="span4">
+          <h2>Consulting</h2>
+          <p class="splash-blurb"><t:slot name="consulting" /></p>
+        </div>
+        <div class="span4">
+          <h2>Training</h2>
+          <p class="splash-blurb"><t:slot name="training" /></p>
+        </div>
+        <div class="span4">
+          <h2>Teams</h2>
+          <p class="splash-blurb"><t:slot name="teams" /></p>
+        </div>
+      </div>
+
+      <!-- row of button columns -->
+      <div class="row">
+        <div class="span4">
+          <p>
+            <a class="btn btn-mindpool">
+              <t:attr name="href">
+                <t:slot name="consultingURL" />
+              </t:attr>View details &#187;</a>
+          </p>
+        </div>
+        <div class="span4">
+          <p>
+            <a class="btn btn-mindpool">
+              <t:attr name="href">
+                <t:slot name="trainingURL" />
+              </t:attr>View details &#187;</a>
+          </p>
+        </div>
+        <div class="span4">
+          <p>
+            <a class="btn btn-mindpool">
+              <t:attr name="href">
+                <t:slot name="teamsURL" />
+              </t:attr>Learn more &#187;</a>
+          </p>
+        </div>
+      </div>
+      <t:transparent t:render="footer" />
+    </div>
+
+    <script src="/static/js/bootstrap-carousel.js"></script>
+    <script type="text/javascript">
+      $('.carousel').carousel();
+    </script>
+</t:transparent>
