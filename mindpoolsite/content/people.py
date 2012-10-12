@@ -2,13 +2,13 @@ people = """
 People
 ------
 
-MindPool is a people company. We know all of our engineers personally and know
-who can help you the most.
+MindPool is a people company. We invest in our people as they are the company.
 
 We're not a shop for bodies. We don't provide fleets of drone workers for use
 in assembly-line software dev sweatshops. We are a close-knit team of software
-and systems engineers that love working with each other, love tackling hard
-problems, and most of all, have a passion for delivering world-class solutions.
+and systems engineers covering three decades industry experiencethat who love working 
+with each other, love tackling hard problems, and most of all, have a passion for 
+delivering world-class solutions.
 """
 
 
@@ -18,7 +18,7 @@ Teams
 Our teams nurture technical excellence in each member of the team. As such, you
 know you're getting dedication when you bring us on board. Furthermore, we
 thrive on our close connections with each other and with the teams that we join
-for the duration of our contracts. This keeps project momentum strong, even
+for the duration of our engagements. This keeps project momentum strong, even
 during crunch times.
 
 When you hire our services, you are getting engineers that know how to
