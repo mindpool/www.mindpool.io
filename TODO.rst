@@ -39,6 +39,8 @@ Authentication / Authorization
 
 * roles need to be defined, associated with accounts, etc.
 
+  * allowed roles can be passed as a list of interfaces to route decorators
+
 * an admin interface needs to be added for managing users
 
 * account data needs to be stored
@@ -81,6 +83,6 @@ Optimization
 
   * then add a command line option for doing it
 
-* can the routes be organized into classes?
+* don't do page instantiation in the routes
 
-  * this would make them easier to maintain...
+  * override this behaviour in custom decorator
