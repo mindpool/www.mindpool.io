@@ -10,7 +10,6 @@ problems for our Clients.
 
 Learn more about the Frameworks, Concurrency, Messaging, Distributed Systems, Big Data,
 Cloud, Software-Defined Networking and User Experience expertise by browsing the links.
-
 """
 
 
@@ -59,7 +58,7 @@ frameworks = """
 Quicker Deliveries with Frameworks
 ----------------------------------
 
-TBD
+Coming Soon.
 
 *A selection of supported frameworks:*
 
@@ -74,14 +73,14 @@ concurrency = """
 Do More with Concurrency
 ------------------------
 
-TBD
+Coming Soon.
 """
 
 messaging = """
 Integrate Systems with Messaging
 --------------------------------
 
-TBD
+Coming Soon.
 
 *A selection of supported messaging solutions:*
 
@@ -94,7 +93,7 @@ distributed = """
 Safeguard with Distributed Systems
 ----------------------------------
 
-TBD
+Coming Soon.
 """
 
 
@@ -102,7 +101,7 @@ data = """
 Mine Your Data
 --------------
 
-TBD
+Coming Soon.
 
 *A selection of supported databases:*
 
@@ -147,5 +146,5 @@ ux = """
 User Experience
 --------------------------------
 
-TBD
+Coming Soon.
 """

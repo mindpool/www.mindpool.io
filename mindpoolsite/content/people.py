@@ -6,7 +6,7 @@ MindPool is a people company. We invest in our people as they are the company.
 
 We're not a shop for bodies. We don't provide fleets of drone workers for use
 in assembly-line software dev sweatshops. We are a close-knit team of software
-and systems engineers covering three decades industry experiencethat who love working 
+and systems engineers covering three decades of industry experience who love working 
 with each other, love tackling hard problems, and most of all, have a passion for 
 delivering world-class solutions.
 """
@@ -33,6 +33,5 @@ Members
 -------
 
 We'd like to give you the change to know our engineers better. Below is a list
-of links, each going to a page where you can find out more about the engineer
-in question.
+of links, each going to a page where you can find out more about our engineers.
 """

@@ -2,9 +2,8 @@ who = """
 Who We Are
 ----------
 
-    "Henceforth, we're all to be known as Team Alpha Super Awesome Cool
-    Dynamite Wolf Squadron."
-
+We are a Technology Services company comprised of seasoned engineers with 
+over three decades of riding technology waves.
 
 What we are:
 
@@ -22,23 +21,27 @@ What we are:
 
 * We're green. Super-green.
 
-
-What we're not:
-
-* We're not looking for exit strategies.
-
-* We're not in business to stroke our egos, get famous, or make one beeellion
-  dollars.
-
-* We're not another group of engineers that's "gone independent".
-
-
-If you're curious and want to know more, be sure to check out our `Culture`_
-page.
-
-.. Links
-.. _Culture: /about/culture
 """
+
+
+# "Henceforth, we're all to be known as Team Alpha Super Awesome Cool
+# Dynamite Wolf Squadron."
+
+
+# What we're not:
+
+# * We're not looking for exit strategies.
+
+# * We're not in business to stroke our egos, get famous, or make one beeellion
+#   dollars.
+
+# * We're not another group of engineers that's "gone independent".
+
+# If you're curious and want to know more, be sure to check out our `Culture`_
+# page.
+
+# .. Links
+# .. _Culture: /about/culture
 
 
 what = """
@@ -105,11 +108,11 @@ Swimming in the MindPool
 
 If you're an extraordinary software or systems engineer with smooth people
 skills and would enjoy working with an adventurous crew that's living in the
-future, you've come to the right place ;-)
+future, you've come to the right place!
 
 Send an email to the address below with a copy of your recent resume or a
 LinkedIn URL and tell us a little something about yourself that's not in the
-resume...
+resume.
 
 `jobs@mindpool.io`_
 
