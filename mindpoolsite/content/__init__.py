@@ -1,1 +1,1 @@
-import about, auth, solutions, members, opensource, people, services, splash
+import about, auth, tech, members, opensource, people, services, splash

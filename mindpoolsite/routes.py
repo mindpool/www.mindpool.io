@@ -62,9 +62,9 @@ class Technologies(object):
     """
     """
     @staticmethod
-    @pages.route(urls.map["solutions"], caching=True)
-    def Solutions(request):
-        return pages.SolutionsPage
+    @pages.route(urls.map["tech"], caching=True)
+    def Tech(request):
+        return pages.TechPage
 
     @staticmethod
     @pages.route(urls.map["langs"], caching=True)

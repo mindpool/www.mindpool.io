@@ -123,65 +123,65 @@ class MembersPage(PeoplePage):
     contentData = content.people.members
 
 
-class SolutionsPage(base.SidebarPage):
+class TechPage(base.SidebarPage):
     """
     """
-    contentData = content.solutions.solutions
+    contentData = content.tech.main
     sidebarLinks = urls.SolutionsLinks
 
 
-class LangsPage(SolutionsPage):
+class LangsPage(TechPage):
     """
     """
-    contentData = content.solutions.langs
+    contentData = content.tech.langs
 
 
-class FrameworksPage(SolutionsPage):
+class FrameworksPage(TechPage):
     """
     """
-    contentData = content.solutions.frameworks
+    contentData = content.tech.frameworks
 
 
-class ConcurrencyPage(SolutionsPage):
+class ConcurrencyPage(TechPage):
     """
     """
-    contentData = content.solutions.concurrency
+    contentData = content.tech.concurrency
 
 
-class MessagingPage(SolutionsPage):
+class MessagingPage(TechPage):
     """
     """
-    contentData = content.solutions.messaging
+    contentData = content.tech.messaging
 
 
-class DistributedPage(SolutionsPage):
+class DistributedPage(TechPage):
     """
     """
-    contentData = content.solutions.distributed
+    contentData = content.tech.distributed
 
 
-class BigDataPage(SolutionsPage):
+class BigDataPage(TechPage):
     """
     """
-    contentData = content.solutions.data
+    contentData = content.tech.data
 
 
-class AsAServicePage(SolutionsPage):
+class AsAServicePage(TechPage):
     """
     """
-    contentData = content.solutions.aas
+    contentData = content.tech.aas
 
 
-class SDNPage(SolutionsPage):
+class SDNPage(TechPage):
     """
     """
-    contentData = content.solutions.sdn
+    contentData = content.tech.sdn
 
 
-class UXPage(SolutionsPage):
+class UXPage(TechPage):
     """
     """
-    contentData = content.solutions.ux
+    contentData = content.tech.ux
 
 
 class OpenSourcePage(base.SidebarPage):

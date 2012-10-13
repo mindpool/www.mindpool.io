@@ -46,11 +46,11 @@ development expertise:
 * Are you in too deep, and need to augment your engineering teams with
   experienced developers who will hit the ground running?
 
-Take a look at the `solutions`_ around which we provide consulting services.
+Take a look at the `technologies`_ around which we provide consulting services.
 
 
 .. Links
-.. _solutions: /solutions
+.. technologies: /tech
 """
 
 

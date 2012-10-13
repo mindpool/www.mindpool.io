@@ -11,17 +11,17 @@ map = {
     "people": "/people",
     "teams": "/people/teams",
     "members": "/people/members",
-    # solutions
-    "solutions": "/solutions",
-    "langs": "/solutions/languages",
-    "frameworks": "/solutions/frameworks",
-    "concurrency": "/solutions/concurrency",
-    "messaging": "/solutions/messaging",
-    "distributed": "/solutions/distributed",
-    "big-data": "/solutions/data",
-    "aas": "/solutions/aas",
-    "sdn": "/solutions/sdn",
-    "ux": "/solutions/ux",
+    # technologies
+    "tech": "/tech",
+    "langs": "/tech/languages",
+    "frameworks": "/tech/frameworks",
+    "concurrency": "/tech/concurrency",
+    "messaging": "/tech/messaging",
+    "distributed": "/tech/distributed",
+    "big-data": "/tech/data",
+    "aas": "/tech/aas",
+    "sdn": "/tech/sdn",
+    "ux": "/tech/ux",
     # open source
     "open-source": "/opensource",
     "github": "http://mindpool.github.com/",
@@ -50,7 +50,7 @@ splashAliases = ["/", "/index", "/index.html", "/index.htm"]
 splashTopNavLinks = [
     ("Services", map["services"], const.LINK),
     ("People", map["people"], const.LINK),
-    ("Solutions", map["solutions"], const.LINK),
+    ("Solutions", map["tech"], const.LINK),
     ("Open Source", map["open-source"], const.LINK),
     ("About", map["about"], const.DROPDOWN)]
 #topNavLinks = [("Home", map["root"], LINK)] + splashTopNavLinks
@@ -85,7 +85,7 @@ peopleLinks = [
 
 
 SolutionsLinks = [
-    ("Solutions", map["solutions"], const.LINK),
+    ("Solutions", map["tech"], const.LINK),
     ("Languages as the Foundation", map["langs"], const.LINK),
     ("Frameworks", map["frameworks"], const.LINK),
     ("Concurrency", map["concurrency"], const.LINK),

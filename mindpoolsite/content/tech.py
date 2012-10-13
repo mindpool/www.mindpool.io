@@ -1,4 +1,4 @@
-solutions = """
+main = """
 Solutions
 ---------
 
@@ -74,7 +74,7 @@ these) are what decide that for software engineering.
 +----------------------------------------------------+---------------------------------------------------+
 
 .. Links
-.. _frameworks: /solutions/frameworks
+.. _frameworks: /tech/frameworks
 """
 
 frameworks = """
