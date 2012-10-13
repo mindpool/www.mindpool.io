@@ -109,9 +109,6 @@ lint:
 	-pyflakes $(LIB)
 	-pep8 $(LIB)
 
-start-dev: css lint $(CERTS)
-	$(TWISTD) -n mindpool-site --debug --cache
-
 start-placeholder:
 	$(TWISTD) web -p 9080 --path=./static/html/placeholder/
 
@@ -119,9 +116,21 @@ stop-static:
 	make stop-prod
 
 start-prod: $(CERTS)
-	$(TWISTD) mindpool-site
+	$(TWISTD) mindpool-site --cache
 
-stop-prod:
+start-staging: $(CERTS)
+	$(TWISTD) mindpool-site -p 10080 --cache
+
+start-testing: $(CERTS)
+	$(TWISTD) mindpool-site -p 11080 --cache --debug
+
+start-hosted-dev: $(CERTS)
+	$(TWISTD) mindpool-site -p 12080 --cache --debug
+
+start-dev: css lint $(CERTS)
+	$(TWISTD) -n mindpool-site --debug --cache
+
+stop:
 	$(TWISTD) mindpool-site stop
 
 $(MONGO_BASE):
