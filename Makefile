@@ -120,7 +120,7 @@ stop-static:
 	make stop-prod
 
 start-prod: $(CERTS)
-	$(TWISTD) mindpool-site --cache
+	$(TWISTD) mindpool-site -p 9080 --cache
 
 start-staging: $(CERTS)
 	$(TWISTD) mindpool-site -p 10080 --cache
