@@ -81,7 +81,15 @@ frameworks = """
 Quicker Deliveries with Frameworks
 ----------------------------------
 
-Coming Soon.
+As we describe on our `languages page`_, the choice of programming language and
+associated libraries dictates what you will be able to do on a project, and how
+quickly you will be able to do it. In general, frameworks provide far more
+power and functionality that what comes with a language or its various
+libraries. They often require a significant investment in time -- much more so
+for mastery than initial usage.
+
+With a framework in hand, one can move virtual mountains. We make sure the
+right mountains are getting moved with the right framework.
 
 *A selection of supported frameworks:*
 
@@ -90,6 +98,9 @@ Coming Soon.
 +------------------------------------------------------+------------------------------------------+
 | .. image:: /static/img/django-logo-negative-x153.jpg | .. image:: /static/img/knockout-x153.jpg |
 +------------------------------------------------------+------------------------------------------+
+
+.. Links
+.. _languages page: /tech/languages
 """
 
 concurrency = """
