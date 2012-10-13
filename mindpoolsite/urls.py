@@ -84,13 +84,13 @@ peopleLinks = [
     ]
 
 
-SolutionsLinks = [
+techLinks = [
     ("Solutions", map["tech"], const.LINK),
     ("Languages as the Foundation", map["langs"], const.LINK),
     ("Frameworks", map["frameworks"], const.LINK),
-    ("Concurrency", map["concurrency"], const.LINK),
-    ("Messaging", map["messaging"], const.LINK),
-    ("Distributed Systems", map["distributed"], const.LINK),
+    #("Concurrency", map["concurrency"], const.LINK),
+    #("Messaging", map["messaging"], const.LINK),
+    #("Distributed Systems", map["distributed"], const.LINK),
     ("Big Data", map["big-data"], const.LINK),
     ("Cloud", map["aas"], const.LINK),
     ("Software Defined Networking", map["sdn"], const.LINK),

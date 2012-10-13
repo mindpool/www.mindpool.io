@@ -127,7 +127,7 @@ class TechPage(base.SidebarPage):
     """
     """
     contentData = content.tech.main
-    sidebarLinks = urls.SolutionsLinks
+    sidebarLinks = urls.techLinks
 
 
 class LangsPage(TechPage):
