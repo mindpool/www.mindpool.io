@@ -135,7 +135,10 @@ data = """
 Mine Your Data
 --------------
 
-Coming Soon.
+We are intimately familiar with the ins and outs of big data. In particular,
+MindPool members are experts in asynchronous, event-driven data access and
+data visualization. Used in conjunction with our frameworks of choice, we can
+deliver light-weight, powerful solutions for your data needs.
 
 *A selection of supported databases:*
 
@@ -149,15 +152,19 @@ Coming Soon.
 """
 
 aas = """
-Infrastructure and Platforms as Services
-----------------------------------------
+The Cloud
+---------
 
-MindPool contributes to the following Cloud Platforms.
+Members of MindPool are contributors to several cloud software projects,
+products, and third-party open source libraries. Even more, we have experience
+configuring and deploying \*aaS solutions and related components.
 
-*A selection of supported cloud platforms:*
+*A selection of supported cloud platforms and SDNs:*
 
 +------------------------------------------------+-----------------------------------------------+
-| .. image:: /static/img/OpenStackLogo-x153.jpg  | .. image:: /static/img/cloud-foundry-x153.jpg |
+| .. image:: /static/img/OpenStackLogo-x153.jpg  | .. image:: /static/img/midokura-x153.jpg      |
++------------------------------------------------+-----------------------------------------------+
+| .. image:: /static/img/cloud-foundry-x153.jpg  | .. image:: /static/img/vmware-nicira-x153.jpg |
 +------------------------------------------------+-----------------------------------------------+
 """
 

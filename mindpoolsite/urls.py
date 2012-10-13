@@ -19,7 +19,7 @@ map = {
     "messaging": "/tech/messaging",
     "distributed": "/tech/distributed",
     "big-data": "/tech/data",
-    "aas": "/tech/aas",
+    "aas": "/tech/cloud",
     "sdn": "/tech/sdn",
     "ux": "/tech/ux",
     # open source
@@ -93,7 +93,7 @@ techLinks = [
     #("Distributed Systems", map["distributed"], const.LINK),
     ("Big Data", map["big-data"], const.LINK),
     ("Cloud", map["aas"], const.LINK),
-    ("Software Defined Networking", map["sdn"], const.LINK),
+    #("Software Defined Networking", map["sdn"], const.LINK),
     #("User Experience", map["ux"], const.LINK)
     ]
 
