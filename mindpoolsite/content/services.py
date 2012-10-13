@@ -16,12 +16,13 @@ technologies:
 * Custom product development leveraging MindPool participating Open Source Technologies
 
 Read more about how we can help you in these areas in our `Consulting`_ and
-`Training`_ pages.
+`Training`_ pages. Learn about the tools we use on our `Technologies`_ page.
 
 
 .. Links
 .. _Consulting: /services/consulting
 .. _Training: /services/training
+.. _Technologies: /tech
 
 """
 
