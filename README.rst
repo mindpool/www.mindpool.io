@@ -17,10 +17,9 @@ Setup
 Production Deployments
 ----------------------
 
-#. Install ``memcached`` on your system
-#. Download `pypy-1.9`_.
+#. Install ``memcached`` on your system.
 
-#. Unzip it and move it to ``/usr/local``.
+#. Change directory to your production checkout of ``mindpoolsite``.
 
 #. Run ``make install``.
 
@@ -30,27 +29,26 @@ Production Deployments
 Development
 -----------
 
-#. Download and install pypy as above.
+#. Download and install the dependencies for the production environment.
 
 #. Install MongoDB.
-
 
 #. Run ``make install-dev``
 
    This step will install Bootstrap (in the local dir) and the LESS compiler
    (using ``npm``).
 
-   If you run into errors:
+   If you run into errors::
 
-   sudo ln -sf /usr/local/share/npm/bin/lessc /usr/local/bin/
+     sudo ln -sf /usr/local/share/npm/bin/lessc /usr/local/bin/
 
-   export PATH=$PATH:/usr/local/share/npm/bin/ (or .bashrc depending on your setup)
+     export PATH=$PATH:/usr/local/share/npm/bin/ (or .bashrc depending on your setup)
 
 #. Run ``make start-dev``
 
-If you don't want to use the default of ``pypy`` as your Python binary, then
-you can pass ``make`` variables to select the one that you want. For example,
-on a sysmte that doesn't have pypy installed, you can do this::
+If you don't want to use the default Python binary, then you can pass ``make``
+variables to select the one that you want. For example, on a sysmte that
+doesn't have pypy installed, you can do this::
 
   $ PYTHON=`which python` TWISTD=`which twistd` make start-dev
 
