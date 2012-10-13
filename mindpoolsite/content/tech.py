@@ -1,6 +1,6 @@
 main = """
-Solutions
----------
+Technologies
+------------
 
 We assemble our solutions -- built from open source foundations -- based on
 customers' needs.  These currently fall into categories commonly referred to as

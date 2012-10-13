@@ -187,7 +187,7 @@ class UXPage(TechPage):
 class OpenSourcePage(base.SidebarPage):
     """
     """
-    contentData = content.opensource.opensource
+    contentData = content.opensource.main
     sidebarLinks = urls.openSourceLinks
 
 

@@ -50,8 +50,8 @@ splashAliases = ["/", "/index", "/index.html", "/index.htm"]
 splashTopNavLinks = [
     ("Services", map["services"], const.LINK),
     ("People", map["people"], const.LINK),
-    ("Solutions", map["tech"], const.LINK),
-    ("Open Source", map["open-source"], const.LINK),
+    ("Technologies", map["tech"], const.LINK),
+    ("Community", map["open-source"], const.LINK),
     ("About", map["about"], const.DROPDOWN)]
 #topNavLinks = [("Home", map["root"], LINK)] + splashTopNavLinks
 topNavLinks = splashTopNavLinks
@@ -85,7 +85,7 @@ peopleLinks = [
 
 
 techLinks = [
-    ("Solutions", map["tech"], const.LINK),
+    ("Technologies", map["tech"], const.LINK),
     ("Languages as the Foundation", map["langs"], const.LINK),
     ("Frameworks", map["frameworks"], const.LINK),
     #("Concurrency", map["concurrency"], const.LINK),
@@ -99,7 +99,7 @@ techLinks = [
 
 
 openSourceLinks = [
-    ("Open Source", map["open-source"], const.LINK),
+    ("Community", map["open-source"], const.LINK),
     ("Github Page", map["github"], const.LINK),
     ("Sponsored Projects", map["projects"], const.LINK),
     ("Dev Blog", map["blog"], const.LINK)]

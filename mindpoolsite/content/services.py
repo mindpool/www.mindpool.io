@@ -50,7 +50,7 @@ Take a look at the `technologies`_ around which we provide consulting services.
 
 
 .. Links
-.. technologies: /tech
+.. _technologies: /tech
 """
 
 
