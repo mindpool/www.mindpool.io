@@ -7,5 +7,5 @@ For info on the Clojure implementation, see the `Clojure README`_.
 
 
 .. Links
-.. _Twisted README: tree/master/twisted
-.. _Clojure README: tree/master/clojure
+.. _Twisted README: www.mindpool.io/tree/master/twisted
+.. _Clojure README: www.mindpool.io/tree/master/clojure
