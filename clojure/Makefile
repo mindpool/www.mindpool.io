@@ -18,9 +18,7 @@ get-targets:
 	@egrep ':$$' Makefile|egrep -v '^\$$'|sed -e 's/://g'
 
 clean:
-	rm -rf dist/ build/ MANIFEST *.egg-info
-	rm -rf _trial_temp/ CHECK_THIS_BEFORE_UPLOAD.txt twistd.log
-	find ./ -name "*.py[co]" -exec rm {} \;
+	rm -rf target
 
 $(DEPS_DIR):
 	mkdir $(DEPS_DIR)
