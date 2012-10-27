@@ -3,4 +3,6 @@
   :url "http://mindpool.io/"
   :license {:name "BSD"
             :url "http://opensource.org/licenses/BSD-2-Clause"}
-  :dependencies [[org.clojure/clojure "1.4.0"]])
+  :dependencies [[org.clojure/clojure "1.4.0"]
+                 [noir "1.3.0-beta3"]]
+  :main www-mindpool-io.server)
