@@ -25,16 +25,16 @@ deployment, maintenance and training -- all on an as-needed basis.
 
 # from murali: commented out
 # Ah, the ever-present buzzword, "cloud." Despite the protest of armies of
-# systems engineers, it's a useful term. It certainly saves a lot of time typing!
-# In the left menu we've outlined only *some* of the technologies encapsulated in
-# the term "cloud", and it's still a lot.
+# systems engineers, it's a useful term. It certainly saves a lot of time
+# typing!  In the left menu we've outlined only *some* of the technologies
+# encapsulated in the term "cloud", and it's still a lot.
 
 # Here's what cloud means to us in a nutshell: **the systematic engineering of
 # networked resources**. That's it. And this is what we bring you.
 
 # Of course, there's a bunch involved in that one phrase. Instead of the usual
-# litany of technologies-cum-buzzwords, here's a deeper look that keeps the focus
-# on the concepts involved:
+# litany of technologies-cum-buzzwords, here's a deeper look that keeps the
+# focus on the concepts involved:
 
 # * packaging of software and systems such that it's installable by one or more
 #   configuration management systems
@@ -68,9 +68,9 @@ these) are what decide that for software engineering.
 *Below is a selection of language that we are currently supporting:*
 
 +----------------------------------------------------+---------------------------------------------------+
-| .. image:: /static/img/python-logo-x153-v3-TM.jpg  | .. image:: /static/img/made-with-lisp-x153.jpg    |
+| .. image:: /static/img/python-logo-x153-v3-TM.jpg  | .. image:: /static/img/clojure-logo-x153.jpg      |
 +----------------------------------------------------+---------------------------------------------------+
-| .. image:: /static/img/ruby-logo-R-x153.jpg        | .. image:: /static/img/coffeescript_logo_x153.jpg |
+| .. image:: /static/img/made-with-lisp-x153.jpg     | .. image:: /static/img/coffeescript_logo_x153.jpg |
 +----------------------------------------------------+---------------------------------------------------+
 
 .. Links
