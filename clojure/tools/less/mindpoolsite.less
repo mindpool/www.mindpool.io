@@ -1,0 +1,246 @@
+// Imports
+@import "bootstrap.less";
+@import "navbar.less";
+@import "responsive.less";
+@import "jumbotron.less";
+@import "pageback.less";
+
+// Scafolding
+@bodyPaddingTop:            0;
+@bodyPaddingBottom:         40;
+@bodyMargin:                0;
+//@bodyBackgroundContentPage: #dacfdf;
+@bodyBackgroundContentPage: @jumbotronBackgroundColor1;
+@baseFontSize:              13px;
+@baseFontFamily:            @serifFontFamily;
+@baseLineHeight:            18px;
+@altFontFamily:             @sansFontFamily;
+@contentPadMindPoolLeft:    50px;
+@contentPadMindPoolRight:   50px;
+@contentPadMindPoolBootom:  50px;
+@greyWellBackground:        rgba(220, 205, 225, .25);
+@footerTopPadding:          40px;
+
+// Navbar
+@navbarHeight:                  40px;
+@navbarBackground:              #180725;
+@navbarBackgroundHighlight:     #1b012f;
+@navbarMindPoolActive:          @jumbotronBackgroundColor1;
+@navbarMindPoolActiveHighlight: @jumbotronBackgroundColor2;
+@navbarMindPoolActiveShadow:    rgba(112, 112, 112, 0.55);
+
+// Jumbotron
+@jumbotronTextColor:        @white;
+@jumbotronAlign:            center;
+@jumbotronBackgroundColor1: @navbarBackgroundHighlight;
+@jumbotronBackgroundColor2: #574364;
+@jumbotronMastheadPattern:  "../img/mindpool-masthead-pattern.png";
+
+// Pageback
+@pagebackTextColor:        @black;
+@pagebackPadding:          40px 0;
+@pagebackAlign:            left;
+@pagebackBackgroundColor1: @jumbotronBackgroundColor1;
+@pagebackBackgroundColor2: @jumbotronBackgroundColor2;
+@pagebackMastheadPattern:  "../img/mindpool-masthead-pattern.png";
+
+// Buttons
+@btnMindPoolLightBackground:            #dacfde;
+@btnMindPoolLightBackgroundHighlight:   darken(@btnMindPoolLightBackground, 10%);
+@btnMindPoolLightTextColor:             #363636;
+@btnMindPoolBorderColor:                #acacac;
+@btnMindPoolDarkBackground:             lighten(@btnMindPoolDarkBackgroundHighlight, 20%);
+@btnMindPoolDarkBackgroundHighlight:    @jumbotronBackgroundColor2;
+@btnMindPoolDarkTextColor:              @white;
+@btnMindPoolDarkBorderColor:            #262626;
+
+// CSS/LESS Overrides
+body {
+  margin: @bodyMargin;
+  padding-top: @bodyPaddingTop;
+  padding-bottom: @bodyPaddingBottom;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @bodyBackgroundContentPage;
+}
+
+body.splash {
+  background-color: @white;
+}
+
+body.content-page {
+  background-color: @bodyBackgroundContentPage;
+}
+
+.mindpool-button-shadow {
+  .box-shadow(inset 0 3px 8px @navbarMindPoolActiveShadow);
+}
+
+.mindpool-button-fade {
+  color: @navbarInverseLinkColorActive;
+  text-decoration: none;
+  .mindpool-button-shadow;
+  background: @navbarMindPoolActive; /* Old browsers */
+  background: -moz-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @navbarMindPoolActive), color-stop(100%, @navbarMindPoolActiveHighlight)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* IE10+ */
+  background: linear-gradient(to bottom, @navbarMindPoolActive 0%, @navbarMindPoolActiveHighlight 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@navbarMindPoolActive', endColorstr='@navbarMindPoolActiveHighlight',GradientType=0 ); /* IE6-9 */
+}
+
+.navbar-inverse {
+  .navbar-inner {
+    #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+  }
+
+  .nav .active > a,
+  .nav .active > a:hover,
+  .nav .active > a:focus {
+    .mindpool-button-fade;
+  }
+}
+
+.persona-assertion {
+  padding: 0;
+  padding-top: 0.75em;
+}
+
+.persona-text {
+  font-size: 90%;
+}
+
+.persona-text a {
+  color: @navbarInverseLinkColor;
+}
+
+.persona-text a:hover,
+.persona-text a:focus {
+  color: @navbarInverseLinkColorActive;
+  text-decoration: none;
+}
+
+.persona-text #member-links {
+  font-size: 120%;
+}
+
+.persona-link-text {
+  font-size: 80%;
+}
+
+.main-content-mindpool {
+  padding-left: @contentPadMindPoolLeft;
+  padding-right: @contentPadMindPoolRight;
+  padding-bottom: @contentPadMindPoolBootom;
+}
+
+.main-content-mindpool a {
+  color: @pagebackBackgroundColor2;
+  text-decoration: underline;
+}
+
+.main-content-mindpool a:hover,
+.main-content-mindpool a:focus {
+  color: @pagebackBackgroundColor1;
+}
+
+/* ReST styling */
+.main-content-mindpool .document h1,
+.main-content-mindpool .document h2,
+.main-content-mindpool .document h3,
+.main-content-mindpool .document h4,
+.main-content-mindpool .document h5,
+.main-content-mindpool .document h6 {
+  letter-spacing: 2px;
+  padding-bottom: 1em;
+}
+
+.main-content-mindpool .document ul.simple {
+  margin-top: -2em;
+  padding-bottom: 1em;
+}
+
+.main-content-mindpool table.docutils {
+  background-color: @white;
+  width: 100%;
+}
+
+.main-content-mindpool table.docutils td {
+  border: none;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+p.tagline {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+p.splash-blurb {
+  font-size: 115%;
+}
+
+.btn-mindpool {
+  .buttonBackground(@btnMindPoolDarkBackground,
+                    @btnMindPoolDarkBackgroundHighlight,
+                    @btnMindPoolDarkTextColor, 0);
+  border-color: @btnMindPoolDarkBorderColor;
+  .mindpool-button-shadow;
+}
+
+.nav-pills > li > a {
+  background-color: @white;
+  color: #333;
+}
+
+.nav-pills > li > a:hover {
+  background-color: @btnMindPoolLightBackgroundHighlight;
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  color: @white;
+  .mindpool-button-fade;
+}
+
+.splash-page-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.offices {
+  font-style: italic;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .city {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.copyright {
+  font-size: 80%;
+}
+
+.grey-well {
+  background-color: @greyWellBackground;
+  border: 1px solid darken(@greyWellBackground, 7%);
+  //border-top: 1px solid darken(@greyWellBackground, 14%);
+}
+
+.footer {
+  padding-top: @footerTopPadding;
+}
+
+body.content-page .footer {
+  color: #ccc;
+}
+
+body.splash .footer a {
+  color: @jumbotronBackgroundColor1;
+}
