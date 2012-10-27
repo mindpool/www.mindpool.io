@@ -1,4 +1,4 @@
-# www.mindpool.io
+# mindpoolsite
 
 A Clojure implementation of the MindPool website.
 

@@ -63,7 +63,7 @@ init-template: install-deps $(ASSETS_DIR) $(TEMPLATES_DIR)
 	git add $(ASSETS_DIR) $(TEMPLATES_DIR)
 
 css:
-	$(LESSC) ./tools/less/mindpoolsite.less > ./static/css/site.css
+	$(LESSC) ./tools/less/mindpoolsite.less > ./resources/public/css/site.css
 
 lint:
 	-pyflakes $(LIB)

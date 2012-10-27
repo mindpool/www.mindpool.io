@@ -1,4 +1,4 @@
-(ns www-mindpool-io.core)
+(ns mindpoolsite.core)
 
 (defn foo
   "I don't do a whole lot."
